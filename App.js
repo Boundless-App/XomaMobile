@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
-export default function App() {
+import {
+  CoursesScreen,
+  ShopScreen,
+  ProfileScreen,
+  OpportunitiesScreen,
+  ResourcesScreen,
+  BookDescriptionScreen,
+  CartScreen,
+} from "./screens/";
+import { Tabs, CourseNav, ShopNav } from "./components";
+import { useFonts } from "expo-font";
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={"HomeScreen"}
+      >
+        <Stack.Screen name="HomeScreen" component={Tabs} />
+        <Stack.Screen name="ShopScreen" component={ShopNav} />
+        <Stack.Screen name="CoursesScreen" component={CourseNav} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="ResourcesScreen" component={ResourcesScreen} />
+        <Stack.Screen
+          name="OpportunitiesScreen"
+          component={OpportunitiesScreen}
+        />
+        <Stack.Screen
+          name="BookDescriptionScreen"
+          component={BookDescriptionScreen}
+        />
+        <Stack.Screen name="CartScreen" component={CartScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
