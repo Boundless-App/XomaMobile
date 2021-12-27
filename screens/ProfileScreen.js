@@ -146,9 +146,13 @@ const ProfileScreen = () => {
       <View style={styles.profileSectionContainer}>
         <ProfileValue icon={icons.read_icon} label="Name" value="Eugena" />
         <LineDivider />
-        <ProfileValue icon={icons.read_icon} label="Email" value="Eugena" />
+        <ProfileValue
+          icon={icons.read_icon}
+          label="Email"
+          value="eugena@hello.com"
+        />
         <LineDivider />
-        <ProfileValue icon={icons.read_icon} label="Password" value="Eugena" />
+        <ProfileValue icon={icons.read_icon} label="Password" value="******" />
       </View>
     );
   }

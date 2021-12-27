@@ -1,6 +1,13 @@
 import React from "react";
-import { View, Text, ImageBackground } from "react-native";
-import { COLORS, SIZES } from "../constants";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  SafeAreaView,
+  Image,
+  ScrollView,
+} from "react-native";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
   const [books, setBook] = React.useState(null);
@@ -10,61 +17,89 @@ const BookDescriptionScreen = ({ route, navigation }) => {
     setBook(books);
   }, [books]);
 
-  function renderBookInfo() {
+  function renderHeaderSection() {
     return (
-      <View style={{ flex: 1 }}>
-        <ImageBackground
+      <SafeAreaView
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "40%",
+          overflow: "hidden",
+          alignItems: "center",
+        }}
+      >
+        <Image
           source={books.image}
           resizeMode="cover"
           style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
+            height: "100%",
+            width: "100%",
+            borderBottomLeftRadius: SIZES.radius * 3,
+            borderBottomRightRadius: SIZES.radius * 3,
           }}
         />
+      </SafeAreaView>
+    );
+  }
 
-        {/* Color Overlay */}
-        <View
+  function renderBookDescription() {
+    return (
+      <ScrollView
+        style={{
+          marginTop: "90%",
+        }}
+      >
+        <Text
           style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            backgroundColor: COLORS.transparentWhite,
+            ...FONTS.h2,
+            color: COLORS.textGray,
+            marginBottom: SIZES.padding,
           }}
-        ></View>
+        >
+          Description
+        </Text>
+        <Text style={{ ...FONTS.body3, color: COLORS.gray1 }}>
+          {books.description}
+        </Text>
+      </ScrollView>
+    );
+  }
 
-        {/* Navigation */}
-        <View
-          style={{
-            flexDirection: "row",
-            paddingHorizontal: SIZES.radius,
-            height: 80,
-            alignItems: "flex-end",
-          }}
-        ></View>
-      </View>
+  function renderBottomButton() {
+    return (
+      <TouchableOpacity
+        style={{
+          height: "80%",
+          backgroundColor: COLORS.lightRed,
+          marginHorizontal: SIZES.radius,
+          marginVertical: SIZES.base,
+          borderRadius: SIZES.radius,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        onPress={() => navigation.navigate("Cart")}
+      >
+        <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
+      </TouchableOpacity>
     );
   }
 
   if (books) {
     return (
-      <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
-        {/* Book Spotlight */}
-        <View
-          style={{
-            flex: 4,
-          }}
-        >
-          {renderBookInfo()}
-        </View>
-        {/* Book Description */}
-        <View style={{ flex: 2 }}></View>
-        {/* Button */}
-        <View style={{ height: 70 }}></View>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: COLORS.transparentWhite,
+        }}
+      >
+        {/* Header section, with image and price */}
+        {renderHeaderSection()}
+        {/* Book Desctiption */}
+        {renderBookDescription()}
+        {/* Add to cart button */}
+        <View style={{ height: "10%" }}>{renderBottomButton()}</View>
       </View>
     );
   } else {

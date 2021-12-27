@@ -249,19 +249,20 @@ const HomeScreen = ({ navigation }) => {
       return (
         <TouchableOpacity
           style={{
-            padding: SIZES.padding,
-            paddingBottom: SIZES.padding * 2,
-            backgroundColor: COLORS.darkBlue,
+            padding: SIZES.radius,
+            paddingBottom: SIZES.padding,
+            // backgroundColor: COLORS.darkBlue,
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
-            marginRight: SIZES.padding,
+            // marginRight: SIZES.padding,
           }}
         >
           <Image
             source={item.poster}
-            resizeMode="contain"
-            style={{ width: 400, height: 100 }}
+            resizeMode="cover"
+            // style={{ width: 300, height: 200 }}
+            style={{ width: 350, height: 175, borderRadius: 20 }}
           />
         </TouchableOpacity>
       );
@@ -297,7 +298,7 @@ const HomeScreen = ({ navigation }) => {
           <Image
             source={item.bookCover}
             resizeMode="cover"
-            style={{ width: 180, height: 250, borderRadius: 20 }}
+            style={{ width: 187.5, height: 250, borderRadius: 20 }}
           />
         </TouchableOpacity>
       );

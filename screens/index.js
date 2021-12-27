@@ -5,6 +5,7 @@ import ProfileScreen from "./ProfileScreen";
 import ResourcesScreen from "./ResourcesScreen";
 import OpportunitiesScreen from "./OpportunitiesScreen";
 import BookDescriptionScreen from "./BookDescriptionScreen";
+import CourseDescriptionScreen from "./CourseDescriptionScreen";
 import CartScreen from "./Cart/CartScreen";
 
 export {
@@ -15,5 +16,6 @@ export {
   ResourcesScreen,
   OpportunitiesScreen,
   BookDescriptionScreen,
+  CourseDescriptionScreen,
   CartScreen,
 };

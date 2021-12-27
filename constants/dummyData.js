@@ -191,10 +191,109 @@ const books = [
   },
 ];
 
+const courses = [
+  {
+    id: 1,
+    course_title: "Conducting User Research",
+    course_image: require("../assets/courses/ConductingUserResearch.png"),
+    progress: "0%",
+  },
+  {
+    id: 2,
+    course_title: "Blogging and Writing",
+    course_image: require("../assets/courses/Blogging_and_Writing.png"),
+    progress: "0%",
+  },
+  {
+    id: 3,
+    course_title: "Building Effective Teams",
+    course_image: require("../assets/courses/Building_Effective_Teams.png"),
+    progress: "0%",
+  },
+  {
+    id: 4,
+    course_title: "Risk and Safeguarding",
+    course_image: require("../assets/courses/Risk_and_Safeguarding.png"),
+    progress: "0%",
+  },
+  {
+    id: 5,
+    course_title: "Marketing your brand",
+    course_image: require("../assets/courses/Marketing_your_brand.png"),
+    progress: "0%",
+  },
+  {
+    id: 6,
+    course_title: "Create a Business Plan - 30 Minutes",
+    course_image: require("../assets/courses/Create_a_Business_Plan_30_Minutes.png"),
+    progress: "0%",
+  },
+  {
+    id: 7,
+    course_title: "Financial Literacy for Beginners",
+    course_image: require("../assets/courses/Financial_Literacy_for_Beginners.png"),
+    progress: "0%",
+  },
+  {
+    id: 8,
+    course_title: "Digital Literacy to Accelerate Your Career",
+    course_image: require("../assets/courses/Digital_Literacy_to_Accelerate_Your_Career.png"),
+    progress: "0%",
+  },
+  {
+    id: 9,
+    course_title: "How to Ace That Online Job Application",
+    course_image: require("../assets/courses/How_to_Ace_That_Online_Job_Application.png"),
+    progress: "0%",
+  },
+  {
+    id: 10,
+    course_title: "Email Communication Skills to Give You an Edge",
+    course_image: require("../assets/courses/Email_Communication-Skills-to-Give-You-an-Edge.png"),
+    progress: "0%",
+  },
+  {
+    id: 11,
+    course_title: "Skills for Public Speaking and Pitching",
+    course_image: require("../assets/courses/Skills-for-Public-Speaking-and-Pitching.png"),
+    progress: "0%",
+  },
+  {
+    id: 12,
+    course_title: "Personality Types For Career Advancement",
+    course_image: require("../assets/courses/Personality-Types-For-Career-Advancement.png"),
+    progress: "0%",
+  },
+  {
+    id: 13,
+    course_title: "Personal Leadership for Professional Growth",
+    course_image: require("../assets/courses/Personal-Leadership-for-Professional-Growth.png"),
+    progress: "0%",
+  },
+  {
+    id: 14,
+    course_title: "Career Mapping For Students",
+    course_image: require("../assets/courses/Career-Mapping-For-Students.png"),
+    progress: "0%",
+  },
+  {
+    id: 15,
+    course_title: "How to Nail That Job Interview",
+    course_image: require("../assets/courses/How-to-Nail-That-Job-Interview.png"),
+    progress: "0%",
+  },
+  {
+    id: 16,
+    course_title: "How to Write a Winning CV",
+    course_image: require("../assets/courses/How-to-Write-a-Winning-CV.png"),
+    progress: "0%",
+  },
+];
+
 export default {
   // categories,
   // courses_list_1,
   // courses_list_2,
-  // top_searches,
+  courses,
   books,
 };

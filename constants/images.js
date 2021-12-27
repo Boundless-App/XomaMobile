@@ -22,6 +22,7 @@ export const personalLeadership = require("../assets/courses/Personal-Leadership
 export const personalityTypes = require("../assets/courses/Personality-Types-For-Career-Advancement.png");
 export const riskSafeguarding = require("../assets/courses/Risk_and_Safeguarding.png");
 export const pitching = require("../assets/courses/Skills-for-Public-Speaking-and-Pitching.png");
+export const userResearch = require("../assets/courses/ConductingUserResearch.png");
 export const poster1 = require("../assets/Canvas_Poster.png");
 export const poster2 = require("../assets/Career_Map_Poster.png");
 export const poster3 = require("../assets/Concept_Note_Poster.png");
@@ -44,6 +45,7 @@ export default {
   bloggingWriting,
   buildTeams,
   careerMapping,
+  userResearch,
   businessPlan,
   digitalLiteracy,
   emailCommunication,
@@ -56,6 +58,7 @@ export default {
   personalityTypes,
   riskSafeguarding,
   pitching,
+  userResearch,
   poster1,
   poster2,
   poster3,

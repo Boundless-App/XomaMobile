@@ -1,11 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text } from "react-native";
 
 import {
   CoursesScreen,
   ResourcesScreen,
   OpportunitiesScreen,
+  CourseDescriptionScreen,
 } from "../../screens";
 
 const CoursesStack = createStackNavigator();
@@ -18,6 +18,10 @@ const CourseNav = () => {
       <CoursesStack.Screen
         name="OpportunitiesScreen"
         component={OpportunitiesScreen}
+      />
+      <CoursesStack.Screen
+        name="CourseDescriptionScreen"
+        component={CourseDescriptionScreen}
       />
     </CoursesStack.Navigator>
   );

@@ -3,13 +3,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
 import {
-  CoursesScreen,
-  ShopScreen,
   ProfileScreen,
   OpportunitiesScreen,
   ResourcesScreen,
   BookDescriptionScreen,
   CartScreen,
+  CourseDescriptionScreen,
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
@@ -17,26 +16,37 @@ import { useFonts } from "expo-font";
 const Stack = createStackNavigator();
 
 const App = () => {
+  const [loaded] = useFonts({
+    "Lato-Black": require("./assets/fonts/Lato-Black.ttf"),
+    "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
+    "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={"HomeScreen"}
+        initialRouteName={"Home"}
       >
-        <Stack.Screen name="HomeScreen" component={Tabs} />
-        <Stack.Screen name="ShopScreen" component={ShopNav} />
-        <Stack.Screen name="CoursesScreen" component={CourseNav} />
-        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-        <Stack.Screen name="ResourcesScreen" component={ResourcesScreen} />
+        <Stack.Screen name="Home" component={Tabs} />
+        <Stack.Screen name="Shop" component={ShopNav} />
+        <Stack.Screen name="Courses" component={CourseNav} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Resources" component={ResourcesScreen} />
+        <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
         <Stack.Screen
-          name="OpportunitiesScreen"
-          component={OpportunitiesScreen}
+          name="CourseDescriptionScreen"
+          component={CourseDescriptionScreen}
         />
         <Stack.Screen
           name="BookDescriptionScreen"
           component={BookDescriptionScreen}
         />
-        <Stack.Screen name="CartScreen" component={CartScreen} />
+        <Stack.Screen name="Cart" component={CartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -89,6 +89,66 @@ const ShopScreen = ({ navigation }) => {
       {renderBooksList()}
     </SafeAreaView>
   );
-};
 
+  // const renderItem = ({ item }) => (
+  //   <View
+  //     style={{
+  //       flexGrow: 4,
+  //     }}
+  //   >
+  //     <TouchableOpacity
+  //       style={{
+  //         marginTop: SIZES.padding * 2,
+  //         marginBottom: SIZES.padding,
+  //       }}
+  //       onPress={() =>
+  //         navigation.navigate("BookDescriptionScreen", {
+  //           books: item,
+  //         })
+  //       }
+  //     >
+  //       <View
+  //         style={{
+  //           marginBottom: SIZES.radius,
+  //         }}
+  //       >
+  //         <Image
+  //           source={item.image}
+  //           resizeMode="cover"
+  //           style={{
+  //             width: "50%",
+  //             height: 150,
+  //           }}
+  //         />
+  //       </View>
+  //     </TouchableOpacity>
+  //   </View>
+  // );
+
+  // function renderBooksList() {
+  //   return (
+  //     <FlatList
+  //       style={{
+  //         paddingHorizontal: SIZES.padding,
+  //         paddingBottom: 30,
+  //       }}
+  //       data={books.books}
+  //       keyExtractor={(item) => `${item.id}`}
+  //       renderItem={renderItem}
+  //     />
+  //   );
+  // }
+
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: COLORS.lightGray5,
+        marginTop: 40,
+      }}
+    >
+      {renderBooksList()}
+    </SafeAreaView>
+  );
+};
 export default ShopScreen;
