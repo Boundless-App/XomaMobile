@@ -13,13 +13,13 @@ import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
 const HomeScreen = ({ navigation }) => {
   const profileData = {
-    name: "Eugena",
+    name: "Eugenia",
   };
 
   const bookOne = {
     id: 1,
     bookName: "level 31",
-    bookCover: images.bookPackageLevel2,
+    bookCover: images.bookLover,
     description: "Awesome read",
     backgroundColor: "rgba(240,240,232,0.9)",
     navTintColor: "#000",
@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   const bookTwo = {
     id: 2,
     bookName: "Creative Thinking",
-    bookCover: images.adultColoringBook,
+    bookCover: images.bookLover,
     description: "Awesome read",
     backgroundColor: "rgba(240,240,232,0.9)",
     navTintColor: "#000",
@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
   const bookThree = {
     id: 3,
     bookName: "Kavuyo",
-    bookCover: images.kavuyo,
+    bookCover: images.knowledge,
     description: "Awesome read",
     backgroundColor: "rgba(240,240,232,0.9)",
     navTintColor: "#000",
@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
   const bookFour = {
     id: 4,
     bookName: "Tumu",
-    bookCover: images.actionWordGame,
+    bookCover: images.ladyReading,
     description: "Awesome read",
     backgroundColor: "rgba(240,240,232,0.9)",
     navTintColor: "#000",
@@ -51,7 +51,7 @@ const HomeScreen = ({ navigation }) => {
   const bookFive = {
     id: 5,
     bookName: "Beyond the Mountains",
-    bookCover: images.creativeThinkingWorkbook,
+    bookCover: images.seatedOnBooks,
     description: "Awesome read",
     backgroundColor: "rgba(240,240,232,0.9)",
     navTintColor: "#000",
@@ -124,17 +124,20 @@ const HomeScreen = ({ navigation }) => {
     {
       id: 1,
       item: "course",
-      poster: images.poster1,
+      poster: images.kidWantsBook,
+      details: "Ads details"
     },
     {
       id: 2,
       item: "workshop",
-      poster: images.poster4,
+      poster: images.kidWantsBook,
+      details: "Ads details"
     },
     {
       id: 3,
       item: "opportunity",
-      poster: images.poster7,
+      poster: images.kidWantsBook,
+      details: "Ads details"
     },
   ];
 
@@ -150,25 +153,27 @@ const HomeScreen = ({ navigation }) => {
         style={{
           flex: 1,
           flexDirection: "row",
-          paddingTop: SIZES.padding * 2,
-          paddingHorizontal: SIZES.padding,
+          paddingTop: SIZES.radius,
+          paddingHorizontal: SIZES.padding2 * 1.5,
           alignItems: "center",
+          justifyContent: "center",
+          //backgroundColor: COLORS.orange,
         }}
       >
         {/* Greetings */}
         <View style={{ flex: 1 }}>
-          <View style={{ marginRight: SIZES.padding }}>
-            <Text style={{ ...FONTS.h3 }}>Hello {profile.name}</Text>
+          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base}}>
+            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>Hello </Text>
+            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>{profile.name}</Text>
           </View>
         </View>
         {/* Icons */}
         <TouchableOpacity
           style={{
-            //backgroundColor: COLORS.lightGray4,
-            height: 40,
+            //backgroundColor: COLORS.white,
+            //height: 40,
             paddingLeft: 3,
             paddingRight: 3,
-            borderRadius: 50,
             marginRight: 15,
           }}
           onPress={() => {
@@ -185,18 +190,18 @@ const HomeScreen = ({ navigation }) => {
           >
             <View
               style={{
-                width: 30,
-                height: 30,
+                width: 20,
+                height: 20,
                 alignItems: "center",
                 justifyContent: "center",
-                borderRadius: 25,
-                backgroundColor: COLORS.white,
+                //borderRadius: 25,
+                //backgroundColor: COLORS.white2,
               }}
             >
               <Image
                 source={icons.notification_icon}
                 resizeMode="contain"
-                style={{ width: 20, height: 20 }}
+                style={{ width: 30, height: 30, tintColor: COLORS.primary }}
               />
             </View>
           </View>
@@ -229,13 +234,13 @@ const HomeScreen = ({ navigation }) => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: 25,
-                backgroundColor: COLORS.white,
+                backgroundColor: COLORS.white2,
               }}
             >
               <Image
                 source={icons.cart_icon}
                 resizeMode="contain"
-                style={{ width: 20, height: 20 }}
+                style={{ width: 30, height: 30, tintColor: COLORS.primary }}
               />
             </View>
           </View>
@@ -245,25 +250,43 @@ const HomeScreen = ({ navigation }) => {
   }
 
   function renderSlider() {
-    const renderItem = ({ item }) => {
+    const renderItem = ({ item, index }) => {
       return (
         <TouchableOpacity
           style={{
-            padding: SIZES.radius,
-            paddingBottom: SIZES.padding,
-            // backgroundColor: COLORS.darkBlue,
+            //padding: SIZES.padding,
+            //paddingBottom: SIZES.radius,
+            //backgroundColor: COLORS.darkBlue,
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
-            // marginRight: SIZES.padding,
+            marginRight: SIZES.padding,
+            marginLeft: index == 0 ? SIZES.padding2 : 0,            
           }}
         >
           <Image
             source={item.poster}
             resizeMode="cover"
             // style={{ width: 300, height: 200 }}
-            style={{ width: 350, height: 175, borderRadius: 20 }}
+            style={{ width: 300, height: 110, borderRadius: 20 }}
           />
+          <View
+                        style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            height: 50,
+                            width: SIZES.width * 0.3,
+                            backgroundColor: COLORS.white,
+                            borderTopRightRadius: SIZES.radius,
+                            borderBottomLeftRadius: SIZES.radius,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexDirection: "row-reverse",
+                            alignSelf: "flex-start"
+                        }}
+                    >
+                        <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
+                    </View>
         </TouchableOpacity>
       );
     };
@@ -285,12 +308,12 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity
           style={{
             flex: 1,
-            marginLeft: index == 0 ? SIZES.padding : 0,
-            marginRight: SIZES.radius,
+            marginLeft: index == 0 ? SIZES.padding2 : 0,
+            marginRight: SIZES.padding
           }}
           onPress={() =>
-            navigation.navigate("BookDescription", {
-              book: item,
+            navigation.navigate("BookDescriptionScreen", {
+              books: item,
             })
           }
         >
@@ -298,7 +321,7 @@ const HomeScreen = ({ navigation }) => {
           <Image
             source={item.bookCover}
             resizeMode="cover"
-            style={{ width: 187.5, height: 250, borderRadius: 20 }}
+            style={{ width: 180, height: 250, borderRadius: 20 }}
           />
         </TouchableOpacity>
       );
@@ -309,18 +332,19 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View
           style={{
-            paddingHorizontal: SIZES.padding,
+            paddingHorizontal: SIZES.padding2,
             flexDirection: "row",
             justifyContent: "space-between",
           }}
         >
-          <Text style={{ ...FONTS.h3 }}>Trending Books</Text>
+          <Text style={{ ...FONTS.h2, color: COLORS.primary }}>Trending Books</Text>
           <TouchableOpacity onPress={() => navigation.navigate("ShopScreen")}>
             <Text
               style={{
-                ...FONTS.body3,
+                ...FONTS.h3,
                 alignSelf: "flex-start",
                 textDecorationLine: "underline",
+                color: COLORS.primary,
               }}
             >
               See All
@@ -345,11 +369,11 @@ const HomeScreen = ({ navigation }) => {
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
-          style={{ flex: 1, marginRight: SIZES.padding }}
+          style={{ flex: 1, marginRight: SIZES.radius }}
           onPress={() => setSelectedCourse(item.id)}
         >
           {selectedCourse == item.id && (
-            <Text style={{ ...FONTS.body4, color: COLORS.black }}>
+            <Text style={{ ...FONTS.body4, color: COLORS.black}}>
               {item.categoryName}
             </Text>
           )}
@@ -363,7 +387,7 @@ const HomeScreen = ({ navigation }) => {
     };
 
     return (
-      <View style={{ flex: 1, paddingLeft: SIZES.padding }}>
+      <View style={{ flex: 1, paddingLeft: SIZES.radius }}>
         <FlatList
           data={courses}
           showsHorizontalScrollIndicator={false}
@@ -411,7 +435,7 @@ const HomeScreen = ({ navigation }) => {
 
     return (
       <View
-        style={{ flex: 1, marginTop: SIZES.radius, paddingLeft: SIZES.padding }}
+        style={{ flex: 1, marginTop: SIZES.padding2, paddingLeft: SIZES.padding2 }}
       >
         <FlatList
           data={courses}
@@ -424,17 +448,18 @@ const HomeScreen = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray}}>
+
       {/* Header Section */}
-      <View style={{ height: 100 }}>{renderHeader(profile)}</View>
-      {/* Top Slider */}
-      <View>{renderSlider()}</View>
+      <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
       {/* Body Section */}
-      <ScrollView style={{ marginTop: SIZES.radius }}>
+      <ScrollView style={{ marginTop: SIZES.padding }}>
+        {/* Top Slider */}
+      <View>{renderSlider()}</View>
         {/* Trending Books Section */}
-        <View>{renderMyTrendsSection(myTrends)}</View>
+        <View style={{ marginTop: SIZES.padding2 }}>{renderMyTrendsSection(myTrends)}</View>
         {/* Courses Section */}
-        <View style={{ marginTop: SIZES.padding }}>
+        <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>
           <View>{renderCoursesData()}</View>
         </View>

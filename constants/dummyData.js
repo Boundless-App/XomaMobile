@@ -123,7 +123,7 @@ const books = [
     description:
       "Each word card reinforces the 100 words that children need to know – and it helps them master comprehension, spelling, writing, and usage of each word.",
     price: 10000,
-    image: require("../assets/books/ACTION_WORDS_1.max-350x225.png"),
+    image: require("../assets/books/BookLover.jpg"),
   },
   {
     id: 2,

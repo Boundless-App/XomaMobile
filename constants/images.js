@@ -1,3 +1,4 @@
+//book images
 export const bookPackageLevel3 = require("../assets/books/BOOK_PACKAGE_LEVEL31_HZLjJS8.max-350x225.png");
 export const bookPackageLevel2 = require("../assets/books/BOOK_PACKAGE_LEVEL23.max-350x225.png");
 export const bookPackageLevel1 = require("../assets/books/Level_1BookPackage.png");
@@ -8,6 +9,8 @@ export const adultColoringBook = require("../assets/books/AdultColoring.jpg");
 export const childrenColoringBook = require("../assets/books/CHILDRENColoring_1.max-350x225.png");
 export const unbound = require("../assets/books/Unbound.jpg");
 export const bloggingWriting = require("../assets/courses/Blogging_and_Writing.png");
+
+//courses images
 export const buildTeams = require("../assets/courses/Building_Effective_Teams.png");
 export const careerMapping = require("../assets/courses/Career-Mapping-For-Students.png");
 export const businessPlan = require("../assets/courses/Create_a_Business_Plan_30_Minutes.png");
@@ -23,6 +26,8 @@ export const personalityTypes = require("../assets/courses/Personality-Types-For
 export const riskSafeguarding = require("../assets/courses/Risk_and_Safeguarding.png");
 export const pitching = require("../assets/courses/Skills-for-Public-Speaking-and-Pitching.png");
 export const userResearch = require("../assets/courses/ConductingUserResearch.png");
+
+//poster images
 export const poster1 = require("../assets/Canvas_Poster.png");
 export const poster2 = require("../assets/Career_Map_Poster.png");
 export const poster3 = require("../assets/Concept_Note_Poster.png");
@@ -31,6 +36,13 @@ export const poster5 = require("../assets/Manchester_pic.png");
 export const poster6 = require("../assets/Manchester.png");
 export const poster7 = require("../assets/Vision_Tracker_Poster.png");
 export const otherWords = require("../assets/images/other_words_for_home.jpg");
+
+//vector books images
+export const bookLover = require("../assets/books/BookLover.jpg");
+export const kidWantsBook = require("../assets/books/KidWantsBook.png");
+export const knowledge = require("../assets/books/Knowledge.jpg");
+export const ladyReading = require("../assets/books/LadyReading.png");
+export const seatedOnBooks = require("../assets/books/SeatedOnBooks.png");
 
 export default {
   bookPackageLevel3,
@@ -43,6 +55,7 @@ export default {
   childrenColoringBook,
   unbound,
   bloggingWriting,
+
   buildTeams,
   careerMapping,
   userResearch,
@@ -59,6 +72,7 @@ export default {
   riskSafeguarding,
   pitching,
   userResearch,
+
   poster1,
   poster2,
   poster3,
@@ -67,4 +81,11 @@ export default {
   poster6,
   poster7,
   otherWords,
+
+  bookLover,
+  kidWantsBook,
+  knowledge,
+  ladyReading,
+  seatedOnBooks,
+
 };

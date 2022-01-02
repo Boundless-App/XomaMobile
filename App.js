@@ -13,6 +13,13 @@ import {
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
 
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    border: "transparent"
+  }
+}
 const Stack = createStackNavigator();
 
 const App = () => {
