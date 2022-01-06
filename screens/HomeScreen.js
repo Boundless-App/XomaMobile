@@ -11,6 +11,8 @@ import {
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
+import { IconButton, Section } from "../components";
+
 const HomeScreen = ({ navigation }) => {
   const profileData = {
     name: "Eugenia",
@@ -125,19 +127,19 @@ const HomeScreen = ({ navigation }) => {
       id: 1,
       item: "course",
       poster: images.kidWantsBook,
-      details: "Ads details"
+      details: "Ads details",
     },
     {
       id: 2,
       item: "workshop",
       poster: images.kidWantsBook,
-      details: "Ads details"
+      details: "Ads details",
     },
     {
       id: 3,
       item: "opportunity",
       poster: images.kidWantsBook,
-      details: "Ads details"
+      details: "Ads details",
     },
   ];
 
@@ -162,89 +164,31 @@ const HomeScreen = ({ navigation }) => {
       >
         {/* Greetings */}
         <View style={{ flex: 1 }}>
-          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base}}>
+          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
             <Text style={{ ...FONTS.h1, color: COLORS.primary }}>Hello </Text>
-            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>{profile.name}</Text>
+            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>
+              {profile.name}
+            </Text>
           </View>
         </View>
         {/* Icons */}
-        <TouchableOpacity
-          style={{
-            //backgroundColor: COLORS.white,
-            //height: 40,
-            paddingLeft: 3,
-            paddingRight: 3,
-            marginRight: 15,
+        <IconButton
+          icon={icons.notification_icon}
+          iconStyle={{
+            tintColor: COLORS.primary,
           }}
-          onPress={() => {
-            console.log("notifications");
+          onPress={() => console.log("Notifications")}
+          containerStyle={{
+            paddingRight: "8%",
           }}
-        >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                width: 20,
-                height: 20,
-                alignItems: "center",
-                justifyContent: "center",
-                //borderRadius: 25,
-                //backgroundColor: COLORS.white2,
-              }}
-            >
-              <Image
-                source={icons.notification_icon}
-                resizeMode="contain"
-                style={{ width: 30, height: 30, tintColor: COLORS.primary }}
-              />
-            </View>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            //backgroundColor: COLORS.lightGray4,
-            height: 40,
-            paddingLeft: 3,
-            paddingRight: 3,
-            borderRadius: 50,
-            marginLeft: 15,
+        />
+        <IconButton
+          icon={icons.cart_icon}
+          iconStyle={{
+            tintColor: COLORS.primary,
           }}
-          onPress={() => {
-            navigation.navigate("CartScreen");
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                width: 30,
-                height: 30,
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: 25,
-                backgroundColor: COLORS.white2,
-              }}
-            >
-              <Image
-                source={icons.cart_icon}
-                resizeMode="contain"
-                style={{ width: 30, height: 30, tintColor: COLORS.primary }}
-              />
-            </View>
-          </View>
-        </TouchableOpacity>
+          onPress={() => navigation.navigate("Cart")}
+        />
       </View>
     );
   }
@@ -261,7 +205,7 @@ const HomeScreen = ({ navigation }) => {
             alignItems: "center",
             justifyContent: "center",
             marginRight: SIZES.padding,
-            marginLeft: index == 0 ? SIZES.padding2 : 0,            
+            marginLeft: index == 0 ? SIZES.padding2 : 0,
           }}
         >
           <Image
@@ -271,22 +215,22 @@ const HomeScreen = ({ navigation }) => {
             style={{ width: 300, height: 110, borderRadius: 20 }}
           />
           <View
-                        style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            height: 50,
-                            width: SIZES.width * 0.3,
-                            backgroundColor: COLORS.white,
-                            borderTopRightRadius: SIZES.radius,
-                            borderBottomLeftRadius: SIZES.radius,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexDirection: "row-reverse",
-                            alignSelf: "flex-start"
-                        }}
-                    >
-                        <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
-                    </View>
+            style={{
+              position: "absolute",
+              bottom: 0,
+              height: 50,
+              width: SIZES.width * 0.3,
+              backgroundColor: COLORS.white,
+              borderTopRightRadius: SIZES.radius,
+              borderBottomLeftRadius: SIZES.radius,
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row-reverse",
+              alignSelf: "flex-start",
+            }}
+          >
+            <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
+          </View>
         </TouchableOpacity>
       );
     };
@@ -309,7 +253,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             flex: 1,
             marginLeft: index == 0 ? SIZES.padding2 : 0,
-            marginRight: SIZES.padding
+            marginRight: SIZES.padding,
           }}
           onPress={() =>
             navigation.navigate("BookDescriptionScreen", {
@@ -330,27 +274,11 @@ const HomeScreen = ({ navigation }) => {
     return (
       <View style={{ flex: 1 }}>
         {/* Header */}
-        <View
-          style={{
-            paddingHorizontal: SIZES.padding2,
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <Text style={{ ...FONTS.h2, color: COLORS.primary }}>Trending Books</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("ShopScreen")}>
-            <Text
-              style={{
-                ...FONTS.h3,
-                alignSelf: "flex-start",
-                textDecorationLine: "underline",
-                color: COLORS.primary,
-              }}
-            >
-              See All
-            </Text>
-          </TouchableOpacity>
-        </View>
+
+        <Section
+          title="Trending Books"
+          onPress={() => navigation.navigate("ShopScreen")}
+        />
         {/* Books */}
         <View style={{ flex: 1, marginTop: SIZES.padding }}>
           <FlatList
@@ -366,36 +294,40 @@ const HomeScreen = ({ navigation }) => {
   }
 
   function renderCoursesHeader() {
-    const renderItem = ({ item }) => {
-      return (
-        <TouchableOpacity
-          style={{ flex: 1, marginRight: SIZES.radius }}
-          onPress={() => setSelectedCourse(item.id)}
-        >
-          {selectedCourse == item.id && (
-            <Text style={{ ...FONTS.body4, color: COLORS.black}}>
-              {item.categoryName}
-            </Text>
-          )}
-          {selectedCourse != item.id && (
-            <Text style={{ ...FONTS.body4, color: COLORS.lightGray4 }}>
-              {item.categoryName}
-            </Text>
-          )}
-        </TouchableOpacity>
-      );
-    };
+    // const renderItem = ({ item }) => {
+    //   return (
+    //     <TouchableOpacity
+    //       style={{ flex: 1, marginRight: SIZES.radius }}
+    //       onPress={() => setSelectedCourse(item.id)}
+    //     >
+    //       {selectedCourse == item.id && (
+    //         <Text style={{ ...FONTS.body4, color: COLORS.black}}>
+    //           {item.categoryName}
+    //         </Text>
+    //       )}
+    //       {selectedCourse != item.id && (
+    //         <Text style={{ ...FONTS.body4, color: COLORS.lightGray4 }}>
+    //           {item.categoryName}
+    //         </Text>
+    //       )}
+    //     </TouchableOpacity>
+    //   );
+    // };
 
     return (
-      <View style={{ flex: 1, paddingLeft: SIZES.radius }}>
-        <FlatList
-          data={courses}
-          showsHorizontalScrollIndicator={false}
-          renderItem={renderItem}
-          keyExtractor={(item) => `${item.id}`}
-          horizontal
-        />
-      </View>
+      // <View style={{ flex: 1, paddingLeft: SIZES.radius }}>
+      //   <FlatList
+      //     data={courses}
+      //     showsHorizontalScrollIndicator={false}
+      //     renderItem={renderItem}
+      //     keyExtractor={(item) => `${item.id}`}
+      //     horizontal
+      //   />
+      // </View>
+      <Section
+        title="Popular Courses"
+        onPress={() => navigation.navigate("CoursesScreen")}
+      />
     );
   }
 
@@ -435,7 +367,11 @@ const HomeScreen = ({ navigation }) => {
 
     return (
       <View
-        style={{ flex: 1, marginTop: SIZES.padding2, paddingLeft: SIZES.padding2 }}
+        style={{
+          flex: 1,
+          marginTop: SIZES.padding2,
+          paddingLeft: SIZES.padding2,
+        }}
       >
         <FlatList
           data={courses}
@@ -448,16 +384,17 @@ const HomeScreen = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray}}>
-
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
       {/* Header Section */}
       <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
       {/* Body Section */}
       <ScrollView style={{ marginTop: SIZES.padding }}>
         {/* Top Slider */}
-      <View>{renderSlider()}</View>
+        <View>{renderSlider()}</View>
         {/* Trending Books Section */}
-        <View style={{ marginTop: SIZES.padding2 }}>{renderMyTrendsSection(myTrends)}</View>
+        <View style={{ marginTop: SIZES.padding2 }}>
+          {renderMyTrendsSection(myTrends)}
+        </View>
         {/* Courses Section */}
         <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>

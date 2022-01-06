@@ -129,7 +129,7 @@ const books = [
     id: 2,
     title: "Creative Thinking Workbook",
     description:
-      "Discover how a growth mindset can help you achieve your goals―activities for kids 8 to 13. A Creative Thinking Workbook can help you develop your abilities to tackle just about anything. Creative Thinking Workbook for Kids is a fun and engaging activity book, for ages 8 to 13, that can help you train your brain and develop creative problem-solving skills through practice and perseverance. You’ll learn how to foster a “can-do” attitude and celebrate your mistakes as a path to ultimate success. Packed with awesome activities and easy exercises, this complete workbook addressing growth mindset for kids is a great way to master just about anything with a little effort and encouragement. The real and rewarding work of dreaming big, making missteps, and expanding your mind (like a muscle) starts now. Let’s find out what amazing things you can do―a growth mindset for kids is mission possible!",
+      "Discover how a growth mindset can help you achieve your goals―activities for kids 8 to 13. \n\nA Creative Thinking Workbook can help you develop your abilities to tackle just about anything. Creative Thinking Workbook for Kids is a fun and engaging activity book, for ages 8 to 13, that can help you train your brain and develop creative problem-solving skills through practice and perseverance. You’ll learn how to foster a “can-do” attitude and celebrate your mistakes as a path to ultimate success.\n\nPacked with awesome activities and easy exercises, this complete workbook addressing growth mindset for kids is a great way to master just about anything with a little effort and encouragement. The real and rewarding work of dreaming big, making missteps, and expanding your mind (like a muscle) starts now. Let’s find out what amazing things you can do―a growth mindset for kids is mission possible!",
     price: 10000,
     image: require("../assets/books/CREATIVE_THINKING_WORKBOOK_1.max-350x225.png"),
   },
@@ -161,7 +161,7 @@ const books = [
     id: 6,
     title: "Kavuyo",
     description:
-      "GET TO KNOW UGANDA BETTER: You think you know your country? Think again! Our KAVUYO Game is a great chance to spend quality time with your loved ones while getting to know places, people and foods like you never did before! PLAY IT ANYTIME, ANYWHERE: Make any occasion exciting and light-hearted with our card game that you can play for a romantic evening, drinking sessions, meeting with friends, family gatherings, and more! UNIQUE CARD GAME: No need to wrack your brain with this one. It's a simple and fun game to play that will spread laughter to everyone! Kavuyo will inspire funny, engaging chats that'll spark connection and intimacy with the people around you. PREMIUM QUALITY: Made of the highest quality raw materials. It also features lamination for durability and long-lasting use. PERFECT GIFT IDEA: Make our card game the perfect gift for people who love to entertain guests or have a good laugh by clicking 'Add to Cart' now!",
+      "• GET TO KNOW UGANDA BETTER: You think you know your country? Think again! Our KAVUYO Game is a great chance to spend quality time with your loved ones while getting to know places, people and foods like you never did before! \n• PLAY IT ANYTIME, ANYWHERE: Make any occasion exciting and light-hearted with our card game that you can play for a romantic evening, drinking sessions, meeting with friends, family gatherings, and more! \n• UNIQUE CARD GAME: No need to wrack your brain with this one. It's a simple and fun game to play that will spread laughter to everyone! Kavuyo will inspire funny, engaging chats that'll spark connection and intimacy with the people around you. \n• PREMIUM QUALITY: Made of the highest quality raw materials. It also features lamination for durability and long-lasting use. \n• PERFECT GIFT IDEA: Make our card game the perfect gift for people who love to entertain guests or have a good laugh by clicking 'Add to Cart' now!",
     price: 20000,
     image: require("../assets/books/KAVUYO_1.max-350x225.png"),
   },
@@ -169,7 +169,7 @@ const books = [
     id: 7,
     title: "Adult Coloring Book",
     description:
-      "Why You Will Love this Book. Relaxing Coloring Pages. Every page you color will pull you into a relaxing world where your responsibilities will seem to fade away... Beautiful Illustrations. We’ve included 100 unique images for you to express your creativity and make masterpieces. Which colors will you choose for this book? Single-sided Pages. Every image is placed on its own black-backed page to reduce the bleed-through problem found in other coloring books. Great for All Skill Levels. You can color every page however you want and there is no wrong way to color (even if you are a beginner).",
+      "Why You Will Love this Book. \n\n • Relaxing Coloring Pages. Every page you color will pull you into a relaxing world where your responsibilities will seem to fade away... \n• Beautiful Illustrations. We’ve included 100 unique images for you to express your creativity and make masterpieces. Which colors will you choose for this book? \n• Single-sided Pages. Every image is placed on its own black-backed page to reduce the bleed-through problem found in other coloring books. \n• Great for All Skill Levels. You can color every page however you want and there is no wrong way to color (even if you are a beginner).",
     price: 15000,
     image: require("../assets/books/AdultColoring.jpg"),
   },
@@ -177,7 +177,7 @@ const books = [
     id: 8,
     title: "Children's Coloring Book",
     description:
-      "CHILDREN'S COLORING BOOK: Features 50 Coloring Pages and 25 drawing pages. CHILDREN'S COLORING PAGES: Let little ones color and decorate their favorite characters from Different children movies. TRAVEL ACTIVITIES FOR KIDS: Children Coloring Books are ideal for on the go entertainment or rainy days at home. PAIR WITH ART SUPPLIES: Bundle with Crayons or Colored Pencils (sold separately) to get started right away. GIFT FOR KIDS: Makes a great gift for girls and boys, ages 3 and up.",
+      "• CHILDREN'S COLORING BOOK: Features 50 Coloring Pages and 25 drawing pages. \n• CHILDREN'S COLORING PAGES: Let little ones color and decorate their favorite characters from Different children movies. \n• TRAVEL ACTIVITIES FOR KIDS: Children Coloring Books are ideal for on the go entertainment or rainy days at home. \n• PAIR WITH ART SUPPLIES: Bundle with Crayons or Colored Pencils (sold separately) to get started right away. \n• GIFT FOR KIDS: Makes a great gift for girls and boys, ages 3 and up.",
     price: 10000,
     image: require("../assets/books/CHILDRENColoring_1.max-350x225.png"),
   },
@@ -185,7 +185,7 @@ const books = [
     id: 9,
     title: "UnBound",
     description:
-      "#Unbound is your ultimate guide to self-discovery and awareness. It is a practical workbook with life lessons and personal activities on career, money management, mental health, entrepreneurship, relationships and everything between that. It is nothing like you have seen before.",
+      "#Unbound is your ultimate guide to self-discovery and awareness. \n\nIt is a practical workbook with life lessons and personal activities on career, money management, mental health, entrepreneurship, relationships and everything between that. \n\nIt is nothing like you have seen before.",
     price: 25000,
     image: require("../assets/books/Unbound.jpg"),
   },
@@ -197,12 +197,24 @@ const courses = [
     course_title: "Conducting User Research",
     course_image: require("../assets/courses/ConductingUserResearch.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "User Research",
+    description:
+      "Are you in the process of developing a product and designing a service? Find out what you need to do in order to develop the right product and service for your target market.",
+    content:
+      " What is User Research?\n\n Why you need to do research\n\n How to conduct research\n\nWho is your target group?\n\n Choosing Research questions\n\n Building a Persona",
   },
   {
     id: 2,
     course_title: "Blogging and Writing",
     course_image: require("../assets/courses/Blogging_and_Writing.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Blogging and Writing",
+    description:
+      "Are you a writer that is wondering how to go about setting up your blog?\n\nHere are a few tips on how to get started on your writing journey.",
+    content:
+      "What is blogging?\n\nWhy blogging?\n\nWhat your blog says\n\nChoosing a blog topic\n\nFeatures of a blog 1\n\nFeatures of a blog 2\n\nDriving Traffic 1\n\nDriving Traffic 2\n\nMonetizing your blog 1\n\nMonetizing your blog 2\n\nTravel writing\n\nShow and do not tell\n\nBlogging and Photography\n\nBlogging and Photography 2",
   },
   {
     id: 3,

@@ -6,10 +6,20 @@ import {
   SafeAreaView,
   Image,
   ScrollView,
+  Animated,
 } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { Notification, IconButton } from "../components";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
+  const [isActive, setIsActive] = React.useState(false);
+
+  const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(1);
+  const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
+    React.useState(0);
+
+  const indicator = new Animated.Value(0);
+
   const [books, setBook] = React.useState(null);
 
   React.useEffect(() => {
@@ -36,8 +46,29 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           style={{
             height: "100%",
             width: "100%",
-            borderBottomLeftRadius: SIZES.radius * 3,
-            borderBottomRightRadius: SIZES.radius * 3,
+            borderBottomLeftRadius: SIZES.radius * 2,
+            borderBottomRightRadius: SIZES.radius * 2,
+          }}
+        />
+        <IconButton
+          icon={icons.back_arrow_icon}
+          onPress={() => navigation.goBack()}
+          iconStyle={{
+            tintColor: COLORS.white,
+          }}
+          containerStyle={{
+            // marginVertical: "8%",
+            // marginHorizontal: "8%",
+            position: "absolute",
+            top: 40,
+            left: 20,
+            width: 40,
+            height: 40,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 10,
+            backgroundColor: COLORS.transparentBlack,
+            borderRadius: SIZES.padding,
           }}
         />
       </SafeAreaView>
@@ -45,44 +76,126 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   }
 
   function renderBookDescription() {
+    const indicatorSize =
+      scrollViewWholeHeight > scrollViewVisibleHeight
+        ? (scrollViewVisibleHeight * scrollViewVisibleHeight) /
+          scrollViewWholeHeight
+        : scrollViewVisibleHeight;
+
+    const difference =
+      scrollViewVisibleHeight > indicatorSize
+        ? scrollViewVisibleHeight - indicatorSize
+        : 1;
+
     return (
-      <ScrollView
+      <View
         style={{
-          marginTop: "90%",
+          flex: 1,
+          flexDirection: "row",
+          padding: SIZES.padding,
         }}
       >
-        <Text
+        {/* Custom scrollbar */}
+        <View
           style={{
-            ...FONTS.h2,
-            color: COLORS.textGray,
-            marginBottom: SIZES.padding,
+            marginTop: "90%",
+            width: 4,
+            height: "50%",
+            backgroundColor: COLORS.transparentBlack,
           }}
         >
-          Description
-        </Text>
-        <Text style={{ ...FONTS.body3, color: COLORS.gray1 }}>
-          {books.description}
-        </Text>
-      </ScrollView>
+          <Animated.View
+            style={{
+              width: 4,
+              height: indicatorSize,
+              backgroundColor: COLORS.lightRed,
+              transform: [
+                {
+                  translateY: Animated.multiply(
+                    indicator,
+                    scrollViewVisibleHeight / scrollViewWholeHeight
+                  ).interpolate({
+                    inputRange: [0, difference],
+                    outputRange: [0, difference],
+                    extrapolate: "clap",
+                  }),
+                },
+              ],
+            }}
+          />
+        </View>
+
+        <ScrollView
+          style={{
+            marginTop: "90%",
+            paddingLeft: SIZES.padding2,
+          }}
+          showsVerticalScrollIndicator={false}
+          scrollEventThrottle={16}
+          onContentSizeChange={(width, height) => {
+            setScrollViewWholeHeight(height);
+          }}
+          onLayout={({
+            nativeEvent: {
+              layout: { x, y, width, height },
+            },
+          }) => {
+            setScrollViewVisibleHeight(height);
+          }}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: indicator } } }],
+            { useNativeDriver: false }
+          )}
+        >
+          <Text
+            style={{
+              ...FONTS.h2,
+              color: COLORS.textGray,
+              marginBottom: SIZES.padding,
+            }}
+          >
+            Description
+          </Text>
+          <Text style={{ ...FONTS.body3, color: COLORS.gray1 }}>
+            {books.description}
+          </Text>
+        </ScrollView>
+      </View>
     );
   }
 
   function renderBottomButton() {
     return (
-      <TouchableOpacity
-        style={{
-          height: "80%",
-          backgroundColor: COLORS.lightRed,
-          marginHorizontal: SIZES.radius,
-          marginVertical: SIZES.base,
-          borderRadius: SIZES.radius,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        onPress={() => navigation.navigate("Cart")}
-      >
-        <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
-      </TouchableOpacity>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <IconButton
+          icon={icons.cart_icon}
+          iconStyle={{
+            tintColor: COLORS.primary,
+            borderRadius: SIZES.radius,
+          }}
+          onPress={() => navigation.navigate("Cart")}
+          containerStyle={{
+            justifyContent: "center",
+            marginHorizontal: "5%",
+          }}
+        />
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            backgroundColor: COLORS.lightRed,
+            marginHorizontal: SIZES.base,
+            marginVertical: SIZES.base,
+            borderRadius: SIZES.padding,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          // onPress={() => navigation.navigate("Cart")}
+          onPress={() => setIsActive(!isActive)}
+        >
+          <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
+          <Notification isActive={isActive} />
+        </TouchableOpacity>
+      </View>
     );
   }
 
@@ -99,7 +212,9 @@ const BookDescriptionScreen = ({ route, navigation }) => {
         {/* Book Desctiption */}
         {renderBookDescription()}
         {/* Add to cart button */}
-        <View style={{ height: "10%" }}>{renderBottomButton()}</View>
+        <View style={{ height: "10%", marginBottom: "1%" }}>
+          {renderBottomButton()}
+        </View>
       </View>
     );
   } else {

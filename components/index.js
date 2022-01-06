@@ -9,6 +9,8 @@ import ProfileValue from "./ProfileValue";
 import CourseNav from "./navigation/courseNav";
 import ShopNav from "./navigation/shopNav";
 import Tabs from "./navigation/tabs";
+import Notification from "./Notification";
+import Section from "./Section";
 
 export {
   BookCard,
@@ -22,4 +24,6 @@ export {
   CourseNav,
   ShopNav,
   Tabs,
+  Notification,
+  Section,
 };
