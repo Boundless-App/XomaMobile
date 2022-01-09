@@ -7,11 +7,17 @@ import {
   Image,
   ScrollView,
   FlatList,
+  StatusBar,
 } from "react-native";
 
-import { COLORS, FONTS, SIZES, icons, images } from "../constants";
+import { COLORS, FONTS, SIZES, icons, images, coursesData } from "../constants";
 
-import { IconButton, Section } from "../components";
+import {
+  HorizontalCourseCard,
+  IconButton,
+  LineDivider,
+  Section,
+} from "../components";
 
 const HomeScreen = ({ navigation }) => {
   const profileData = {
@@ -77,51 +83,6 @@ const HomeScreen = ({ navigation }) => {
     },
   ];
 
-  const coursesData = [
-    {
-      id: 1,
-      categoryName: "CV Writing",
-      courseCover: images.cvWriting,
-      //course: [bookFour],
-    },
-    {
-      id: 2,
-      categoryName: "Presentation",
-      courseCover: images.pitching,
-      //course: [bookTwo],
-    },
-    {
-      id: 3,
-      categoryName: "Communication",
-      courseCover: images.emailCommunication,
-      //course: [bookOne],
-    },
-    {
-      id: 4,
-      categoryName: "Interview",
-      courseCover: images.jobInterview,
-      //course: [bookThree],
-    },
-    {
-      id: 5,
-      categoryName: "Summary Writing",
-      courseCover: images.digitalLiteracy,
-      //course: [bookFive],
-    },
-    // {
-    //   id: 6,
-    //   categoryName: "Timing",
-    //   courseCover: images.underland,
-    //   //course: [bookThree],
-    // },
-    // {
-    //   id: 7,
-    //   categoryName: "Performance",
-    //   courseCover: images.underland,
-    //   //course: [bookTwo],
-    // },
-  ];
-
   const contentData = [
     {
       id: 1,
@@ -146,8 +107,8 @@ const HomeScreen = ({ navigation }) => {
   const [profile, setProfile] = React.useState(profileData);
   const [content, setContent] = React.useState(contentData);
   const [myTrends, setMyTrends] = React.useState(trends);
-  const [courses, setCourses] = React.useState(coursesData);
-  const [selectedCourse, setSelectedCourse] = React.useState(1);
+  // const [courses, setCourses] = React.useState(coursesData);
+  // const [selectedCourse, setSelectedCourse] = React.useState(1);
 
   function renderHeader(profile) {
     return (
@@ -162,8 +123,9 @@ const HomeScreen = ({ navigation }) => {
           //backgroundColor: COLORS.orange,
         }}
       >
+        <StatusBar backgroundColor="#2D3038" />
         {/* Greetings */}
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 6, paddingRight: "20%" }}>
           <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
             <Text style={{ ...FONTS.h1, color: COLORS.primary }}>Hello </Text>
             <Text style={{ ...FONTS.h1, color: COLORS.primary }}>
@@ -172,6 +134,12 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
         {/* Icons */}
+        {/* <View
+          style={{
+            flex: 1,
+            alignItems: "flex-end",
+          }}
+        > */}
         <IconButton
           icon={icons.notification_icon}
           iconStyle={{
@@ -182,6 +150,25 @@ const HomeScreen = ({ navigation }) => {
             paddingRight: "8%",
           }}
         />
+        {/* <View
+            style={{
+              // flex: 1,
+              position: "absolute",
+              top: -1,
+              right: -1,
+              height: 10,
+              width: 10,
+              // marginLeft: "10%",
+
+              // paddingHorizontal: "20%",
+              borderRadius: SIZES.radius,
+
+              justifyContent: "flex-end",
+              backgroundColor: COLORS.lightRed,
+            }}
+          ></View>
+        </View>
+        <View style={{ flex: 1 }}></View> */}
         <IconButton
           icon={icons.cart_icon}
           iconStyle={{
@@ -332,54 +319,89 @@ const HomeScreen = ({ navigation }) => {
   }
 
   function renderCoursesData() {
-    var myCourses = [];
+    //   var myCourses = [];
 
-    let selectedCourses = myCourses.filter((a) => a.id == selectedCourse);
+    //   let selectedCourses = myCourses.filter((a) => a.id == selectedCourse);
 
-    if (selectedCourses.length > 0) {
-      courses = selectedCourses[0].myCourses;
-    }
+    //   if (selectedCourses.length > 0) {
+    //     courses = selectedCourses[0].myCourses;
+    //   }
 
-    const renderItem = ({ item }) => {
-      return (
-        <View style={{ marginVertical: SIZES.base }}>
-          <TouchableOpacity
-            style={{ flex: 1, flexDirection: "row" }}
-            onPress={() => console.log("Courses Data")}
-          >
-            {/* Course Cover */}
-            <Image
-              source={item.courseCover}
-              resizeMode="cover"
-              style={{ width: 100, height: 150, borderRadius: 10 }}
-            />
+    //   const renderItem = ({ item }) => {
+    //     return (
+    //       <View style={{ marginVertical: SIZES.base }}>
+    //         <TouchableOpacity
+    //           style={{ flex: 1, flexDirection: "row" }}
+    //           onPress={() => console.log("Courses Data")}
+    //         >
+    //           {/* Course Cover */}
+    //           <Image
+    //             source={item.courseCover}
+    //             resizeMode="cover"
+    //             style={{ width: 100, height: 150, borderRadius: 10 }}
+    //           />
 
-            {/* <View style={{ flex: 1, marginLeft: SIZES.radius }}> */}
-            {/* Course Name and Progress */}
-            {/* <View>
-                <Text>{item.courseName}</Text>
-              </View>
-            </View> */}
-          </TouchableOpacity>
-        </View>
-      );
-    };
+    //           {/* <View style={{ flex: 1, marginLeft: SIZES.radius }}> */}
+    //           {/* Course Name and Progress */}
+    //           {/* <View>
+    //               <Text>{item.courseName}</Text>
+    //             </View>
+    //           </View> */}
+    //         </TouchableOpacity>
+    //       </View>
+    //     );
+    //   };
 
+    //   return (
+    //     <View
+    //       style={{
+    //         flex: 1,
+    //         marginTop: SIZES.padding2,
+    //         paddingLeft: SIZES.padding2,
+    //       }}
+    //     >
+    //       <FlatList
+    //         data={courses}
+    //         renderItem={renderItem}
+    //         keyExtractor={(item) => `${item.id}`}
+    //         showsVerticalScrollIndicator={false}
+    //       />
+    //     </View>
+    //   );
+    // }
     return (
-      <View
-        style={{
-          flex: 1,
-          marginTop: SIZES.padding2,
-          paddingLeft: SIZES.padding2,
+      <FlatList
+        data={coursesData.coursesData}
+        listKey="Courses"
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item) => `Courses-${item.id}`}
+        contentContainerStyle={{
+          marginTop: SIZES.radius,
+          paddingHorizontal: SIZES.padding,
         }}
-      >
-        <FlatList
-          data={courses}
-          renderItem={renderItem}
-          keyExtractor={(item) => `${item.id}`}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+        renderItem={({ item, index }) => (
+          <HorizontalCourseCard
+            course={item}
+            containerStyle={{
+              // marginVertical: SIZES.base,
+
+              marginTop: index == 0 ? SIZES.base : SIZES.padding,
+            }}
+            onPress={() =>
+              navigation.navigate("CourseDescriptionScreen", {
+                courses: item,
+              })
+            }
+          />
+        )}
+        ItemSeparatorComponent={() => (
+          <LineDivider
+            lineStyle={{
+              backgroundColor: COLORS.lightTextGray,
+            }}
+          />
+        )}
+      />
     );
   }
 
@@ -398,7 +420,9 @@ const HomeScreen = ({ navigation }) => {
         {/* Courses Section */}
         <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>
-          <View>{renderCoursesData()}</View>
+          <View style={{ marginTop: SIZES.base, marginBottom: SIZES.radius }}>
+            {renderCoursesData()}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

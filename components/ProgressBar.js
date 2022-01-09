@@ -7,7 +7,7 @@ const ProgressBar = ({ containerStyle, progress }) => {
   return (
     <View
       style={{
-        width: "100%",
+        width: "80%",
         height: 13,
         borderRadius: 10,
         backgroundColor: COLORS.white,

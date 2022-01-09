@@ -221,84 +221,201 @@ const courses = [
     course_title: "Building Effective Teams",
     course_image: require("../assets/courses/Building_Effective_Teams.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Building Effective Teams",
+    description: "",
+    content:
+      "What is teamwork?\n\nImportance of teamwork\n\nElements of Teamwork\n\nTips for effective teamwork\n\nMore tips\n\nRemember!",
   },
   {
     id: 4,
     course_title: "Risk and Safeguarding",
     course_image: require("../assets/courses/Risk_and_Safeguarding.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Effectively mitigating Risk",
+    description:
+      "This module will help you know why Safeguarding is a very important element of the work that we do.\n\nWhat risk is and what it involves.\n\nWhat to do in cases of safeguarding issues.",
+    content:
+      "Introduction to Safeguarding\n\nWhat is Safeguarding?\n\nWho are the vulnerable people?\n\nIn the case of Helping Hand\n\nThe importance of safeguarding\n\nWhat is Risk?\n\nWhat risks exist?\n\nHow to identify risk\n\nWhere does Helping Hand start?\n\nIn case of a safeguarding concern...",
   },
   {
     id: 5,
     course_title: "Marketing your brand",
     course_image: require("../assets/courses/Marketing_your_brand.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Marketing your brand",
+    description:
+      "Are you a business owner wondering how to get your product to the market? Here is how you can.",
+    content:
+      "Focus on the current content or product\n\nDo your research\n\nOnline channels\n\nBe relationship oriented\n\nBuild partnerships",
   },
   {
     id: 6,
     course_title: "Create a Business Plan - 30 Minutes",
     course_image: require("../assets/courses/Create_a_Business_Plan_30_Minutes.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Business Ideation",
+    description: "",
+    content:
+      "Problem solving\n\nFind the cause\n\nKnow your target market\n\nWhat's the evidence?\n\nThe solution\n\nHow different are you?\n\nKeeping your clients\n\nSustainability plan",
   },
   {
     id: 7,
     course_title: "Financial Literacy for Beginners",
     course_image: require("../assets/courses/Financial_Literacy_for_Beginners.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Financial Literacy",
+    description: "",
+    content:
+      "Track your Spending\n\nDevelop a savings culture\n\nThink long term\n\nBenefits of Financial Literacy\n\nRemember!\n\nMake Financial Goals\n\nIdentify alternative sources of income\n\nNeeds and Wants",
   },
   {
     id: 8,
     course_title: "Digital Literacy to Accelerate Your Career",
     course_image: require("../assets/courses/Digital_Literacy_to_Accelerate_Your_Career.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Digital Literacy Tips",
+    description:
+      "We live in an era of constant use of technology and social media platforms around the world. However, how you use these digital platforms matter. This course will help you find out how best you can utilize your online presence.",
+    content:
+      "Think Think Think\n\nRespect for people\n\nKeep it private\n\nUse your name\n\nBe cautious\n\nBuild your brand\n\nBeware!",
   },
   {
     id: 9,
     course_title: "How to Ace That Online Job Application",
     course_image: require("../assets/courses/How_to_Ace_That_Online_Job_Application.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Having an impressive application",
+    description:
+      "Wondering how to apply for a job, internship, scholarship or volunteer opportunity online? This course is a guide to help you get all the vitals right.",
+    content:
+      "Application form\n\nWord Limit\n\nWhile you submit your application\n\nCover Letter\n\nGrammar",
   },
   {
     id: 10,
     course_title: "Email Communication Skills to Give You an Edge",
     course_image: require("../assets/courses/Email_Communication-Skills-to-Give-You-an-Edge.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Email Writing",
+    description:
+      "These short tips will help you know how to communicate effectively via email writing.",
+    content:
+      "Email Writing Tips\n\nCc vs Bcc\n\nReply vs Reply All\n\nEmail Signature",
   },
   {
     id: 11,
     course_title: "Skills for Public Speaking and Pitching",
     course_image: require("../assets/courses/Skills-for-Public-Speaking-and-Pitching.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Public Speaking and Presentation Skills",
+    description:
+      "This course will guide you on how to adequately prepare for presentations. You will be equipped with what to take note of and what to exclude while speaking and making presentations.",
+    content: "Public Speaking and Presentation Skills",
   },
   {
     id: 12,
     course_title: "Personality Types For Career Advancement",
     course_image: require("../assets/courses/Personality-Types-For-Career-Advancement.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "What are personality types?",
+    description:
+      "This course will help you identify what kind of personality you have and how you can relate with people of different personality types.",
+    content:
+      "Know your personality type\n\nWhy are Personality Types Important?\n\nWe are all different\n\nOh! And Remember",
   },
   {
     id: 13,
     course_title: "Personal Leadership for Professional Growth",
     course_image: require("../assets/courses/Personal-Leadership-for-Professional-Growth.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Defining Leadership",
+    description:
+      "This course will guide you on how to take charge of your life while taking on other responsibilities in your life.",
+    content:
+      "Defining Leadership\n\nWhat is Personal Leadership?\n\nWhat do I need?\n\nWrapping it up\n\nCreate your vision plan",
   },
   {
     id: 14,
     course_title: "Career Mapping For Students",
     course_image: require("../assets/courses/Career-Mapping-For-Students.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Goal Setting for Career",
+    description:
+      "This activity enables the participant to assess their skill-set and know what they need to do, to improve as they plan out their careers",
+    content:
+      "Goal Setting for Career\n\nNeed Forecasting\n\nSelf-Assessment\n\nOpportunity Scoping",
   },
   {
     id: 15,
     course_title: "How to Nail That Job Interview",
     course_image: require("../assets/courses/How-to-Nail-That-Job-Interview.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "Interview preparation",
+    description:
+      "Get equipped with simple tips on how to nail your job interviews and leave the interviewers impressed",
+    content: " Interview preparation\n\nInterview Day",
   },
   {
     id: 16,
     course_title: "How to Write a Winning CV",
     course_image: require("../assets/courses/How-to-Write-a-Winning-CV.png"),
     progress: "0%",
+    topics: "1 Topics",
+    title: "CV Content",
+    description:
+      "This course will guide you on how to write and formulate a winning curriculum vitae that will get you a job interview or even better your dream job.",
+    content:
+      "Always Remember\n\nReferees\n\nWork Experience\n\nEducation experience\n\nBio Data\n\nCV Length",
+  },
+];
+
+const coursesData = [
+  {
+    id: 1,
+    course_title: "Conducting User Research",
+    course_image: require("../assets/courses/ConductingUserResearch.png"),
+    progress: "0%",
+    topics: "1 Topics",
+    title: "User Research",
+    description:
+      "Are you in the process of developing a product and designing a service? Find out what you need to do in order to develop the right product and service for your target market.",
+    content:
+      " What is User Research?\n\n Why you need to do research\n\n How to conduct research\n\nWho is your target group?\n\n Choosing Research questions\n\n Building a Persona",
+  },
+  {
+    id: 2,
+    course_title: "Blogging and Writing",
+    course_image: require("../assets/courses/Blogging_and_Writing.png"),
+    progress: "0%",
+    topics: "1 Topics",
+    title: "Blogging and Writing",
+    description:
+      "Are you a writer that is wondering how to go about setting up your blog?\n\nHere are a few tips on how to get started on your writing journey.",
+    content:
+      "What is blogging?\n\nWhy blogging?\n\nWhat your blog says\n\nChoosing a blog topic\n\nFeatures of a blog 1\n\nFeatures of a blog 2\n\nDriving Traffic 1\n\nDriving Traffic 2\n\nMonetizing your blog 1\n\nMonetizing your blog 2\n\nTravel writing\n\nShow and do not tell\n\nBlogging and Photography\n\nBlogging and Photography 2",
+  },
+  {
+    id: 3,
+    course_title: "Building Effective Teams",
+    course_image: require("../assets/courses/Building_Effective_Teams.png"),
+    progress: "0%",
+    topics: "1 Topics",
+    title: "Building Effective Teams",
+    description: "",
+    content:
+      "What is teamwork?\n\nImportance of teamwork\n\nElements of Teamwork\n\nTips for effective teamwork\n\nMore tips\n\nRemember!",
   },
 ];
 
@@ -308,4 +425,5 @@ export default {
   // courses_list_2,
   courses,
   books,
+  coursesData,
 };

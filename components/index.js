@@ -11,6 +11,7 @@ import ShopNav from "./navigation/shopNav";
 import Tabs from "./navigation/tabs";
 import Notification from "./Notification";
 import Section from "./Section";
+import SelectTabButton from "./SelectTabButton";
 
 export {
   BookCard,
@@ -26,4 +27,5 @@ export {
   Tabs,
   Notification,
   Section,
+  SelectTabButton,
 };

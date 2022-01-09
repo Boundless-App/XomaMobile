@@ -13,7 +13,7 @@ import {
 
 //import SearchCos from '../pages/SeachBar/SearchCos';
 import { COLORS, FONTS, SIZES, icons, courses } from "../constants";
-import { TextButton } from "../components";
+import { LineDivider, TextButton } from "../components";
 import { HorizontalCourseCard } from "../components";
 
 const CoursesScreen = ({ navigation }) => {
@@ -82,10 +82,26 @@ const CoursesScreen = ({ navigation }) => {
           <HorizontalCourseCard
             course={item}
             containerStyle={{
-              marginVertical: SIZES.padding,
-              marginTop: index == 0 ? SIZES.radius : SIZES.padding,
+              // marginVertical: SIZES.base,
+
+              marginTop: index == 0 ? SIZES.padding2 : SIZES.padding,
             }}
-            onPress={() => navigation.navigate("CourseDescriptionScreen")}
+            // onPress={
+            //   (() => navigation.navigate("CourseDescriptionScreen"),
+            //   { courses: item })
+            // }
+            onPress={() =>
+              navigation.navigate("CourseDescriptionScreen", {
+                courses: item,
+              })
+            }
+          />
+        )}
+        ItemSeparatorComponent={() => (
+          <LineDivider
+            lineStyle={{
+              backgroundColor: COLORS.lightTextGray,
+            }}
           />
         )}
       />
@@ -114,10 +130,19 @@ const CoursesScreen = ({ navigation }) => {
           backgroundColor: COLORS.lightGray2,
           borderTopRightRadius: SIZES.radius * 2,
           borderTopLeftRadius: SIZES.radius * 2,
+          overflow: "hidden",
+          marginBottom: SIZES.radius * 2,
         }}
       >
         {renderCoursesList()}
       </View>
+      {/* <View
+        style={{
+          flex: 1,
+          backgroundColor: COLORS.lightGray2,
+          overflow: "hidden",
+        }}
+      ></View> */}
     </View>
   );
 };

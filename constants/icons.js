@@ -17,6 +17,11 @@ export const cart_icon = require("../assets/icons/cart_icon.png");
 export const home_icon = require("../assets/icons/home_icon.png");
 export const shop_icon = require("../assets/icons/shop_icon.png");
 export const profile_icon = require("../assets/icons/profile_icon.png");
+export const list_icon = require("../assets/icons/list_icon.png");
+export const alignLeft_icon = require("../assets/icons/alignLeft_icon.png");
+export const shop2_icon = require("../assets/icons/shop2_icon.png");
+export const home2_icon = require("../assets/icons/home2_icon.png");
+export const back_icon = require("../assets/icons/back_icon.png");
 
 export default {
   card_icon,
@@ -38,4 +43,9 @@ export default {
   home_icon,
   shop_icon,
   profile_icon,
+  list_icon,
+  alignLeft_icon,
+  shop2_icon,
+  home2_icon,
+  back_icon,
 };

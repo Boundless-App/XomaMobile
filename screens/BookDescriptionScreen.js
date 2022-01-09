@@ -51,7 +51,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           }}
         />
         <IconButton
-          icon={icons.back_arrow_icon}
+          icon={icons.back_icon}
           onPress={() => navigation.goBack()}
           iconStyle={{
             tintColor: COLORS.white,
