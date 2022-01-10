@@ -12,7 +12,8 @@ const Section = ({ containerStyle, title, onPress, children }) => {
       <View
         style={{
           flexDirection: "row",
-          paddingHorizontal: SIZES.padding,
+          paddingHorizontal: "4%",
+          paddingRight: "4%" 
         }}
       >
         <Text
@@ -36,17 +37,6 @@ const Section = ({ containerStyle, title, onPress, children }) => {
             See All
           </Text>
         </TouchableOpacity>
-
-        {/*         
-// <TextButton
-//           contentContainerStyle={{
-//             width: 80,
-//             borderRadius: 30,
-//             backgroundColor: COLORS.primary,
-//           }}
-//           label="See All"
-//           onPress={onPress}
-//         /> */}
       </View>
     </View>
   );

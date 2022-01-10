@@ -11,62 +11,99 @@ import {
   FlatList,
 } from "react-native";
 
-//import SearchCos from '../pages/SeachBar/SearchCos';
 import { COLORS, FONTS, SIZES, icons, courses } from "../constants";
 import { LineDivider, TextButton } from "../components";
 import { HorizontalCourseCard } from "../components";
 
+const VerticalLineDivider = () => {
+  return (
+      <View style={{ 
+        width: 1, 
+        paddingVertical: 15 
+        }}>
+          <View style={{ flex: 1, borderLeftColor: COLORS.primary, borderLeftWidth: 1 }}></View>
+      </View>
+  )
+}
+
 const CoursesScreen = ({ navigation }) => {
-  function renderHeaderButtons() {
+
+  function renderButtonSection() {
     return (
       <View
-        style={{
-          flex: 1,
-          flexDirection: "row",
-          marginTop: 40,
-          marginBottom: 10,
-          paddingHorizontal: SIZES.padding,
+        style={{ 
+          flex: 1, 
+          justifyContent: "center",
+          padding: SIZES.padding 
         }}
       >
+        <StatusBar />
         <View
           style={{
-            marginRight: "5%",
+            flexDirection: "row",
+            width: "100%",
+            height: 70,
+            borderRadius: SIZES.radius,
           }}
         >
-          <TextButton
-            label="Resourses"
-            contentContainerStyle={{
-              height: "100%",
-              paddingHorizontal: SIZES.padding,
-              borderRadius: 20,
-              backgroundColor: COLORS.transparentWhite,
-            }}
-            labelStyle={{
-              color: COLORS.black,
-            }}
+          {/* Resources */}
+          <TouchableOpacity
+            style={{ flex: 1 }}
             onPress={() => navigation.navigate("Resources")}
-          />
-        </View>
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text
+                style={{
+                  marginLeft: SIZES.base,
+                  ...FONTS.h3,
+                  color: COLORS.primary,
+                }}
+              >
+                Resources
+              </Text>
+            </View>
+          </TouchableOpacity>
 
-        <View style={{ marginLeft: "5%" }}>
-          <TextButton
-            label="Opportunities"
-            contentContainerStyle={{
-              height: "100%",
-              paddingHorizontal: SIZES.padding * 0.6,
-              borderRadius: 20,
-              backgroundColor: COLORS.transparentWhite,
-            }}
-            labelStyle={{
-              color: COLORS.black,
-            }}
+          {/* Divider */}
+          {VerticalLineDivider()}
+
+          {/* Opportunities */}
+          <TouchableOpacity
+            style={{ flex: 1 }}
             onPress={() => navigation.navigate("Opportunities")}
-          />
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text
+                style={{
+                  marginLeft: SIZES.base,
+                  ...FONTS.h3,
+                  color: COLORS.primary,
+                }}
+              >
+                Opportunities
+              </Text>
+            </View>
+          </TouchableOpacity>
+
         </View>
       </View>
     );
   }
-
+  
   function renderCoursesList() {
     return (
       <FlatList
@@ -82,14 +119,8 @@ const CoursesScreen = ({ navigation }) => {
           <HorizontalCourseCard
             course={item}
             containerStyle={{
-              // marginVertical: SIZES.base,
-
               marginTop: index == 0 ? SIZES.padding2 : SIZES.padding,
             }}
-            // onPress={
-            //   (() => navigation.navigate("CourseDescriptionScreen"),
-            //   { courses: item })
-            // }
             onPress={() =>
               navigation.navigate("CourseDescriptionScreen", {
                 courses: item,
@@ -101,6 +132,7 @@ const CoursesScreen = ({ navigation }) => {
           <LineDivider
             lineStyle={{
               backgroundColor: COLORS.lightTextGray,
+              marginTop: SIZES.base
             }}
           />
         )}
@@ -119,9 +151,10 @@ const CoursesScreen = ({ navigation }) => {
         style={{
           flex: 1,
           alignItems: "center",
+          
         }}
       >
-        {renderHeaderButtons()}
+        {renderButtonSection()}
       </View>
 
       <View
@@ -136,13 +169,6 @@ const CoursesScreen = ({ navigation }) => {
       >
         {renderCoursesList()}
       </View>
-      {/* <View
-        style={{
-          flex: 1,
-          backgroundColor: COLORS.lightGray2,
-          overflow: "hidden",
-        }}
-      ></View> */}
     </View>
   );
 };

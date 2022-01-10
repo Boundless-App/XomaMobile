@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 
-import { COLORS, FONTS, SIZES, icons, images, coursesData } from "../constants";
+import { COLORS, FONTS, SIZES, icons, images, coursesData, books } from "../constants";
 
 import {
   HorizontalCourseCard,
@@ -83,6 +83,7 @@ const HomeScreen = ({ navigation }) => {
     },
   ];
 
+  //poster pics
   const contentData = [
     {
       id: 1,
@@ -107,8 +108,6 @@ const HomeScreen = ({ navigation }) => {
   const [profile, setProfile] = React.useState(profileData);
   const [content, setContent] = React.useState(contentData);
   const [myTrends, setMyTrends] = React.useState(trends);
-  // const [courses, setCourses] = React.useState(coursesData);
-  // const [selectedCourse, setSelectedCourse] = React.useState(1);
 
   function renderHeader(profile) {
     return (
@@ -116,14 +115,14 @@ const HomeScreen = ({ navigation }) => {
         style={{
           flex: 1,
           flexDirection: "row",
-          paddingTop: SIZES.radius,
+          paddingTop: SIZES.padding,
           paddingHorizontal: SIZES.padding2 * 1.5,
           alignItems: "center",
           justifyContent: "center",
-          //backgroundColor: COLORS.orange,
         }}
       >
-        <StatusBar backgroundColor="#2D3038" />
+        <StatusBar backgroundColor={COLORS.primary} />
+
         {/* Greetings */}
         <View style={{ flex: 6, paddingRight: "20%" }}>
           <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
@@ -133,13 +132,10 @@ const HomeScreen = ({ navigation }) => {
             </Text>
           </View>
         </View>
+
         {/* Icons */}
-        {/* <View
-          style={{
-            flex: 1,
-            alignItems: "flex-end",
-          }}
-        > */}
+
+        {/* Notifications */}
         <IconButton
           icon={icons.notification_icon}
           iconStyle={{
@@ -147,28 +143,11 @@ const HomeScreen = ({ navigation }) => {
           }}
           onPress={() => console.log("Notifications")}
           containerStyle={{
-            paddingRight: "8%",
+            paddingRight: "5%",
           }}
         />
-        {/* <View
-            style={{
-              // flex: 1,
-              position: "absolute",
-              top: -1,
-              right: -1,
-              height: 10,
-              width: 10,
-              // marginLeft: "10%",
 
-              // paddingHorizontal: "20%",
-              borderRadius: SIZES.radius,
-
-              justifyContent: "flex-end",
-              backgroundColor: COLORS.lightRed,
-            }}
-          ></View>
-        </View>
-        <View style={{ flex: 1 }}></View> */}
+        {/* Cart */}
         <IconButton
           icon={icons.cart_icon}
           iconStyle={{
@@ -180,14 +159,12 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
+  // Advertisements
   function renderSlider() {
     const renderItem = ({ item, index }) => {
       return (
         <TouchableOpacity
           style={{
-            //padding: SIZES.padding,
-            //paddingBottom: SIZES.radius,
-            //backgroundColor: COLORS.darkBlue,
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
@@ -198,7 +175,6 @@ const HomeScreen = ({ navigation }) => {
           <Image
             source={item.poster}
             resizeMode="cover"
-            // style={{ width: 300, height: 200 }}
             style={{ width: 300, height: 110, borderRadius: 20 }}
           />
           <View
@@ -233,6 +209,7 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
+  // Shop books
   function renderMyTrendsSection(myTrends) {
     const renderItem = ({ item, index }) => {
       return (
@@ -280,37 +257,9 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
+  // Course list
   function renderCoursesHeader() {
-    // const renderItem = ({ item }) => {
-    //   return (
-    //     <TouchableOpacity
-    //       style={{ flex: 1, marginRight: SIZES.radius }}
-    //       onPress={() => setSelectedCourse(item.id)}
-    //     >
-    //       {selectedCourse == item.id && (
-    //         <Text style={{ ...FONTS.body4, color: COLORS.black}}>
-    //           {item.categoryName}
-    //         </Text>
-    //       )}
-    //       {selectedCourse != item.id && (
-    //         <Text style={{ ...FONTS.body4, color: COLORS.lightGray4 }}>
-    //           {item.categoryName}
-    //         </Text>
-    //       )}
-    //     </TouchableOpacity>
-    //   );
-    // };
-
     return (
-      // <View style={{ flex: 1, paddingLeft: SIZES.radius }}>
-      //   <FlatList
-      //     data={courses}
-      //     showsHorizontalScrollIndicator={false}
-      //     renderItem={renderItem}
-      //     keyExtractor={(item) => `${item.id}`}
-      //     horizontal
-      //   />
-      // </View>
       <Section
         title="Popular Courses"
         onPress={() => navigation.navigate("CoursesScreen")}
@@ -319,56 +268,6 @@ const HomeScreen = ({ navigation }) => {
   }
 
   function renderCoursesData() {
-    //   var myCourses = [];
-
-    //   let selectedCourses = myCourses.filter((a) => a.id == selectedCourse);
-
-    //   if (selectedCourses.length > 0) {
-    //     courses = selectedCourses[0].myCourses;
-    //   }
-
-    //   const renderItem = ({ item }) => {
-    //     return (
-    //       <View style={{ marginVertical: SIZES.base }}>
-    //         <TouchableOpacity
-    //           style={{ flex: 1, flexDirection: "row" }}
-    //           onPress={() => console.log("Courses Data")}
-    //         >
-    //           {/* Course Cover */}
-    //           <Image
-    //             source={item.courseCover}
-    //             resizeMode="cover"
-    //             style={{ width: 100, height: 150, borderRadius: 10 }}
-    //           />
-
-    //           {/* <View style={{ flex: 1, marginLeft: SIZES.radius }}> */}
-    //           {/* Course Name and Progress */}
-    //           {/* <View>
-    //               <Text>{item.courseName}</Text>
-    //             </View>
-    //           </View> */}
-    //         </TouchableOpacity>
-    //       </View>
-    //     );
-    //   };
-
-    //   return (
-    //     <View
-    //       style={{
-    //         flex: 1,
-    //         marginTop: SIZES.padding2,
-    //         paddingLeft: SIZES.padding2,
-    //       }}
-    //     >
-    //       <FlatList
-    //         data={courses}
-    //         renderItem={renderItem}
-    //         keyExtractor={(item) => `${item.id}`}
-    //         showsVerticalScrollIndicator={false}
-    //       />
-    //     </View>
-    //   );
-    // }
     return (
       <FlatList
         data={coursesData.coursesData}
@@ -376,15 +275,13 @@ const HomeScreen = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => `Courses-${item.id}`}
         contentContainerStyle={{
-          marginTop: SIZES.radius,
+          marginTop: SIZES.padding,
           paddingHorizontal: SIZES.padding,
         }}
         renderItem={({ item, index }) => (
           <HorizontalCourseCard
             course={item}
             containerStyle={{
-              // marginVertical: SIZES.base,
-
               marginTop: index == 0 ? SIZES.base : SIZES.padding,
             }}
             onPress={() =>
@@ -398,6 +295,7 @@ const HomeScreen = ({ navigation }) => {
           <LineDivider
             lineStyle={{
               backgroundColor: COLORS.lightTextGray,
+              marginTop: SIZES.base,
             }}
           />
         )}
@@ -409,15 +307,18 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
       {/* Header Section */}
       <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
+
       {/* Body Section */}
       <ScrollView style={{ marginTop: SIZES.padding }}>
         {/* Top Slider */}
         <View>{renderSlider()}</View>
-        {/* Trending Books Section */}
+
+        {/* Trending Books Slider */}
         <View style={{ marginTop: SIZES.padding2 }}>
           {renderMyTrendsSection(myTrends)}
         </View>
-        {/* Courses Section */}
+
+        {/* Courses Slider */}
         <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>
           <View style={{ marginTop: SIZES.base, marginBottom: SIZES.radius }}>

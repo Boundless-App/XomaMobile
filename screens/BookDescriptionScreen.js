@@ -57,8 +57,6 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             tintColor: COLORS.white,
           }}
           containerStyle={{
-            // marginVertical: "8%",
-            // marginHorizontal: "8%",
             position: "absolute",
             top: 40,
             left: 20,
@@ -101,14 +99,13 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             marginTop: "90%",
             width: 4,
             height: "50%",
-            backgroundColor: COLORS.transparentBlack,
           }}
         >
           <Animated.View
             style={{
               width: 4,
               height: indicatorSize,
-              backgroundColor: COLORS.lightRed,
+              backgroundColor: COLORS.secondary,
               transform: [
                 {
                   translateY: Animated.multiply(
@@ -150,13 +147,13 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           <Text
             style={{
               ...FONTS.h2,
-              color: COLORS.textGray,
+              color: COLORS.primary,
               marginBottom: SIZES.padding,
             }}
           >
             Description
           </Text>
-          <Text style={{ ...FONTS.body3, color: COLORS.gray1 }}>
+          <Text style={{ ...FONTS.body3, color: COLORS.primary }}>
             {books.description}
           </Text>
         </ScrollView>
@@ -171,7 +168,6 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           icon={icons.cart_icon}
           iconStyle={{
             tintColor: COLORS.primary,
-            borderRadius: SIZES.radius,
           }}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
@@ -182,10 +178,10 @@ const BookDescriptionScreen = ({ route, navigation }) => {
         <TouchableOpacity
           style={{
             flex: 1,
-            backgroundColor: COLORS.lightRed,
+            backgroundColor: COLORS.secondary,
             marginHorizontal: SIZES.base,
             marginVertical: SIZES.base,
-            borderRadius: SIZES.padding,
+            borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -204,16 +200,19 @@ const BookDescriptionScreen = ({ route, navigation }) => {
       <View
         style={{
           flex: 1,
-          backgroundColor: COLORS.transparentWhite,
+          backgroundColor: COLORS.lightTextGray,
         }}
       >
         {/* Header section, with image and price */}
         {renderHeaderSection()}
+
         {/* Book Desctiption */}
         {renderBookDescription()}
+
         {/* Add to cart button */}
         <View style={{ height: "10%", marginBottom: "1%" }}>
           {renderBottomButton()}
+          
         </View>
       </View>
     );

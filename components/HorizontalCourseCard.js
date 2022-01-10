@@ -13,53 +13,74 @@ import { SIZES, COLORS, FONTS, icons } from "../constants";
 const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
   return (
     <TouchableOpacity
+    // elevation={5}
       style={{
         flexDirection: "row",
+        borderRadius: SIZES.radius,
+        backgroundColor: COLORS.lightGray,
+        // shadowColor: COLORS.primary,
+        // shadowOpacity: 0.8,
+        // shadowRadius: 2,
+        // shadowOffset: {
+        //   height: 1,
+        //   width: 1
+        // },
         ...containerStyle,
       }}
       onPress={onPress}
     >
       {/* Thumbnail */}
+      <View
+      style={{
+        //backgroundColor: COLORS.black
+      }}
+      >
       <Image
         source={course.course_image}
         resizeMode="cover"
         style={{
           width: 130,
-          height: 130,
-          marginBottom: SIZES.radius,
-        }}
-        imageStyle={{
-          borderRadius: SIZES.radius,
+          height: 110,
+          borderRadius: 20,
         }}
       />
+      </View>
       {/* Details */}
       <View
         style={{
           flex: 1,
+          flexDirection: "column",
           marginLeft: SIZES.base,
+          //backgroundColor: COLORS.black,
+                  
         }}
       >
-        {/* Title */}
+        <View
+        style={{
+          flexDirection: "column",
+          height: 52,
+          //backgroundColor: COLORS.white
+        }}
+        >
+          {/* Title */}
         <Text
           style={{
-            ...FONTS.h3,
+            ...FONTS.h4,
             fontSize: 18,
+            marginTop: SIZES.base,
+            color: COLORS.primary
           }}
         >
           {course.course_title}
         </Text>
+        </View>
         <View
           style={{
             flexDirection: "row",
             position: "absolute",
-            // backgroundColor: COLORS.lightGreen,
-            // top: 10,
-            marginTop: SIZES.base * 6,
-            // width: 30,
-            // height: 30,
+            marginTop: SIZES.base * 6.5,
             alignItems: "center",
-            // justifyContent: "center",
-            // borderRadius: 5,
+            //backgroundColor: COLORS.lightGreen,
           }}
         >
           <Image
@@ -82,28 +103,29 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
         </View>
         <View
           style={{
-            flexDirection: "row-reverse",
+            flexDirection: "row",
             alignItems: "center",
-            marginTop: SIZES.base * 6,
-            justifyContent: "space-between",
+            marginTop: SIZES.base * 4,
+            //backgroundColor: COLORS.lightBlue
           }}
         >
+          <ProgressBar
+            progress={course.progress}
+            containerStyle={{
+              //marginTop: SIZES.base,
+            }}
+          />
+
           <Text
             style={{
               ...FONTS.h5,
-              color: COLORS.lightRed,
-              marginLeft: SIZES.padding,
-              marginTop: SIZES.base,
+              color: COLORS.secondary,
+              marginLeft: SIZES.base / 2,
+              //marginTop: SIZES.base,
             }}
           >
             {course.progress}
           </Text>
-          <ProgressBar
-            progress={course.progress}
-            containerStyle={{
-              marginTop: SIZES.base * 2,
-            }}
-          />
         </View>
       </View>
     </TouchableOpacity>

@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/xoma.png",
-      "resizeMode": "contain",
+      "resizeMode": "native",
       "backgroundColor": "#4d4d4d"
     },
     "updates": {
