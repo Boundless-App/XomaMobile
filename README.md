@@ -3,7 +3,7 @@
 </p>
 
 <p align="center"> 
-  <a href="https://github.com/Boundless-App/theMentor-App" title="License">
+  <a href="https://github.com/Boundless-App/XomaMobile" title="License">
     <img alt="GitHub license" src="https://img.shields.io/github/license/Boundless-App/XomaMobile?label=License&logo=Github&style=flat-square" alt="The Xoma App License">
   </a>
   
