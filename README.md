@@ -7,15 +7,15 @@
     <img alt="GitHub license" src="https://img.shields.io/github/license/Boundless-App/theMentor-App?label=License&logo=Github&style=flat-square" alt="The Xoma App License">
   </a>
   
-  <a href="https://github.com/Boundless-App/theMentor-App/network" title="Forks">
+  <a href="https://github.com/Boundless-App/XomaMobile/network" title="Forks">
     <img alt="GitHub forks" src="https://img.shields.io/github/forks/Boundless-App/theMentor-App?label=Forks&logo=Github&style=flat-square" alt="The Xoma App Forks">
   </a>
   
-  <a href="https://github.com/Boundless-App/theMentor-App/stargazers" title="Stars">
+  <a href="https://github.com/Boundless-App/XomaMobile/stargazers" title="Stars">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/Boundless-App/theMentor-App?label=Stars&logo=Github&style=flat-square" alt="The Xoma App Stars">
   </a>  
   
-  <a href="https://github.com/Boundless-App/theMentor-App/issues" title="Issues">
+  <a href="https://github.com/Boundless-App/XomaMobile/issues" title="Issues">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues/Boundless-App/theMentor-App?label=Issues&logo=Github&style=flat-square" alt="The Xoma App Issues">
   </a>
   
