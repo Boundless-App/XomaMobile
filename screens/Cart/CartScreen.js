@@ -1,109 +1,101 @@
 import React from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
-import { books, COLORS, SIZES } from "../../constants";
+import { View, Text, Image } from "react-native";
+import { Incrementer, CartQuantityBtn, IconButton } from "../../components";
 
-import { BookCard } from "../../components";
-
+import { COLORS, FONTS, SIZES, icons, books } from "../../constants";
 const CartScreen = ({ navigation }) => {
-  // function renderItem({ item }) {
-  //   return (
-  //     <TouchableOpacity
-  //       style={{
-  //         width: "40%",
-  //         height: 200,
-  //         backgroundColor: COLORS.white,
-  //         marginTop: 35,
-  //         marginRight: 10,
-  //         borderColor: COLORS.primary,
-  //         borderRadius: 10,
-  //       }}
-  //     >
-  //       <View
-  //         style={{
-  //           width: "50%",
-  //           height: 100,
-  //         }}
-  //       >
-  //         <Image
-  //           source={item.image}
-  //           resizeMode="contain"
-  //           style={{
-  //             width: "100%",
-  //             position: "absolute",
-  //             marginLeft: 40,
-  //             marginTop: -50,
-  //           }}
-  //         />
-  //       </View>
-  //       <View
-  //         style={{
-  //           marginTop: 10,
-  //         }}
-  //       >
-  //         <Text>{item.title}</Text>
-  //         <Text>UGX {item.price}</Text>
-  //       </View>
-  //     </TouchableOpacity>
+  const [qty, setQty] = React.useState(1);
+  const [myCartList, setMyCartList] = React.useState(books);
 
-  //   );
-  // }
-
-  function renderShopItems() {
+  function renderHeader() {
     return (
-      <ScrollView>
-        <FlatList
-          // style={{}}
-          // data={books.books}
-          // //horizontal
-          // keyExtractor={(item) => `${item.id}`}
-          // renderItem={renderItem}
-          data={books.books}
-          numColumns={2}
-          scrollEnabled={false}
-          listKey="Books"
-          keyExtractor={(item) => `books-${item.id}`}
-          contentContainerStyle={{
-            marginTop: SIZES.radius,
+      <View
+        style={{
+          height: 50,
+          // backgroundColor: COLORS.lightRed,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <IconButton
+          icon={icons.back_icon}
+          onPress={() => navigation.goBack()}
+          iconStyle={{
+            tintColor: COLORS.white,
           }}
-          renderItem={({ item, index }) => (
-            <BookCard
-              book={item}
-              contentContainerStyle={{
-                height: 130,
-                width: (SIZES.width - SIZES.padding * 2 - SIZES.radius) / 2,
-                marginTop: SIZES.radius,
-                marginLeft: (index + 1) % 2 == 0 ? SIZES.radius : SIZES.padding,
-              }}
-            />
-          )}
+          containerStyle={{
+            // marginVertical: "8%",
+            // marginHorizontal: "8%",
+            // position: "absolute",
+            top: 10,
+            left: 20,
+            width: 40,
+            height: 40,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 10,
+            backgroundColor: COLORS.transparentBlack,
+            borderRadius: SIZES.padding,
+          }}
         />
-      </ScrollView>
+        <Text
+          style={{
+            ...FONTS.h4,
+            paddingTop: SIZES.padding2,
+          }}
+        >
+          MY CART
+        </Text>
+        <CartQuantityBtn
+          // quantity={2}
+          containerStyle={{
+            marginRight: 20,
+            marginTop: 10,
+          }}
+        />
+      </View>
     );
   }
 
+  function renderCartList() {
+    return (
+      <View
+        style={{
+          marginTop: SIZES.radius,
+          height: 100,
+          backgroundColor: COLORS.lightGray2,
+        }}
+      >
+        <Text>{books.title}</Text>
+      </View>
+    );
+  }
   return (
     <View
       style={{
         flex: 1,
-        flexDirection: "row",
-        alignItems: "flex-start",
-        marginTop: 40,
-        borderColor: COLORS.textGray,
-        backgroundColor: COLORS.lightGray5,
+        backgroundColor: COLORS.white,
       }}
     >
-      {renderShopItems()}
+      {/* Header */}
+      {renderHeader()}
+      {/* CartList */}
+      {renderCartList()}
 
-      {/* <Text style={{ color: COLORS.textGray }}>Cart</Text> */}
+      {/* Footer */}
     </View>
   );
 };
 
 export default CartScreen;
+{
+  /* <Incrementer
+        value={qty}
+        onAdd={() => setQty(qty + 1)}
+        onMinus={() => {
+          if (qty > 1) {
+            setQty(qty - 1);
+          }
+        }}
+      /> */
+}

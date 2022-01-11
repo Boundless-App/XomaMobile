@@ -11,6 +11,9 @@ import {
   Linking,
 } from "react-native";
 
+import { HorizontalCourseCard, IconButton } from "../components";
+import { COLORS, FONTS, SIZES, icons } from "../constants";
+
 const OpportunitiesScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, marginTop: 40 }}>

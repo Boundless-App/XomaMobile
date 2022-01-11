@@ -17,24 +17,27 @@ import { HorizontalCourseCard } from "../components";
 
 const VerticalLineDivider = () => {
   return (
-      <View style={{ 
-        width: 1, 
-        paddingVertical: 15 
-        }}>
-          <View style={{ flex: 1, borderLeftColor: COLORS.primary, borderLeftWidth: 1 }}></View>
-      </View>
-  )
-}
+    <View
+      style={{
+        width: 1,
+        paddingVertical: 15,
+      }}
+    >
+      <View
+        style={{ flex: 1, borderLeftColor: COLORS.primary, borderLeftWidth: 1 }}
+      ></View>
+    </View>
+  );
+};
 
 const CoursesScreen = ({ navigation }) => {
-
   function renderButtonSection() {
     return (
       <View
-        style={{ 
-          flex: 1, 
+        style={{
+          flex: 1,
           justifyContent: "center",
-          padding: SIZES.padding 
+          padding: SIZES.padding,
         }}
       >
         <StatusBar />
@@ -98,12 +101,11 @@ const CoursesScreen = ({ navigation }) => {
               </Text>
             </View>
           </TouchableOpacity>
-
         </View>
       </View>
     );
   }
-  
+
   function renderCoursesList() {
     return (
       <FlatList
@@ -119,6 +121,8 @@ const CoursesScreen = ({ navigation }) => {
           <HorizontalCourseCard
             course={item}
             containerStyle={{
+              paddingTop: SIZES.padding2,
+              paddingBottom: SIZES.padding2,
               marginTop: index == 0 ? SIZES.padding2 : SIZES.padding,
             }}
             onPress={() =>
@@ -128,14 +132,14 @@ const CoursesScreen = ({ navigation }) => {
             }
           />
         )}
-        ItemSeparatorComponent={() => (
-          <LineDivider
-            lineStyle={{
-              backgroundColor: COLORS.lightTextGray,
-              marginTop: SIZES.base
-            }}
-          />
-        )}
+        // ItemSeparatorComponent={() => (
+        //   <LineDivider
+        //     lineStyle={{
+        //       backgroundColor: COLORS.lightTextGray,
+        //       marginTop: SIZES.base,
+        //     }}
+        //   />
+        // )}
       />
     );
   }
@@ -151,7 +155,6 @@ const CoursesScreen = ({ navigation }) => {
         style={{
           flex: 1,
           alignItems: "center",
-          
         }}
       >
         {renderButtonSection()}
@@ -159,8 +162,8 @@ const CoursesScreen = ({ navigation }) => {
 
       <View
         style={{
-          flex: 6,
-          backgroundColor: COLORS.lightGray2,
+          flex: 9,
+          backgroundColor: COLORS.white,
           borderTopRightRadius: SIZES.radius * 2,
           borderTopLeftRadius: SIZES.radius * 2,
           overflow: "hidden",

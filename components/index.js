@@ -12,6 +12,8 @@ import Tabs from "./navigation/tabs";
 import Notification from "./Notification";
 import Section from "./Section";
 import SelectTabButton from "./SelectTabButton";
+import CartQuantityBtn from "./CartQuantityBtn";
+import Incrementer from "./Incrementer";
 
 export {
   BookCard,
@@ -28,4 +30,6 @@ export {
   Notification,
   Section,
   SelectTabButton,
+  CartQuantityBtn,
+  Incrementer,
 };

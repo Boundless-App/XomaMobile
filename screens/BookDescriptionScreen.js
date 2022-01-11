@@ -212,7 +212,6 @@ const BookDescriptionScreen = ({ route, navigation }) => {
         {/* Add to cart button */}
         <View style={{ height: "10%", marginBottom: "1%" }}>
           {renderBottomButton()}
-          
         </View>
       </View>
     );

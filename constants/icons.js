@@ -22,6 +22,7 @@ export const alignLeft_icon = require("../assets/icons/alignLeft_icon.png");
 export const shop2_icon = require("../assets/icons/shop2_icon.png");
 export const home2_icon = require("../assets/icons/home2_icon.png");
 export const back_icon = require("../assets/icons/back_icon.png");
+export const minus_icon = require("../assets/icons/minus_icon.png");
 
 export default {
   card_icon,
@@ -48,4 +49,5 @@ export default {
   shop2_icon,
   home2_icon,
   back_icon,
+  minus_icon,
 };

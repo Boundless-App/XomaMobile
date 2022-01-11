@@ -10,7 +10,15 @@ import {
   StatusBar,
 } from "react-native";
 
-import { COLORS, FONTS, SIZES, icons, images, coursesData, books } from "../constants";
+import {
+  COLORS,
+  FONTS,
+  SIZES,
+  icons,
+  images,
+  coursesData,
+  books,
+} from "../constants";
 
 import {
   HorizontalCourseCard,
@@ -231,6 +239,13 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="cover"
             style={{ width: 180, height: 250, borderRadius: 20 }}
           />
+          <Text
+            style={{
+              ...FONTS.body4,
+            }}
+          >
+            {item.bookName}
+          </Text>
         </TouchableOpacity>
       );
     };
@@ -282,6 +297,8 @@ const HomeScreen = ({ navigation }) => {
           <HorizontalCourseCard
             course={item}
             containerStyle={{
+              paddingTop: SIZES.padding2,
+              paddingBottom: SIZES.padding2,
               marginTop: index == 0 ? SIZES.base : SIZES.padding,
             }}
             onPress={() =>
@@ -291,14 +308,14 @@ const HomeScreen = ({ navigation }) => {
             }
           />
         )}
-        ItemSeparatorComponent={() => (
-          <LineDivider
-            lineStyle={{
-              backgroundColor: COLORS.lightTextGray,
-              marginTop: SIZES.base,
-            }}
-          />
-        )}
+        // ItemSeparatorComponent={() => (
+        //   <LineDivider
+        //     lineStyle={{
+        //       backgroundColor: COLORS.lightTextGray,
+        //       marginTop: SIZES.base,
+        //     }}
+        //   />
+        // )}
       />
     );
   }
@@ -309,7 +326,10 @@ const HomeScreen = ({ navigation }) => {
       <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
 
       {/* Body Section */}
-      <ScrollView style={{ marginTop: SIZES.padding }}>
+      <ScrollView
+        style={{ marginTop: SIZES.padding }}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Top Slider */}
         <View>{renderSlider()}</View>
 
@@ -321,7 +341,13 @@ const HomeScreen = ({ navigation }) => {
         {/* Courses Slider */}
         <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>
-          <View style={{ marginTop: SIZES.base, marginBottom: SIZES.radius }}>
+          <View
+            style={{
+              marginTop: SIZES.base,
+              marginBottom: SIZES.radius,
+              backgroundColor: COLORS.white,
+            }}
+          >
             {renderCoursesData()}
           </View>
         </View>

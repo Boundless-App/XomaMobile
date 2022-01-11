@@ -419,6 +419,57 @@ const coursesData = [
   },
 ];
 
+const resources = [
+  {
+    id: 1,
+    resource_title: "Vision Tracker",
+    resource_image: require("../assets/Vision_Tracker_Poster.png"),
+    description:
+      "Do you have a dream? Here is a tracker for beginners, to help you bring it to life.",
+    link: "https://www.thementoronline.org/documents/2/Vision_Tracker_Boundless_Minds.pdf",
+  },
+  {
+    id: 2,
+    resource_title: "Career Map Template",
+    resource_image: require("../assets/Career_Map_Poster.png"),
+    description:
+      "Are you trying to figure out what to do next? Where to go, and how to get there? Here is a map to guide you.",
+    link: "https://www.thementoronline.org/documents/4/Career_Mapping_Template.pdf",
+  },
+  {
+    id: 3,
+    resource_title: "Business Ideation Canvas Template",
+    resource_image: require("../assets/Canvas_Poster.png"),
+    description:
+      "Do you have an idea? Use this Ideation canvas as a basic business plan!",
+    link: "https://www.thementoronline.org/documents/5/Ideation_Canvas_Template.pdf",
+  },
+  {
+    id: 4,
+    resource_title: "Sample CV Template",
+    resource_image: require("../assets/CV_poster.png"),
+    description:
+      "CV writing for job applications can be a daunting task. Let's make it easy for you!",
+    link: "https://www.thementoronline.org/documents/6/Sample_CV_Template.pdf",
+  },
+  {
+    id: 5,
+    resource_title: "Concept Note Template",
+    resource_image: require("../assets/Concept_Note_Poster.png"),
+    description:
+      "Do you struggle with writing concept notes and proposals? Let us us make it easy for you with this 1 pager template.",
+    link: "https://www.thementoronline.org/documents/7/Concept_Note_Template.pdf",
+  },
+];
+
+const opportunities = [
+  {
+    id: 1,
+    title: "",
+    link: "",
+  },
+];
+
 export default {
   // categories,
   // courses_list_1,
@@ -426,4 +477,13 @@ export default {
   courses,
   books,
   coursesData,
+  resources,
 };
+
+// {
+//   heading: "Take advantage of free resoorces to guide you on your learning or teaching journey"
+// },
+
+// {
+//   Explore entry-level jobs, funding and training opportunities, fellowships, scholarships and volunteer opportunities
+// }

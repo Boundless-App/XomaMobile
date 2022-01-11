@@ -13,10 +13,10 @@ import { SIZES, COLORS, FONTS, icons } from "../constants";
 const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
   return (
     <TouchableOpacity
-    // elevation={5}
+      // elevation={5}
       style={{
         flexDirection: "row",
-        borderRadius: SIZES.radius,
+        borderRadius: SIZES.base,
         backgroundColor: COLORS.lightGray,
         // shadowColor: COLORS.primary,
         // shadowOpacity: 0.8,
@@ -31,19 +31,21 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
     >
       {/* Thumbnail */}
       <View
-      style={{
-        //backgroundColor: COLORS.black
-      }}
+        style={
+          {
+            //backgroundColor: COLORS.black
+          }
+        }
       >
-      <Image
-        source={course.course_image}
-        resizeMode="cover"
-        style={{
-          width: 130,
-          height: 110,
-          borderRadius: 20,
-        }}
-      />
+        <Image
+          source={course.course_image}
+          resizeMode="cover"
+          style={{
+            width: 130,
+            height: 110,
+            borderRadius: 20,
+          }}
+        />
       </View>
       {/* Details */}
       <View
@@ -52,27 +54,26 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
           flexDirection: "column",
           marginLeft: SIZES.base,
           //backgroundColor: COLORS.black,
-                  
         }}
       >
         <View
-        style={{
-          flexDirection: "column",
-          height: 52,
-          //backgroundColor: COLORS.white
-        }}
-        >
-          {/* Title */}
-        <Text
           style={{
-            ...FONTS.h4,
-            fontSize: 18,
-            marginTop: SIZES.base,
-            color: COLORS.primary
+            flexDirection: "column",
+            height: 52,
+            //backgroundColor: COLORS.white
           }}
         >
-          {course.course_title}
-        </Text>
+          {/* Title */}
+          <Text
+            style={{
+              ...FONTS.h4,
+              fontSize: 17,
+              marginTop: SIZES.base,
+              color: COLORS.primary,
+            }}
+          >
+            {course.course_title}
+          </Text>
         </View>
         <View
           style={{
@@ -111,9 +112,11 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
         >
           <ProgressBar
             progress={course.progress}
-            containerStyle={{
-              //marginTop: SIZES.base,
-            }}
+            containerStyle={
+              {
+                //marginTop: SIZES.base,
+              }
+            }
           />
 
           <Text
