@@ -470,6 +470,50 @@ const opportunities = [
   },
 ];
 
+// ########################################
+
+const book1 = {
+  id: 1,
+  title: "Action Word Game",
+  description:
+    "Each word card reinforces the 100 words that children need to know – and it helps them master comprehension, spelling, writing, and usage of each word.",
+  price: 10000,
+  image: require("../assets/books/BookLover.jpg"),
+};
+
+const book2 = {
+  id: 2,
+  title: "Creative Thinking Workbook",
+  description:
+    "Discover how a growth mindset can help you achieve your goals―activities for kids 8 to 13. \n\nA Creative Thinking Workbook can help you develop your abilities to tackle just about anything. Creative Thinking Workbook for Kids is a fun and engaging activity book, for ages 8 to 13, that can help you train your brain and develop creative problem-solving skills through practice and perseverance. You’ll learn how to foster a “can-do” attitude and celebrate your mistakes as a path to ultimate success.\n\nPacked with awesome activities and easy exercises, this complete workbook addressing growth mindset for kids is a great way to master just about anything with a little effort and encouragement. The real and rewarding work of dreaming big, making missteps, and expanding your mind (like a muscle) starts now. Let’s find out what amazing things you can do―a growth mindset for kids is mission possible!",
+  price: 10000,
+  image: require("../assets/books/CREATIVE_THINKING_WORKBOOK_1.max-350x225.png"),
+};
+
+const book3 = {
+  id: 3,
+  title: "Level 3 Book Package",
+  description:
+    "This compilation of 3 tales from the Moran Publishers aims to guide the young readers about wise conduct, human nature, and the right path for attaining success in life. Accompanied …",
+  price: 30000,
+  image: require("../assets/books/BOOK_PACKAGE_LEVEL31_HZLjJS8.max-350x225.png"),
+};
+
+const myCart = [
+  {
+    ...book1,
+    qty: 1,
+  },
+  {
+    ...book2,
+    qty: 1,
+  },
+  {
+    ...book3,
+    qty: 1,
+  },
+];
+
 export default {
   // categories,
   // courses_list_1,
@@ -478,6 +522,7 @@ export default {
   books,
   coursesData,
   resources,
+  myCart,
 };
 
 // {
