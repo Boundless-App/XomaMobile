@@ -18,13 +18,8 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
         flexDirection: "row",
         borderRadius: SIZES.base,
         backgroundColor: COLORS.lightGray,
-        // shadowColor: COLORS.primary,
-        // shadowOpacity: 0.8,
-        // shadowRadius: 2,
-        // shadowOffset: {
-        //   height: 1,
-        //   width: 1
-        // },
+        elevation: 15,
+
         ...containerStyle,
       }}
       onPress={onPress}

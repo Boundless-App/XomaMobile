@@ -117,6 +117,7 @@ const CartScreen = ({ navigation }) => {
               marginTop: SIZES.padding,
               paddingHorizontal: SIZES.radius,
               borderRadius: SIZES.radius,
+              elevation: 10,
             }}
           >
             {/* Book Image */}
