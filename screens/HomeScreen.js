@@ -345,7 +345,7 @@ const HomeScreen = ({ navigation }) => {
             style={{
               marginTop: SIZES.base,
               marginBottom: SIZES.radius,
-              backgroundColor: COLORS.white,
+              
             }}
           >
             {renderCoursesData()}

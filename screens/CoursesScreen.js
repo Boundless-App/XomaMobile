@@ -24,7 +24,7 @@ const VerticalLineDivider = () => {
       }}
     >
       <View
-        style={{ flex: 1, borderLeftColor: COLORS.primary, borderLeftWidth: 1 }}
+        style={{ flex: 1, borderLeftColor: COLORS.lightGray, borderLeftWidth: 1 }}
       ></View>
     </View>
   );
@@ -66,7 +66,7 @@ const CoursesScreen = ({ navigation }) => {
                 style={{
                   marginLeft: SIZES.base,
                   ...FONTS.h3,
-                  color: COLORS.primary,
+                  color: COLORS.lightGray,
                 }}
               >
                 Resources
@@ -94,7 +94,7 @@ const CoursesScreen = ({ navigation }) => {
                 style={{
                   marginLeft: SIZES.base,
                   ...FONTS.h3,
-                  color: COLORS.primary,
+                  color: COLORS.lightGray,
                 }}
               >
                 Opportunities
@@ -148,7 +148,7 @@ const CoursesScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.lightGray3,
+        backgroundColor: COLORS.secondary,
       }}
     >
       <View
@@ -163,7 +163,7 @@ const CoursesScreen = ({ navigation }) => {
       <View
         style={{
           flex: 9,
-          backgroundColor: COLORS.white,
+          backgroundColor: COLORS.lightGray,
           borderTopRightRadius: SIZES.radius * 2,
           borderTopLeftRadius: SIZES.radius * 2,
           overflow: "hidden",

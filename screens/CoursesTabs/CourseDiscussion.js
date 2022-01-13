@@ -92,7 +92,7 @@ const CourseDiscussion = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.white,
+        backgroundColor: COLORS.lightGray5,
       }}
     >
       {/* Discussion */}

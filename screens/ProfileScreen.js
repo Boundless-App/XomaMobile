@@ -26,14 +26,16 @@ const ProfileScreen = () => {
         <Text
           style={{
             ...FONTS.h1,
+            color: COLORS.primary
           }}
         >
           My Profile
         </Text>
+
         <Image
           source={icons.profile_icon}
           resizeMode="contain"
-          style={{ width: 20, height: 20 }}
+          style={{ width: 40, height: 40, tintColor: COLORS.primary }}
         />
       </View>
     );
@@ -48,7 +50,8 @@ const ProfileScreen = () => {
           paddingHorizontal: SIZES.radius,
           paddingVertical: 20,
           borderRadius: SIZES.radius,
-          backgroundColor: COLORS.darkBlue,
+          borderColor: COLORS.secondary,
+          borderWidth: 2,
         }}
       >
         {/* Profile Image */}
@@ -59,13 +62,14 @@ const ProfileScreen = () => {
           }}
         >
           <Image
-            source={icons.plus_icon}
+            source={icons.profile_icon}
             style={{
               width: "100%",
               height: "100%",
               borderRadius: 40,
-              borderWidth: 1,
-              borderColor: COLORS.white,
+              borderWidth: 2,
+              borderColor: COLORS.primary,
+              tintColor: COLORS.primary
             }}
           />
 
@@ -86,7 +90,7 @@ const ProfileScreen = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: 15,
-                backgroundColor: COLORS.lightBlue,
+                backgroundColor: COLORS.primary,
               }}
             >
               <Image
@@ -95,6 +99,7 @@ const ProfileScreen = () => {
                 style={{
                   width: 17,
                   height: 17,
+                  tintColor: COLORS.white,
                 }}
               />
             </View>
@@ -111,7 +116,7 @@ const ProfileScreen = () => {
         >
           <Text
             style={{
-              color: COLORS.lightGray,
+              color: COLORS.primary,
               ...FONTS.h2,
             }}
           >
@@ -120,7 +125,7 @@ const ProfileScreen = () => {
 
           <Text
             style={{
-              color: COLORS.lightGray,
+              color: COLORS.primary,
               ...FONTS.h4,
             }}
           >
@@ -157,11 +162,39 @@ const ProfileScreen = () => {
     );
   }
 
+  function renderXomaLogo() {
+    return(
+      <View
+      style={{
+        // flex: 5,
+        // flexDirection: "row",
+        // position: "relative",
+        width: "100%",
+        //height: 300,
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 120,
+        //backgroundColor: COLORS.black,
+      }}
+      >
+        <Image 
+        source={images.xomaLogo}
+        resizeMode="contain"
+        style={{
+          width: 120,
+          height: 120,
+          tintColor: COLORS.secondary,
+        }}
+        />
+
+      </View>
+    )
+  }
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.white,
+        backgroundColor: COLORS.lightGray,
       }}
     >
       {/* Header */}
@@ -179,6 +212,9 @@ const ProfileScreen = () => {
         {/* Profile Section */}
         {renderProfileSection()}
       </ScrollView>
+
+      {/* Xoma Logo */}
+      {renderXomaLogo()}
     </View>
   );
 };
@@ -187,9 +223,9 @@ const styles = StyleSheet.create({
   profileSectionContainer: {
     marginTop: SIZES.padding,
     paddingHorizontal: SIZES.padding,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: SIZES.radius,
-    borderColor: COLORS.gray1,
+    borderColor: COLORS.primary,
   },
 });
 export default ProfileScreen;

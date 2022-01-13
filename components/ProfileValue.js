@@ -21,7 +21,7 @@ const ProfileValue = ({ icons, label, value, onPress }) => {
           alignItems: "center",
           justifyContent: "center",
           borderRadius: 20,
-          backgroundColor: COLORS.lightGray4,
+          backgroundColor: COLORS.transparentBlack,
         }}
       >
         <Image
@@ -30,6 +30,7 @@ const ProfileValue = ({ icons, label, value, onPress }) => {
           style={{
             width: 25,
             height: 25,
+            tintColor: COLORS.white,
           }}
         />
       </View>
@@ -44,8 +45,8 @@ const ProfileValue = ({ icons, label, value, onPress }) => {
         {label && (
           <Text
             style={{
-              color: COLORS.lightGray3,
-              ...FONTS.body3,
+              color: COLORS.primary,
+              ...FONTS.h3,
             }}
           >
             {label}
@@ -53,7 +54,7 @@ const ProfileValue = ({ icons, label, value, onPress }) => {
         )}
         <Text
           style={{
-            ...FONTS.h3,
+            ...FONTS.body3,
           }}
         >
           {value}

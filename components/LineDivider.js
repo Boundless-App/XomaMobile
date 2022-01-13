@@ -9,7 +9,7 @@ const LineDivider = ({ lineStyle }) => {
       style={{
         height: 2,
         width: "100%",
-        backgroundColor: COLORS.textGray,
+        backgroundColor: COLORS.primary,
         ...lineStyle,
       }}
     />

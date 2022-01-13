@@ -43,6 +43,7 @@ export const kidWantsBook = require("../assets/books/KidWantsBook.png");
 export const knowledge = require("../assets/books/Knowledge.jpg");
 export const ladyReading = require("../assets/books/LadyReading.png");
 export const seatedOnBooks = require("../assets/books/SeatedOnBooks.png");
+export const xomaLogo = require("../assets/images/xoma.png")
 
 export default {
   bookPackageLevel3,
@@ -87,5 +88,6 @@ export default {
   knowledge,
   ladyReading,
   seatedOnBooks,
+  xomaLogo
 
 };

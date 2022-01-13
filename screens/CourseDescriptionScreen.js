@@ -280,8 +280,9 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
         label="Enroll"
         contentContainerStyle={{
           height: "100%",
+          //width: "50%",
           paddingHorizontal: SIZES.padding,
-          // borderRadius: 20,
+          borderRadius: 30,
           backgroundColor: COLORS.caribbeanGreen,
         }}
         labelStyle={{
