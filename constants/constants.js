@@ -113,7 +113,7 @@ const course_details_tabs = [
   },
   {
     id: 2,
-    label: "Discussions",
+    label: "Discussion",
   },
 ];
 

@@ -9,11 +9,9 @@ import {
   Animated,
 } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
-import { Notification, IconButton } from "../components";
+import { IconButton } from "../components";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
-  const [isActive, setIsActive] = React.useState(false);
-
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(1);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
@@ -186,10 +184,8 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             justifyContent: "center",
           }}
           // onPress={() => navigation.navigate("Cart")}
-          onPress={() => setIsActive(!isActive)}
         >
           <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
-          <Notification isActive={isActive} />
         </TouchableOpacity>
       </View>
     );

@@ -15,6 +15,7 @@ import SelectTab from "./SelectTab";
 import CartQuantityBtn from "./CartQuantityBtn";
 import Incrementer from "./Incrementer";
 import FooterTotal from "./FooterTotal";
+import TabIndicator from "./TabIndicator";
 
 export {
   BookCard,
@@ -34,4 +35,5 @@ export {
   CartQuantityBtn,
   Incrementer,
   FooterTotal,
+  TabIndicator,
 };

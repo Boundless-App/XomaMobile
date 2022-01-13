@@ -29,7 +29,14 @@ const courseDesption = () => {
   function renderDescription() {
     return (
       <View>
-        <Text>{dummyData2.courses_details.description}</Text>
+        <Text
+          style={{
+            ...FONTS.body3,
+            paddingHorizontal: SIZES.padding,
+          }}
+        >
+          {dummyData2.courses_details.description}
+        </Text>
       </View>
     );
   }
@@ -38,7 +45,13 @@ const courseDesption = () => {
       {/* Title */}
       {renderTitle()}
       {/* Line */}
-      <LineDivider lineStyle={{ height: 1, marginVertical: SIZES.radius }} />
+      <LineDivider
+        lineStyle={{
+          height: 1,
+          marginVertical: SIZES.radius,
+          backgroundColor: COLORS.lightGray5,
+        }}
+      />
 
       {/* Description */}
       {renderDescription()}

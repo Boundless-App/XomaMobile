@@ -1,12 +1,126 @@
 import React from "react";
-import { View, Text, SafeAreaView, Animated, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Animated,
+  TouchableOpacity,
+} from "react-native";
 
 import { COLORS, FONTS, SIZES, icons, constants } from "../constants";
-import { IconButton, LineDivider, SelectTab, TextButton } from "../components";
+import { IconButton, LineDivider, TextButton } from "../components";
 
 import CourseDesption from "./CoursesTabs/CourseDesption";
 import CourseContent from "./CoursesTabs/CourseContent";
 import CourseDiscussion from "./CoursesTabs/CourseDiscussion";
+
+const course_details_tabs = constants.course_details_tabs.map(
+  (course_details_tab) => ({
+    ...course_details_tab,
+    ref: React.createRef(),
+  })
+);
+// Tab Indicator Component
+const TabIndicator = ({ measureLayout, scrollX }) => {
+  const inputRange = course_details_tabs.map((_, i) => i * SIZES.width);
+
+  const tabIndicatorWidth = scrollX.interpolate({
+    inputRange,
+    outputRange: measureLayout.map((measure) => measure.width),
+  });
+
+  const translateX = scrollX.interpolate({
+    inputRange,
+    outputRange: measureLayout.map((measure) => measure.x),
+  });
+
+  return (
+    <Animated.View
+      style={{
+        position: "absolute",
+        height: 4,
+        width: tabIndicatorWidth,
+        borderRadius: SIZES.radius,
+        backgroundColor: COLORS.secondary,
+        bottom: 0,
+        transform: [
+          {
+            translateX,
+          },
+        ],
+      }}
+    />
+  );
+};
+
+// Select Tab Component
+const SelectTab = ({ scrollX, onTabPress }) => {
+  const [measureLayout, setMeasureLayout] = React.useState([]);
+  const containerRef = React.useRef();
+
+  React.useEffect(() => {
+    let ml = [];
+
+    course_details_tabs.forEach((course_details_tab) => {
+      course_details_tab?.ref?.current?.measureLayout(
+        containerRef.current,
+        (x, y, width, height) => {
+          ml.push({
+            x,
+            y,
+            width,
+            height,
+          });
+          if (ml.length === course_details_tabs.length) {
+            setMeasureLayout(ml);
+          }
+        }
+      );
+    });
+  }, [containerRef.current]);
+  return (
+    <View
+      ref={containerRef}
+      style={{
+        flex: 1,
+        flexDirection: "row",
+      }}
+    >
+      {/* Tab indicator */}
+      {measureLayout.length > 0 && (
+        <TabIndicator measureLayout={measureLayout} scrollX={scrollX} />
+      )}
+      {/* Tabs */}
+      {course_details_tabs.map((item, index) => {
+        return (
+          <TouchableOpacity
+            key={`Tab-${index}`}
+            ref={item.ref}
+            style={{
+              flex: 1,
+              paddingHorizontal: 15,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            onPress={() => {
+              onTabPress(index);
+            }}
+          >
+            <Text
+              style={{
+                ...FONTS.h3,
+                fontSize: SIZES.height > 800 ? 18 : 17,
+                color: COLORS.textGray,
+              }}
+            >
+              {item.label}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
+};
 
 const CourseDescriptionScreen = ({ route, navigation }) => {
   // const [selectedTab, setSelectedTab] = React.useState(0);

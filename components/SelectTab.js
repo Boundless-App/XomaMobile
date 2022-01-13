@@ -38,47 +38,16 @@
 
 import React from "react";
 import { View, Text, TouchableOpacity, Animated } from "react-native";
+import { TabIndicator } from "../constants";
 
 import { COLORS, constants, FONTS, SIZES } from "../constants";
 
 const course_details_tabs = constants.course_details_tabs.map(
   (course_details_tab) => ({
     ...course_details_tab,
-    ref: React.createRef,
+    ref: React.createRef(),
   })
 );
-
-const TabIndicator = ({ measureLayout, scrollX }) => {
-  const inputRange = course_details_tabs.map((_, i) => i * SIZES.width);
-
-  const tabIndicatorWidth = scrollX.interpolate({
-    inputRange,
-    outputRange: measureLayout.map((measure) => measure.width),
-  });
-
-  const translateX = scrollX.interpolate({
-    inputRange,
-    outputRange: measureLayout.map((measure) => measure.x),
-  });
-
-  return (
-    <Animated.View
-      style={{
-        position: "absolute",
-        bottom: 0,
-        height: 4,
-        width: tabIndicatorWidth,
-        borderRadius: SIZES.radius,
-        backgroundColor: COLORS.secondary,
-        transform: [
-          {
-            translateX,
-          },
-        ],
-      }}
-    />
-  );
-};
 
 const SelectTab = ({ scrollX, onTabPress }) => {
   const [measureLayout, setMeasureLayout] = React.useState([]);
