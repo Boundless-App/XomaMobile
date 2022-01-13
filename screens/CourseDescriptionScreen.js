@@ -1,12 +1,24 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, Animated, FlatList } from "react-native";
 
-import { COLORS, FONTS, SIZES, icons, coursesData } from "../constants";
-import { IconButton, SelectTabButton, TextButton } from "../components";
+import { COLORS, FONTS, SIZES, icons, constants } from "../constants";
+import { IconButton, LineDivider, SelectTab, TextButton } from "../components";
+
+import CourseDesption from "./CoursesTabs/CourseDesption";
+import CourseContent from "./CoursesTabs/CourseContent";
+import CourseDiscussion from "./CoursesTabs/CourseDiscussion";
 
 const CourseDescriptionScreen = ({ route, navigation }) => {
-  const [selectedTab, setSelectedTab] = React.useState(0);
+  // const [selectedTab, setSelectedTab] = React.useState(0);
   const [courses, setCourses] = React.useState(null);
+  const flatListRef = React.useRef();
+  const scrollX = React.useRef(new Animated.Value(0)).current;
+
+  const onTabPress = React.useCallback((tabIndex) => {
+    flatListRef?.current?.scrollToOffset({
+      offset: tabIndex * SIZES.width,
+    });
+  });
 
   React.useEffect(() => {
     let { courses } = route.params;
@@ -70,26 +82,79 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
 
   function renderCourseOptions() {
     return (
+      // <View
+      //   style={{
+      //     flexDirection: "row",
+      //   }}
+      // >
+      //   <SelectTab
+      //     containerStyle={{
+      //       width: "30%",
+      //     }}
+      //     label="Description"
+      //     selected={selectedTab == 0}
+      //     onPress={() => setSelectedTab(0)}
+      //   />
+      //   <SelectTab
+      //     containerStyle={{
+      //       width: "30%",
+      //     }}
+      //     label="Content"
+      //     selected={selectedTab == 1}
+      //     onPress={() => setSelectedTab(1)}
+      //   />
+      // </View>
       <View
         style={{
-          flexDirection: "row",
+          flex: 1,
         }}
       >
-        <SelectTabButton
-          containerStyle={{
-            width: "30%",
+        {/* Tabs */}
+        <View
+          style={{
+            height: 60,
           }}
-          label="Description"
-          selected={selectedTab == 0}
-          onPress={() => setSelectedTab(0)}
+        >
+          <SelectTab scrollX={scrollX} onTabPress={onTabPress} />
+        </View>
+        {/* Line */}
+        <LineDivider
+          lineStyle={{
+            backgroundColor: COLORS.lightGray3,
+          }}
         />
-        <SelectTabButton
-          containerStyle={{
-            width: "30%",
+
+        {/* Content */}
+        <Animated.FlatList
+          ref={flatListRef}
+          horizontal
+          pagingEnabled
+          snapToAlignment="center"
+          snapToInterval={SIZES.width}
+          decelerationRate="fast"
+          keyboardDismissMode="on-drag"
+          showsHorizontalScrollIndicator={false}
+          data={constants.course_details_tabs}
+          keyExtractor={(item) => `CourseDetailTabs-${item.id}`}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            {
+              useNativeDriver: false,
+            }
+          )}
+          renderItem={({ item, index }) => {
+            return (
+              <View
+                style={{
+                  width: SIZES.width,
+                }}
+              >
+                {index == 0 && <CourseDesption />}
+                {index == 1 && <CourseContent />}
+                {index == 2 && <CourseDiscussion />}
+              </View>
+            );
           }}
-          label="Content"
-          selected={selectedTab == 1}
-          onPress={() => setSelectedTab(1)}
         />
       </View>
     );
@@ -106,7 +171,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           backgroundColor: COLORS.caribbeanGreen,
         }}
         labelStyle={{
-          color: COLORS.black,
+          color: COLORS.white,
         }}
       />
     );
@@ -116,7 +181,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
       <View
         style={{
           flex: 1,
-          backgroundColor: COLORS.black,
+          backgroundColor: COLORS.lightGray3,
         }}
       >
         <View
@@ -135,15 +200,12 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
             borderTopLeftRadius: SIZES.radius * 2,
           }}
         >
-          <View style={{ padding: SIZES.padding2 }}>
-            {renderCourseOptions()}
-          </View>
+          {renderCourseOptions()}
         </View>
 
         <View
           style={{
             height: "7%",
-            backgroundColor: COLORS.lightGray,
           }}
         >
           {renderEnrollButton()}

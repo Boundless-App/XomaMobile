@@ -11,7 +11,7 @@ import ShopNav from "./navigation/shopNav";
 import Tabs from "./navigation/tabs";
 import Notification from "./Notification";
 import Section from "./Section";
-import SelectTabButton from "./SelectTabButton";
+import SelectTab from "./SelectTab";
 import CartQuantityBtn from "./CartQuantityBtn";
 import Incrementer from "./Incrementer";
 import FooterTotal from "./FooterTotal";
@@ -30,7 +30,7 @@ export {
   Tabs,
   Notification,
   Section,
-  SelectTabButton,
+  SelectTab,
   CartQuantityBtn,
   Incrementer,
   FooterTotal,
