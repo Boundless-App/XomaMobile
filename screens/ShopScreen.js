@@ -27,7 +27,7 @@ const ShopScreen = ({ navigation }) => {
       {/* Image */}
       <View
         style={{
-          marginBottom: SIZES.radius,
+          marginBottom: SIZES.base,
         }}
       >
         <Image
@@ -46,7 +46,7 @@ const ShopScreen = ({ navigation }) => {
 
       <View
         style={{
-          marginTop: SIZES.radius,
+          marginTop: SIZES.base,
           flexDirection: "row",
         }}
       >
@@ -79,76 +79,88 @@ const ShopScreen = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
         backgroundColor: COLORS.lightGray5,
-        marginTop: 40,
+        marginTop: 10,
       }}
     >
+      <Text
+        style={{
+          ...FONTS.h4,
+          alignSelf: "center",
+          marginBottom: SIZES.base,
+        }}
+      >
+        SHOP
+      </Text>
       {renderBooksList()}
-    </SafeAreaView>
-  );
-
-  // const renderItem = ({ item }) => (
-  //   <View
-  //     style={{
-  //       flexGrow: 4,
-  //     }}
-  //   >
-  //     <TouchableOpacity
-  //       style={{
-  //         marginTop: SIZES.padding * 2,
-  //         marginBottom: SIZES.padding,
-  //       }}
-  //       onPress={() =>
-  //         navigation.navigate("BookDescriptionScreen", {
-  //           books: item,
-  //         })
-  //       }
-  //     >
-  //       <View
-  //         style={{
-  //           marginBottom: SIZES.radius,
-  //         }}
-  //       >
-  //         <Image
-  //           source={item.image}
-  //           resizeMode="cover"
-  //           style={{
-  //             width: "50%",
-  //             height: 150,
-  //           }}
-  //         />
-  //       </View>
-  //     </TouchableOpacity>
-  //   </View>
-  // );
-
-  // function renderBooksList() {
-  //   return (
-  //     <FlatList
-  //       style={{
-  //         paddingHorizontal: SIZES.padding,
-  //         paddingBottom: 30,
-  //       }}
-  //       data={books.books}
-  //       keyExtractor={(item) => `${item.id}`}
-  //       renderItem={renderItem}
-  //     />
-  //   );
-  // }
-
-  return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: COLORS.lightGray5,
-        marginTop: 40,
-      }}
-    >
-      {renderBooksList()}
-    </SafeAreaView>
+      <View style={{ marginBottom: SIZES.radius * 2 }}></View>
+    </View>
   );
 };
 export default ShopScreen;
+// const renderItem = ({ item }) => (
+//   <View
+//     style={{
+//       flexGrow: 4,
+//     }}
+//   >
+//     <TouchableOpacity
+//       style={{
+//         marginTop: SIZES.padding * 2,
+//         marginBottom: SIZES.padding,
+//       }}
+//       onPress={() =>
+//         navigation.navigate("BookDescriptionScreen", {
+//           books: item,
+//         })
+//       }
+//     >
+//       <View
+//         style={{
+//           marginBottom: SIZES.radius,
+//         }}
+//       >
+//         <Image
+//           source={item.image}
+//           resizeMode="cover"
+//           style={{
+//             width: "50%",
+//             height: 150,
+//           }}
+//         />
+//       </View>
+//     </TouchableOpacity>
+//   </View>
+// );
+
+// function renderBooksList() {
+//   return (
+//     <FlatList
+//       style={{
+//         paddingHorizontal: SIZES.padding,
+//         paddingBottom: 30,
+//       }}
+//       data={books.books}
+//       keyExtractor={(item) => `${item.id}`}
+//       renderItem={renderItem}
+//     />
+//   );
+// }
+
+//   return (
+//     <SafeAreaView
+//       style={{
+//         flex: 1,
+//         backgroundColor: COLORS.lightGray5,
+//         marginTop: 40,
+//       }}
+//     >
+//       {renderBooksList()}
+//       <View style={{ marginBottom: 120 }}></View>
+//     </SafeAreaView>
+//   );
+// };
+// export default ShopScreen;

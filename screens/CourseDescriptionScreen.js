@@ -163,7 +163,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
             // marginVertical: "8%",
             // marginHorizontal: "8%",
             position: "absolute",
-            top: 40,
+            top: 10,
             left: 20,
             width: 40,
             height: 40,
@@ -196,28 +196,6 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
 
   function renderCourseOptions() {
     return (
-      // <View
-      //   style={{
-      //     flexDirection: "row",
-      //   }}
-      // >
-      //   <SelectTab
-      //     containerStyle={{
-      //       width: "30%",
-      //     }}
-      //     label="Description"
-      //     selected={selectedTab == 0}
-      //     onPress={() => setSelectedTab(0)}
-      //   />
-      //   <SelectTab
-      //     containerStyle={{
-      //       width: "30%",
-      //     }}
-      //     label="Content"
-      //     selected={selectedTab == 1}
-      //     onPress={() => setSelectedTab(1)}
-      //   />
-      // </View>
       <View
         style={{
           flex: 1,
@@ -276,19 +254,25 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
 
   function renderEnrollButton() {
     return (
-      <TextButton
-        label="Enroll"
-        contentContainerStyle={{
-          height: "100%",
-          //width: "50%",
-          paddingHorizontal: SIZES.padding,
-          borderRadius: 30,
-          backgroundColor: COLORS.caribbeanGreen,
+      <View
+        style={{
+          marginBottom: SIZES.padding,
+          marginHorizontal: SIZES.padding,
         }}
-        labelStyle={{
-          color: COLORS.white,
-        }}
-      />
+      >
+        <TextButton
+          label="Enroll"
+          contentContainerStyle={{
+            height: "100%",
+            paddingHorizontal: SIZES.padding,
+            borderRadius: 30,
+            backgroundColor: COLORS.caribbeanGreen,
+          }}
+          labelStyle={{
+            color: COLORS.white,
+          }}
+        />
+      </View>
     );
   }
   if (courses) {
@@ -320,7 +304,8 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
 
         <View
           style={{
-            height: "7%",
+            height: "9%",
+            backgroundColor: COLORS.lightTextGray,
           }}
         >
           {renderEnrollButton()}

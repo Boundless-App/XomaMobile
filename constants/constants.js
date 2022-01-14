@@ -117,6 +117,13 @@ const course_details_tabs = [
   },
 ];
 
+const heading1 = [
+  {
+    heading:
+      "Take advantage of free resoorces to guide you on your learning or teaching journey",
+  },
+];
+
 export default {
   //   register_options,
   //   walkthrough,
@@ -124,4 +131,5 @@ export default {
   //   screens,
   //   bottom_tabs,
   course_details_tabs,
+  heading1,
 };

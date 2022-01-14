@@ -12,23 +12,8 @@ import {
 } from "react-native";
 
 import { COLORS, FONTS, SIZES, icons, courses } from "../constants";
-import { LineDivider, TextButton } from "../components";
+import { LineDivider, TextButton, VerticalLineDivider } from "../components";
 import { HorizontalCourseCard } from "../components";
-
-const VerticalLineDivider = () => {
-  return (
-    <View
-      style={{
-        width: 1,
-        paddingVertical: 15,
-      }}
-    >
-      <View
-        style={{ flex: 1, borderLeftColor: COLORS.lightGray, borderLeftWidth: 1 }}
-      ></View>
-    </View>
-  );
-};
 
 const CoursesScreen = ({ navigation }) => {
   function renderButtonSection() {
@@ -40,7 +25,6 @@ const CoursesScreen = ({ navigation }) => {
           padding: SIZES.padding,
         }}
       >
-        <StatusBar />
         <View
           style={{
             flexDirection: "row",
@@ -75,7 +59,7 @@ const CoursesScreen = ({ navigation }) => {
           </TouchableOpacity>
 
           {/* Divider */}
-          {VerticalLineDivider()}
+          <VerticalLineDivider />
 
           {/* Opportunities */}
           <TouchableOpacity
@@ -121,9 +105,10 @@ const CoursesScreen = ({ navigation }) => {
           <HorizontalCourseCard
             course={item}
             containerStyle={{
-              paddingTop: SIZES.padding2,
-              paddingBottom: SIZES.padding2,
+              paddingTop: SIZES.padding,
+              paddingBottom: SIZES.padding2 * 2,
               marginTop: index == 0 ? SIZES.padding2 : SIZES.padding,
+              // marginBottom: SIZES.font * 3,
             }}
             onPress={() =>
               navigation.navigate("CourseDescriptionScreen", {

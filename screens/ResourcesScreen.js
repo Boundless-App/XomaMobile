@@ -12,7 +12,7 @@ import {
   Linking,
 } from "react-native";
 
-import { HorizontalCourseCard, IconButton } from "../components";
+import { HorizontalCourseCard, IconButton, LineDivider } from "../components";
 import { COLORS, FONTS, SIZES, icons, resources } from "../constants";
 
 const ResourcesScreen = ({ navigation }) => {
@@ -70,24 +70,26 @@ const ResourcesScreen = ({ navigation }) => {
   function renderResources() {
     return (
       <FlatList
-        data={resources}
+        data={resources.resources}
         keyExtractor={(item) => `${item.id}`}
         contentContainerStyle={{
-          marginTop: SIZES.radius,
+          marginTop: SIZES.base,
           paddingHorizontal: SIZES.padding,
-          // paddingBottom: SIZES.padding * 2,
         }}
+        scrollEventThrottle={3}
+        showsVerticalScrollIndicator={false}
         renderItem={(data, rowMap) => (
           <View
             style={{
-              height: 100,
+              height: 120,
               backgroundColor: COLORS.lightGray2,
               flexDirection: "row",
               alignItems: "center",
-              marginTop: SIZES.padding,
+              marginTop: SIZES.base,
+              marginBottom: SIZES.base,
               paddingHorizontal: SIZES.radius,
               borderRadius: SIZES.radius,
-              elevation: 10,
+              elevation: 2,
             }}
           >
             {/* Resource Image */}
@@ -109,6 +111,39 @@ const ResourcesScreen = ({ navigation }) => {
                 }}
               />
             </View>
+            {/* Info */}
+            <View
+              style={{
+                flex: 1,
+              }}
+            >
+              <Text
+                style={{
+                  ...FONTS.h4,
+                }}
+              >
+                {data.item.resource_title}
+              </Text>
+              <Text
+                style={{
+                  ...FONTS.body5,
+                }}
+              >
+                {data.item.description}
+              </Text>
+              {/* URL */}
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    Linking.openURL(data.item.link);
+                  }}
+                >
+                  <Text style={{ ...FONTS.body5, color: COLORS.lightBlue }}>
+                    CLICK TO DOWNLOAD
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         )}
       />
@@ -118,11 +153,32 @@ const ResourcesScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        // backgroundColor: COLORS.lightBlue,
+        // backgroundColor: COLORS.lightGray2,
       }}
     >
       {renderHeader()}
-
+      <View
+        style={{
+          marginTop: SIZES.padding2,
+          alignItems: "center",
+          marginHorizontal: SIZES.base,
+        }}
+      >
+        <Text
+          style={{
+            ...FONTS.h3,
+            color: COLORS.textGray,
+          }}
+        >
+          Take advantage of free resources to guide you on your learning or
+          teaching journey
+        </Text>
+        <LineDivider
+          lineStyle={{
+            backgroundColor: COLORS.lightGray3,
+          }}
+        />
+      </View>
       {renderResources()}
     </View>
   );

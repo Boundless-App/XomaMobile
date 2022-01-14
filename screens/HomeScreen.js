@@ -129,7 +129,7 @@ const HomeScreen = ({ navigation }) => {
           justifyContent: "center",
         }}
       >
-        <StatusBar backgroundColor={COLORS.primary} />
+        <StatusBar backgroundColor={COLORS.status} />
 
         {/* Greetings */}
         <View style={{ flex: 6, paddingRight: "20%" }}>
@@ -345,12 +345,16 @@ const HomeScreen = ({ navigation }) => {
             style={{
               marginTop: SIZES.base,
               marginBottom: SIZES.radius,
-              
             }}
           >
             {renderCoursesData()}
           </View>
         </View>
+        <View
+          style={{
+            marginBottom: SIZES.font * 2,
+          }}
+        ></View>
       </ScrollView>
     </SafeAreaView>
   );

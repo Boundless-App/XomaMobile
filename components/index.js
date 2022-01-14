@@ -2,6 +2,7 @@ import BookCard from "./BookCard";
 import IconButton from "./IconButton";
 import TextButton from "./TextButton";
 import LineDivider from "./LineDivider";
+import VerticalLineDivider from "./VerticalLineDivider";
 import HorizontalCourseCard from "./HorizontalCourseCard";
 import ProgressBar from "./ProgressBar";
 import VerticalShopCard from "./VerticalShopCard";
@@ -22,6 +23,7 @@ export {
   ProgressBar,
   ProfileValue,
   LineDivider,
+  VerticalLineDivider,
   HorizontalCourseCard,
   IconButton,
   TextButton,

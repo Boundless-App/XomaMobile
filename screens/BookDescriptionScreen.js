@@ -8,8 +8,10 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
+import FlashMessage from "react-native-flash-message";
+import { showMessage } from "react-native-flash-message";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
-import { IconButton } from "../components";
+import { IconButton, VerticalLineDivider } from "../components";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(1);
@@ -27,7 +29,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
 
   function renderHeaderSection() {
     return (
-      <SafeAreaView
+      <View
         style={{
           position: "absolute",
           top: 0,
@@ -56,7 +58,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           }}
           containerStyle={{
             position: "absolute",
-            top: 40,
+            top: 10,
             left: 20,
             width: 40,
             height: 40,
@@ -67,7 +69,77 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             borderRadius: SIZES.padding,
           }}
         />
-      </SafeAreaView>
+      </View>
+    );
+  }
+
+  function renderBookTitlePrice() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          position: "absolute",
+          top: "30%",
+          left: "0%",
+          width: "100%",
+          height: "100%",
+          alignItems: "center",
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            paddingVertical: 8,
+            backgroundColor: COLORS.transparentBlack,
+            borderRadius: SIZES.radius,
+          }}
+        >
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                marginTop: 8,
+              }}
+            ></View>
+            <Text
+              style={{
+                ...FONTS.body3,
+                color: COLORS.white,
+              }}
+            >
+              {books.title}
+            </Text>
+          </View>
+          <VerticalLineDivider />
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                ...FONTS.body4,
+                color: COLORS.white,
+              }}
+            >
+              UGX
+            </Text>
+            <Text
+              style={{
+                ...FONTS.body4,
+                color: COLORS.white,
+              }}
+            >
+              {books.price}
+            </Text>
+          </View>
+        </View>
+      </View>
     );
   }
 
@@ -184,6 +256,12 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             justifyContent: "center",
           }}
           // onPress={() => navigation.navigate("Cart")}
+          onPress={() => {
+            showMessage({
+              message: "Item added to cart",
+              type: "success",
+            });
+          }}
         >
           <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
         </TouchableOpacity>
@@ -201,14 +279,17 @@ const BookDescriptionScreen = ({ route, navigation }) => {
       >
         {/* Header section, with image and price */}
         {renderHeaderSection()}
-
+        {/* Book Title and Price */}
+        {renderBookTitlePrice()}
         {/* Book Desctiption */}
+
         {renderBookDescription()}
 
         {/* Add to cart button */}
         <View style={{ height: "10%", marginBottom: "1%" }}>
           {renderBottomButton()}
         </View>
+        <FlashMessage position="top" />
       </View>
     );
   } else {

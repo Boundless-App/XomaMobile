@@ -68,7 +68,7 @@ const CourseDiscussion = () => {
                     paddingVertical: SIZES.base,
                     borderTopWidth: 1,
                     borderBottomWidth: 1,
-                    borderColor: COLORS.gray1,
+                    borderColor: COLORS.lightGray3,
                   }}
                 >
                   {/* Comment */}
