@@ -9,9 +9,12 @@ import {
   BookDescriptionScreen,
   CartScreen,
   CourseDescriptionScreen,
+  OnBoarding,
+  SignUp
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
+import SignIn from "./screens/Authentication/SignIn";
 
 const theme = {
   ...DefaultTheme,
@@ -37,8 +40,13 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={"Home"}
+        initialRouteName={"OnBoarding"}
       >
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+
+        <Stack.Screen name="SignIn" component={SignIn} />
+
+        <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Shop" component={ShopNav} />
         <Stack.Screen name="Courses" component={CourseNav} />
@@ -54,7 +62,7 @@ const App = () => {
           component={BookDescriptionScreen}
         />
         <Stack.Screen name="Cart" component={CartScreen} />
-      </Stack.Navigator>
+      </Stack.Navigator> 
     </NavigationContainer>
   );
 };

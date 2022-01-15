@@ -1,6 +1,9 @@
 import BookCard from "./BookCard";
 import IconButton from "./IconButton";
 import TextButton from "./TextButton";
+import TextIconButton from "./TextIconButton";
+import CustomSwitch from "./CustomSwitch";
+import FormInput from "./FormInput";
 import LineDivider from "./LineDivider";
 import VerticalLineDivider from "./VerticalLineDivider";
 import HorizontalCourseCard from "./HorizontalCourseCard";
@@ -38,4 +41,7 @@ export {
   Incrementer,
   FooterTotal,
   TabIndicator,
+  FormInput,
+  CustomSwitch,
+  TextIconButton,
 };

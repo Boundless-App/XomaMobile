@@ -1,3 +1,8 @@
+//Onboarding screens images
+export const onBoardingScreenOne = require("../assets/images/burgundy-117.png");
+export const onBoardingScreenTwo = require("../assets/images/burgundy-remote-education.png");
+export const onBoardingScreenThree = require("../assets/images/burgundy-library-1.png");
+
 //book images
 export const bookPackageLevel3 = require("../assets/books/BOOK_PACKAGE_LEVEL31_HZLjJS8.max-350x225.png");
 export const bookPackageLevel2 = require("../assets/books/BOOK_PACKAGE_LEVEL23.max-350x225.png");
@@ -46,6 +51,10 @@ export const seatedOnBooks = require("../assets/books/SeatedOnBooks.png");
 export const xomaLogo = require("../assets/images/xoma.png")
 
 export default {
+  onBoardingScreenOne,
+  onBoardingScreenTwo,
+  onBoardingScreenThree,  
+
   bookPackageLevel3,
   bookPackageLevel2,
   bookPackageLevel1,

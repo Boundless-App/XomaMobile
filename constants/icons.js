@@ -26,6 +26,41 @@ export const minus_icon = require("../assets/icons/minus_icon.png");
 export const delete_icon = require("../assets/icons/delete_icon.png");
 export const alignLeft_icon2 = require("../assets/icons/alignLeft_icon2.png");
 export const alignLeft_icon3 = require("../assets/icons/alignLeft_icon3.png");
+export const bill = require("../assets/icons/bill.png");
+export const camera = require("../assets/icons/camera.png");
+export const cancel = require("../assets/icons/cancel.png");
+export const comment = require("../assets/icons/comment.png");
+export const correct = require("../assets/icons/correct.png");
+export const coupon = require("../assets/icons/coupon.png");
+export const cross = require("../assets/icons/cross.png");
+export const down_arrow = require("../assets/icons/down_arrow.png");
+export const education = require("../assets/icons/education.png");
+export const email = require("../assets/icons/email.png");
+export const eye_close = require("../assets/icons/eye_close.png");
+export const eye = require("../assets/icons/eye.png");
+export const favourite = require("../assets/icons/favourite.png");
+export const fb = require("../assets/icons/fb.png");
+export const filter = require("../assets/icons/filter.png");
+export const google = require("../assets/icons/google.png");
+export const help = require("../assets/icons/help.png");
+export const home = require("../assets/icons/home.png");
+export const info = require("../assets/icons/info.png");
+export const location = require("../assets/icons/location.png");
+export const logout = require("../assets/icons/logout.png");
+export const love = require("../assets/icons/love.png");
+export const more = require("../assets/icons/more.png");
+export const new_icon = require("../assets/icons/new.png");
+export const password = require("../assets/icons/password.png");
+export const profile = require("../assets/icons/profile.png");
+export const profile_round = require("../assets/icons/profile_round.png");
+export const setting = require("../assets/icons/setting.png");
+export const star_1 = require("../assets/icons/star_1.png");
+export const star = require("../assets/icons/star.png");
+export const user_outline = require("../assets/icons/user_outline.png");
+export const user = require("../assets/icons/user.png");
+export const wallet = require("../assets/icons/wallet.png");
+export const xoma_logo = require("../assets/icons/xoma-logo.png");
+
 
 export default {
   card_icon,
@@ -56,4 +91,38 @@ export default {
   delete_icon,
   alignLeft_icon2,
   alignLeft_icon3,
+  bill,
+  camera,
+  cancel,
+  comment,
+  correct,
+  coupon,
+  cross,
+  down_arrow,
+  education,
+  email,
+  eye_close,
+  eye,
+  favourite,
+  fb,
+  filter,
+  google,
+  help,
+  home,
+  info,
+  location,
+  logout,
+  love,
+  more,
+  new_icon,
+  password,
+  profile_round,
+  profile,
+  setting,
+  star_1,
+  star,
+  user_outline,
+  user,
+  wallet,
+  xoma_logo,
 };
