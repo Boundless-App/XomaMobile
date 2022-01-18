@@ -18,7 +18,7 @@ const onboarding_screens = [
       backgroundImage: require("../assets/images/burgundy-library-1.png"),
       bannerImage: require("../assets/images/burgundy-library-1.png"),
       title: "An Online Store ",
-      description: "You’ll receive the great food within a hour. And get free delivery credits for every order."
+      description: "You’ll receive the great food within an hour. And get free delivery credits for every order."
   }
 ]
 

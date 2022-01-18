@@ -40,7 +40,11 @@ const SignIn = ({ navigation }) => {
       >
         {/* Form Input */}
         <FormInput
-          label="Email"
+        containerStyle={{
+          marginTop: SIZES.base,
+        }}
+        icons={icons.email}
+          placeholder="Email"
           keyboardType="email-address"
           autoCompleteType="email"
           onChange={(value) => {
@@ -50,6 +54,7 @@ const SignIn = ({ navigation }) => {
             setEmail(value);
           }}
           errorMsg={emailError}
+          
           appendComponent={
             <View
               style={{
@@ -78,13 +83,14 @@ const SignIn = ({ navigation }) => {
         />
 
         <FormInput
-          label="Password"
+          placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
           containerStyle={{
-            marginTop: SIZES.radius,
+            //marginTop: SIZES.padding,
           }}
           onChange={(value) => setPassword(value)}
+          
           appendComponent={
             <TouchableOpacity
               style={{
@@ -110,7 +116,7 @@ const SignIn = ({ navigation }) => {
         <View
           style={{
             flexDirection: "row",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.base,
             justifyContent: "space-between",
           }}
         >
@@ -137,6 +143,7 @@ const SignIn = ({ navigation }) => {
           labelStyle={{
             color: COLORS.white
         }}
+        onPress={() => navigation.navigate("Home")}
           diabled={isEnableSignIn() ? false : true}
           contentContainerStyle={{
             height: 55,
@@ -144,7 +151,7 @@ const SignIn = ({ navigation }) => {
             marginTop: SIZES.radius,
             borderRadius: SIZES.radius,
             backgroundColor: isEnableSignIn()
-              ? COLORS.primary
+              ? COLORS.secondary
               : COLORS.transparentSecondary,
           }}
         />
@@ -166,13 +173,13 @@ const SignIn = ({ navigation }) => {
           </Text>
 
           <TextButton
-            label="Sign Up?"
+            label="Sign Up"
             contentContainerStyle={{
               marginLeft: 3,
               backgroundColor: null,
             }}
             labelStyle={{
-              color: COLORS.primary,
+              color: COLORS.secondary,
               ...FONTS.h3,
             }}
             onPress={() => navigation.navigate("SignUp")}
@@ -180,50 +187,6 @@ const SignIn = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Footer */}
-      {/* <View> */}
-        {/* Facebook */}
-        {/* <TextIconButton
-          containerStyle={{
-            height: 50,
-            alignItems: "center",
-            borderRadius: SIZES.radius,
-            backgroundColor: COLORS.blue,
-          }}
-          icon={icons.fb}
-          iconPosition="LEFT"
-          iconStyle={{
-            tintColor: COLORS.white,
-          }}
-          label="Continue with Facebook"
-          labelSyle={{
-            marginLeft: SIZES.radius,
-            color: COLORS.white,
-          }}
-          onPress={() => console.log("FB")}
-        /> */}
-        
-        {/* Google */}
-        {/* <TextIconButton
-          containerStyle={{
-            height: 50,
-            alignItems: "center",
-            marginTop: SIZES.radius,
-            borderRadius: SIZES.radius,
-            backgroundColor: COLORS.lightGray2,
-          }}
-          icon={icons.google}
-          iconPosition="LEFT"
-          iconStyle={{
-            tintColor: null,
-          }}
-          label="Continue with Google"
-          labelSyle={{
-            marginLeft: SIZES.radius,
-          }}
-          onPress={() => console.log("Google")}
-        /> */}
-      {/* </View> */}
     </AuthLayout>
   );
 };

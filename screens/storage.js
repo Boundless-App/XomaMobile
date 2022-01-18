@@ -1,3 +1,26 @@
+// state ={}
+// componentDidMount() {
+//   if(this.state.autoPlay) this._StartAutoPlay() 
+// }
+
+// _goToNextPage() {
+//     let nextIndex = this._currentIndex + 1 % this._childrenCount
+//   }
+//   _StartAutoPlay() {
+//     this._timerId = setInterval(this._goToNextPage, 5000)
+//   }
+
+//   _StopAutoPlay() {
+//     if(this._timerId) {
+//       clearInterval(this._timerId)
+//       this._timerId = null
+//     }
+
+
+
+
+
+
 // import React from "react";
 // import {
 //   SafeAreaView,

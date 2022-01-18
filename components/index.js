@@ -20,6 +20,7 @@ import CartQuantityBtn from "./CartQuantityBtn";
 import Incrementer from "./Incrementer";
 import FooterTotal from "./FooterTotal";
 import TabIndicator from "./TabIndicator";
+import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
 
 export {
   BookCard,
@@ -44,4 +45,5 @@ export {
   FormInput,
   CustomSwitch,
   TextIconButton,
+  KeyboardAvoidingWrapper,
 };

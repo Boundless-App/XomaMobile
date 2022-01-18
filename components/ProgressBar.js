@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 
 import { COLORS } from "../constants";
 
-const ProgressBar = ({ containerStyle, progress }) => {
+const ProgressBar = ({ containerStyle, progress, progressStyle }) => {
   return (
     <View
       style={{
@@ -22,6 +22,7 @@ const ProgressBar = ({ containerStyle, progress }) => {
           width: progress,
           borderRadius: 10,
           backgroundColor: COLORS.primary,
+          ...progressStyle,
         }}
       ></View>
     </View>

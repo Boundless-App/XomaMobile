@@ -27,6 +27,8 @@ import {
   Section,
 } from "../components";
 
+import AutoScroll from "@homielab/react-native-auto-scroll";
+
 const HomeScreen = ({ navigation }) => {
   const profileData = {
     name: "Eugenia",
@@ -151,7 +153,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           onPress={() => console.log("Notifications")}
           containerStyle={{
-            paddingRight: "5%",
+            paddingRight: "4%",
           }}
         />
 
@@ -162,6 +164,9 @@ const HomeScreen = ({ navigation }) => {
             tintColor: COLORS.primary,
           }}
           onPress={() => navigation.navigate("Cart")}
+          containerStyle={{
+            paddingRight: "4%",
+          }}
         />
       </View>
     );
@@ -171,12 +176,13 @@ const HomeScreen = ({ navigation }) => {
   function renderSlider() {
     const renderItem = ({ item, index }) => {
       return (
+        <AutoScroll endPadding={5}>
         <TouchableOpacity
           style={{
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
-            marginRight: SIZES.padding,
+            marginRight: SIZES.base,
             marginLeft: index == 0 ? SIZES.padding2 : 0,
           }}
         >
@@ -203,6 +209,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
           </View>
         </TouchableOpacity>
+        </AutoScroll>
       );
     };
 

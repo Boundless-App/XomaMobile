@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, KeyboardAvoidingView, ScrollView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { constants, images, FONTS, COLORS, SIZES } from "../../constants";
@@ -11,14 +11,16 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
         flex: 1,
         paddingVertical: SIZES.padding,
         backgroundColor: COLORS.lightGray,
+        paddingHorizontal: SIZES.radius,
+        paddingTop: SIZES.radius * 3
       }}
     >
-      <KeyboardAwareScrollView
+      <KeyboardAvoidingView
         keyboardDismissMode="on-drag"
         contentContainerStyle={{
           flex: 1,
-          paddingHorizontal: SIZES.padding,
-          paddingTop: SIZES.radius
+          paddingVertical: SIZES.padding,
+          
         }}
       >
         {/* App Icon */}
@@ -38,6 +40,10 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
             }}
           />
         </View>
+        
+        <ScrollView
+        showsVerticalScrollIndicator={false}
+        >
 
         {/* Title & Subtitle */}
         <View
@@ -68,7 +74,8 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
         </View>
         {/* Content & Children */}
         {children}
-      </KeyboardAwareScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 };

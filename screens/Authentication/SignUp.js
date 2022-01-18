@@ -43,7 +43,7 @@ const SignUp = ({ navigation }) => {
       >
         {/* Email */}
         <FormInput
-          label="Email"
+          placeholder="Email"
           keyboardType="email-address"
           autoCompleteType="email"
           onChange={(value) => {
@@ -82,7 +82,7 @@ const SignUp = ({ navigation }) => {
 
         {/* Username */}
         <FormInput
-          label="Username"
+          placeholder="Username"
           containerStyle={{
             marginTop: SIZES.padding,
           }}
@@ -119,7 +119,7 @@ const SignUp = ({ navigation }) => {
 
         {/* Password */}
         <FormInput
-          label="Password"
+          placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
           containerStyle={{

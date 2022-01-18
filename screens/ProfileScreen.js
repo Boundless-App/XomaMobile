@@ -8,11 +8,16 @@ import {
   StyleSheet,
 } from "react-native";
 
-import { LineDivider, ProfileValue, ProgressBar } from "../components";
+import {
+  LineDivider,
+  ProfileValue,
+  ProgressBar,
+  TextButton,
+} from "../components";
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   function renderHeader() {
     return (
       <View
@@ -26,7 +31,7 @@ const ProfileScreen = () => {
         <Text
           style={{
             ...FONTS.h1,
-            color: COLORS.primary
+            color: COLORS.primary,
           }}
         >
           My Profile
@@ -69,7 +74,7 @@ const ProfileScreen = () => {
               borderRadius: 40,
               borderWidth: 2,
               borderColor: COLORS.primary,
-              tintColor: COLORS.primary
+              tintColor: COLORS.primary,
             }}
           />
 
@@ -94,7 +99,7 @@ const ProfileScreen = () => {
               }}
             >
               <Image
-                source={icons.read_icon}
+                source={icons.camera}
                 resizeMode="contain"
                 style={{
                   width: 17,
@@ -138,6 +143,9 @@ const ProfileScreen = () => {
             containerStyle={{
               marginTop: SIZES.radius,
             }}
+            progressStyle={{
+              backgroundColor: COLORS.secondary,
+            }}
           />
 
           <View></View>
@@ -158,37 +166,49 @@ const ProfileScreen = () => {
         />
         <LineDivider />
         <ProfileValue icon={icons.read_icon} label="Password" value="******" />
+        <LineDivider lineStyle={{backgroundColor: COLORS.secondary}}/>
+        <TextButton
+          label="Log out"
+          labelStyle={{
+            color: COLORS.primary,
+          }}
+          contentContainerStyle={{
+            height: 60,
+            borderRadius: SIZES.radius,
+            backgroundColor: COLORS.transparent,
+          }}
+          onPress={() => navigation.navigate("SignIn")}
+        />
       </View>
     );
   }
 
   function renderXomaLogo() {
-    return(
+    return (
       <View
-      style={{
-        // flex: 5,
-        // flexDirection: "row",
-        // position: "relative",
-        width: "100%",
-        //height: 300,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: 120,
-        //backgroundColor: COLORS.black,
-      }}
-      >
-        <Image 
-        source={images.xomaLogo}
-        resizeMode="contain"
         style={{
-          width: 120,
-          height: 120,
-          tintColor: COLORS.secondary,
+          // flex: 5,
+          // flexDirection: "row",
+          // position: "relative",
+          width: "100%",
+          //height: 300,
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: 120,
+          //backgroundColor: COLORS.black,
         }}
+      >
+        <Image
+          source={images.xomaLogo}
+          resizeMode="contain"
+          style={{
+            width: 120,
+            height: 120,
+            tintColor: COLORS.secondary,
+          }}
         />
-
       </View>
-    )
+    );
   }
   return (
     <View
