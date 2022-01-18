@@ -8,7 +8,7 @@ import {
   FooterTotal,
 } from "../../components";
 
-import { COLORS, FONTS, SIZES, icons, dummyData } from "../../constants";
+import { COLORS, FONTS, SIZES, icons, dummyData, books } from "../../constants";
 const CartScreen = ({ navigation }) => {
   // Handler
   function updateQtyHandler(newQty, id) {
@@ -76,9 +76,9 @@ const CartScreen = ({ navigation }) => {
           MY CART
         </Text>
         <CartQuantityBtn
-          // quantity={2}
+          quantity={0}
           containerStyle={{
-            marginRight: 20,
+            marginRight: 10,
             marginTop: 10,
           }}
         />

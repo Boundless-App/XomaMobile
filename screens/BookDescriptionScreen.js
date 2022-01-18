@@ -10,10 +10,23 @@ import {
 } from "react-native";
 import FlashMessage from "react-native-flash-message";
 import { showMessage } from "react-native-flash-message";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
-import { IconButton, VerticalLineDivider } from "../components";
+import { COLORS, dummyData, FONTS, icons, SIZES, books } from "../constants";
+import {
+  CartQuantityBtn,
+  IconButton,
+  VerticalLineDivider,
+} from "../components";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
+  const [cart, setCart] = useState();
+
+  useEffect(() => {
+    commerce.cart.retrieve().then((res) => {
+      setCart(res);
+    });
+  }, []);
+  const addToCart = (id, title) => {};
+
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(1);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
@@ -234,7 +247,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   function renderBottomButton() {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <IconButton
+        {/* <IconButton
           icon={icons.cart_icon}
           iconStyle={{
             tintColor: COLORS.primary,
@@ -242,6 +255,15 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
             justifyContent: "center",
+            marginHorizontal: "5%",
+          }}
+        /> */}
+        <CartQuantityBtn
+          quantity={0}
+          onPress={() => navigation.navigate("Cart")}
+          containerStyle={{
+            alignSelf: "center",
+            backgroundColor: COLORS.lightTextGray,
             marginHorizontal: "5%",
           }}
         />
@@ -260,7 +282,8 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             showMessage({
               message: "Item added to cart",
               type: "success",
-            });
+            }),
+              addToCart();
           }}
         >
           <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>

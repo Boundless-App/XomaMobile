@@ -10,7 +10,7 @@ import {
   CartScreen,
   CourseDescriptionScreen,
   OnBoarding,
-  SignUp
+  SignUp,
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
@@ -20,9 +20,9 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    border: "transparent"
-  }
-}
+    border: "transparent",
+  },
+};
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -40,7 +40,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={"OnBoarding"}
+        initialRouteName={"Home"}
       >
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
 
@@ -62,7 +62,7 @@ const App = () => {
           component={BookDescriptionScreen}
         />
         <Stack.Screen name="Cart" component={CartScreen} />
-      </Stack.Navigator> 
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

@@ -13,6 +13,7 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
         justifyContent: "center",
         borderRadius: SIZES.radius,
         backgroundColor: COLORS.white,
+        paddingRight: 20,
         ...containerStyle,
       }}
       onPress={onPress}
@@ -20,9 +21,9 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
       <Image
         source={icons.cart_icon}
         style={{
-          width: 20,
-          height: 20,
-          tintColor: COLORS.black,
+          width: 30,
+          height: 30,
+          tintColor: COLORS.primary,
           ...iconStyle,
         }}
       />
@@ -30,22 +31,22 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
       <View
         style={{
           position: "absolute",
-          top: 5,
-          right: 5,
-          height: 15,
-          width: 15,
+          top: 1,
+          right: 4,
+          height: 20,
+          width: 20,
           alignItems: "center",
           justifyContent: "center",
           borderRadius: SIZES.radius,
-          backgroundColor: COLORS.primary,
+          backgroundColor: COLORS.secondary,
         }}
       >
         <Text
           style={{
             color: COLORS.white,
             ...FONTS.body5,
-            lineHeight: 0,
             fontSize: 10,
+            top: -2,
           }}
         >
           {quantity}

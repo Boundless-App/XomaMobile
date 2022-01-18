@@ -21,6 +21,7 @@ import {
 } from "../constants";
 
 import {
+  CartQuantityBtn,
   HorizontalCourseCard,
   IconButton,
   LineDivider,
@@ -158,14 +159,12 @@ const HomeScreen = ({ navigation }) => {
         />
 
         {/* Cart */}
-        <IconButton
-          icon={icons.cart_icon}
-          iconStyle={{
-            tintColor: COLORS.primary,
-          }}
+
+        <CartQuantityBtn
+          quantity={0}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
-            paddingRight: "4%",
+            backgroundColor: COLORS.lightGray5,
           }}
         />
       </View>
@@ -177,38 +176,38 @@ const HomeScreen = ({ navigation }) => {
     const renderItem = ({ item, index }) => {
       return (
         <AutoScroll endPadding={5}>
-        <TouchableOpacity
-          style={{
-            borderRadius: SIZES.radius,
-            alignItems: "center",
-            justifyContent: "center",
-            marginRight: SIZES.base,
-            marginLeft: index == 0 ? SIZES.padding2 : 0,
-          }}
-        >
-          <Image
-            source={item.poster}
-            resizeMode="cover"
-            style={{ width: 300, height: 110, borderRadius: 20 }}
-          />
-          <View
+          <TouchableOpacity
             style={{
-              position: "absolute",
-              bottom: 0,
-              height: 50,
-              width: SIZES.width * 0.3,
-              backgroundColor: COLORS.white,
-              borderTopRightRadius: SIZES.radius,
-              borderBottomLeftRadius: SIZES.radius,
+              borderRadius: SIZES.radius,
               alignItems: "center",
               justifyContent: "center",
-              flexDirection: "row-reverse",
-              alignSelf: "flex-start",
+              marginRight: SIZES.base,
+              marginLeft: index == 0 ? SIZES.padding2 : 0,
             }}
           >
-            <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
-          </View>
-        </TouchableOpacity>
+            <Image
+              source={item.poster}
+              resizeMode="cover"
+              style={{ width: 300, height: 110, borderRadius: 20 }}
+            />
+            <View
+              style={{
+                position: "absolute",
+                bottom: 0,
+                height: 50,
+                width: SIZES.width * 0.3,
+                backgroundColor: COLORS.white,
+                borderTopRightRadius: SIZES.radius,
+                borderBottomLeftRadius: SIZES.radius,
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row-reverse",
+                alignSelf: "flex-start",
+              }}
+            >
+              <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
+            </View>
+          </TouchableOpacity>
         </AutoScroll>
       );
     };
