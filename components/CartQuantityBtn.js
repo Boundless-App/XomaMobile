@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { connect } from "react-redux";
 
 import { COLORS, FONTS, SIZES, icons } from "../constants";
+import cartItems from "../screens/Cart/Reducers/cartItem";
 
 const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
   return (
@@ -49,11 +51,17 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
             top: -2,
           }}
         >
-          {quantity}
+          {cartItems.length}
         </Text>
       </View>
     </TouchableOpacity>
   );
 };
 
-export default CartQuantityBtn;
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state,
+  };
+};
+
+export default connect()(CartQuantityBtn);

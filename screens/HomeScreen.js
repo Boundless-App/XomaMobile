@@ -161,7 +161,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Cart */}
 
         <CartQuantityBtn
-          quantity={0}
+          // quantity={0}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
             backgroundColor: COLORS.lightGray5,
@@ -175,7 +175,7 @@ const HomeScreen = ({ navigation }) => {
   function renderSlider() {
     const renderItem = ({ item, index }) => {
       return (
-        <AutoScroll endPadding={5}>
+        <AutoScroll endPadding={1}>
           <TouchableOpacity
             style={{
               borderRadius: SIZES.radius,

@@ -8,6 +8,8 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
+
+import { connect } from "react-redux";
 import FlashMessage from "react-native-flash-message";
 import { showMessage } from "react-native-flash-message";
 import { COLORS, dummyData, FONTS, icons, SIZES, books } from "../constants";
@@ -18,14 +20,14 @@ import {
 } from "../components";
 
 const BookDescriptionScreen = ({ route, navigation }) => {
-  const [cart, setCart] = useState();
+  // const [cart, setCart] = React.useState();
 
-  useEffect(() => {
-    commerce.cart.retrieve().then((res) => {
-      setCart(res);
-    });
-  }, []);
-  const addToCart = (id, title) => {};
+  // React.useEffect(() => {
+  //   commerce.cart.retrieve().then((res) => {
+  //     setCart(res);
+  //   });
+  // }, []);
+  // const addToCart = (id, title) => {};
 
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(1);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
@@ -247,19 +249,8 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   function renderBottomButton() {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
-        {/* <IconButton
-          icon={icons.cart_icon}
-          iconStyle={{
-            tintColor: COLORS.primary,
-          }}
-          onPress={() => navigation.navigate("Cart")}
-          containerStyle={{
-            justifyContent: "center",
-            marginHorizontal: "5%",
-          }}
-        /> */}
         <CartQuantityBtn
-          quantity={0}
+          // quantity={0}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
             alignSelf: "center",
@@ -282,8 +273,10 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             showMessage({
               message: "Item added to cart",
               type: "success",
-            }),
-              addToCart();
+            });
+            {
+              books.id;
+            }
           }}
         >
           <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
@@ -320,4 +313,19 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   }
 };
 
-export default BookDescriptionScreen;
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItemToCart: (id) => dispatch({ type: "ADD_TO_CART", payload: id }),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookDescriptionScreen);

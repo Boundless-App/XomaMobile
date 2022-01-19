@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, FlatList } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
+import { connect } from "react-redux";
 import {
   Incrementer,
   CartQuantityBtn,
@@ -76,7 +77,7 @@ const CartScreen = ({ navigation }) => {
           MY CART
         </Text>
         <CartQuantityBtn
-          quantity={0}
+          // quantity={0}
           containerStyle={{
             marginRight: 10,
             marginTop: 10,
@@ -211,4 +212,9 @@ const CartScreen = ({ navigation }) => {
   );
 };
 
-export default CartScreen;
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state,
+  };
+};
+export default connect(mapStateToProps)(CartScreen);

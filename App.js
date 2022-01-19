@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { Provider } from "react-redux";
 
 import {
   ProfileScreen,
@@ -15,6 +16,7 @@ import {
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
 import SignIn from "./screens/Authentication/SignIn";
+import store from "./screens/Cart/store";
 
 const theme = {
   ...DefaultTheme,
@@ -37,33 +39,35 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{ headerShown: false }}
-        initialRouteName={"Home"}
-      >
-        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName={"OnBoarding"}
+        >
+          <Stack.Screen name="OnBoarding" component={OnBoarding} />
 
-        <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="SignIn" component={SignIn} />
 
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Home" component={Tabs} />
-        <Stack.Screen name="Shop" component={ShopNav} />
-        <Stack.Screen name="Courses" component={CourseNav} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="Resources" component={ResourcesScreen} />
-        <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
-        <Stack.Screen
-          name="CourseDescriptionScreen"
-          component={CourseDescriptionScreen}
-        />
-        <Stack.Screen
-          name="BookDescriptionScreen"
-          component={BookDescriptionScreen}
-        />
-        <Stack.Screen name="Cart" component={CartScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen name="Shop" component={ShopNav} />
+          <Stack.Screen name="Courses" component={CourseNav} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Resources" component={ResourcesScreen} />
+          <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
+          <Stack.Screen
+            name="CourseDescriptionScreen"
+            component={CourseDescriptionScreen}
+          />
+          <Stack.Screen
+            name="BookDescriptionScreen"
+            component={BookDescriptionScreen}
+          />
+          <Stack.Screen name="Cart" component={CartScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
