@@ -119,7 +119,7 @@ const OnBoarding = ({ navigation }) => {
               labelStyle={{
                 color: COLORS.secondary,
               }}
-              onPress={() => navigation.replace("SignIn")}
+              onPress={() => navigation.replace("Home")}
             />
             <TextButton
               label="Next"

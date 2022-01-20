@@ -1,3 +1,108 @@
+//------------------------------------------------- Home screen
+// Shop books
+  // function renderMyTrendsSection(myTrends) {
+  //   const renderItem = ({ item, index }) => {
+  //     return (
+  //       <TouchableOpacity
+  //         style={{
+  //           flex: 1,
+  //           marginLeft: index == 0 ? SIZES.padding2 : 0,
+  //           marginRight: SIZES.padding,
+  //         }}
+  //         onPress={() =>
+  //           navigation.navigate("BookDescriptionScreen", {
+  //             books: item,
+  //           })
+  //         }
+  //       >
+  //         {/* Book Cover */}
+  //         <Image
+  //           source={item.bookCover}
+  //           resizeMode="cover"
+  //           style={{ width: 180, height: 250, borderRadius: 20 }}
+  //         />
+  //         <Text
+  //           style={{
+  //             ...FONTS.body4,
+  //           }}
+  //         >
+  //           {item.bookName}
+  //         </Text>
+  //       </TouchableOpacity>
+  //     );
+  //   };
+
+  //   return (
+  //     <View style={{ flex: 1 }}>
+  //       {/* Header */}
+
+  //       <Section
+  //         title="Trending Books"
+  //         onPress={() => navigation.navigate("ShopScreen")}
+  //       />
+  //       {/* Books */}
+  //       <View style={{ flex: 1, marginTop: SIZES.padding }}>
+  //         <FlatList
+  //           data={myTrends}
+  //           renderItem={renderItem}
+  //           keyExtractor={(item) => `${item.id}`}
+  //           horizontal
+  //           showsHorizontalScrollIndicator={false}
+  //         />
+  //       </View>
+  //     </View>
+  //   );
+  // }
+
+  // // Course list
+  // function renderCoursesHeader() {
+  //   return (
+  //     <Section
+  //       title="Popular Courses"
+  //       onPress={() => navigation.navigate("CoursesScreen")}
+  //     />
+  //   );
+  // }
+
+  // function renderCoursesData() {
+  //   return (
+  //     <FlatList
+  //       data={coursesData.coursesData}
+  //       listKey="Courses"
+  //       showsVerticalScrollIndicator={false}
+  //       keyExtractor={(item) => `Courses-${item.id}`}
+  //       contentContainerStyle={{
+  //         marginTop: SIZES.padding,
+  //         paddingHorizontal: SIZES.padding,
+  //       }}
+  //       renderItem={({ item, index }) => (
+  //         <HorizontalCourseCard
+  //           course={item}
+  //           containerStyle={{
+  //             paddingTop: SIZES.padding2,
+  //             paddingBottom: SIZES.padding2,
+  //             marginTop: index == 0 ? SIZES.base : SIZES.padding,
+  //           }}
+  //           onPress={() =>
+  //             navigation.navigate("CourseDescriptionScreen", {
+  //               courses: item,
+  //             })
+  //           }
+  //         />
+  //       )}
+  //       // ItemSeparatorComponent={() => (
+  //       //   <LineDivider
+  //       //     lineStyle={{
+  //       //       backgroundColor: COLORS.lightTextGray,
+  //       //       marginTop: SIZES.base,
+  //       //     }}
+  //       //   />
+  //       // )}
+  //     />
+  //   );
+  // }
+//-------------------------------------------------
+
 // state ={}
 // componentDidMount() {
 //   if(this.state.autoPlay) this._StartAutoPlay() 

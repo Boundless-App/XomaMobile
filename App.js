@@ -44,7 +44,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
-          initialRouteName={"OnBoarding"}
+          initialRouteName={"Home"}
         >
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
 

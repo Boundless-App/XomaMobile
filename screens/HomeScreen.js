@@ -29,6 +29,7 @@ import {
 } from "../components";
 
 import AutoScroll from "@homielab/react-native-auto-scroll";
+import SectionCard from "../components/SectionCard";
 
 const HomeScreen = ({ navigation }) => {
   const profileData = {
@@ -188,7 +189,7 @@ const HomeScreen = ({ navigation }) => {
             <Image
               source={item.poster}
               resizeMode="cover"
-              style={{ width: 300, height: 110, borderRadius: 20 }}
+              style={{ width: 350, height: 150, borderRadius: 20 }}
             />
             <View
               style={{
@@ -223,156 +224,93 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
-  // // Shop books
-  // function renderMyTrendsSection(myTrends) {
-  //   const renderItem = ({ item, index }) => {
-  //     return (
-  //       <TouchableOpacity
-  //         style={{
-  //           flex: 1,
-  //           marginLeft: index == 0 ? SIZES.padding2 : 0,
-  //           marginRight: SIZES.padding,
-  //         }}
-  //         onPress={() =>
-  //           navigation.navigate("BookDescriptionScreen", {
-  //             books: item,
-  //           })
-  //         }
-  //       >
-  //         {/* Book Cover */}
-  //         <Image
-  //           source={item.bookCover}
-  //           resizeMode="cover"
-  //           style={{ width: 180, height: 250, borderRadius: 20 }}
-  //         />
-  //         <Text
-  //           style={{
-  //             ...FONTS.body4,
-  //           }}
-  //         >
-  //           {item.bookName}
-  //         </Text>
-  //       </TouchableOpacity>
-  //     );
-  //   };
-
-  //   return (
-  //     <View style={{ flex: 1 }}>
-  //       {/* Header */}
-
-  //       <Section
-  //         title="Trending Books"
-  //         onPress={() => navigation.navigate("ShopScreen")}
-  //       />
-  //       {/* Books */}
-  //       <View style={{ flex: 1, marginTop: SIZES.padding }}>
-  //         <FlatList
-  //           data={myTrends}
-  //           renderItem={renderItem}
-  //           keyExtractor={(item) => `${item.id}`}
-  //           horizontal
-  //           showsHorizontalScrollIndicator={false}
-  //         />
-  //       </View>
-  //     </View>
-  //   );
-  // }
-
-  // // Course list
-  // function renderCoursesHeader() {
-  //   return (
-  //     <Section
-  //       title="Popular Courses"
-  //       onPress={() => navigation.navigate("CoursesScreen")}
-  //     />
-  //   );
-  // }
-
-  // function renderCoursesData() {
-  //   return (
-  //     <FlatList
-  //       data={coursesData.coursesData}
-  //       listKey="Courses"
-  //       showsVerticalScrollIndicator={false}
-  //       keyExtractor={(item) => `Courses-${item.id}`}
-  //       contentContainerStyle={{
-  //         marginTop: SIZES.padding,
-  //         paddingHorizontal: SIZES.padding,
-  //       }}
-  //       renderItem={({ item, index }) => (
-  //         <HorizontalCourseCard
-  //           course={item}
-  //           containerStyle={{
-  //             paddingTop: SIZES.padding2,
-  //             paddingBottom: SIZES.padding2,
-  //             marginTop: index == 0 ? SIZES.base : SIZES.padding,
-  //           }}
-  //           onPress={() =>
-  //             navigation.navigate("CourseDescriptionScreen", {
-  //               courses: item,
-  //             })
-  //           }
-  //         />
-  //       )}
-  //       // ItemSeparatorComponent={() => (
-  //       //   <LineDivider
-  //       //     lineStyle={{
-  //       //       backgroundColor: COLORS.lightTextGray,
-  //       //       marginTop: SIZES.base,
-  //       //     }}
-  //       //   />
-  //       // )}
-  //     />
-  //   );
-  // }
-
   function renderOptions() {
     return (
       <View
         style={{
-          backgroundColor: COLORS.lightBlue,
+          flexDirection: "column",
+          height: "75%",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginTop: SIZES.padding * 2,
         }}
-      ></View>
+      >
+        <View
+          style={{
+            flexDirection: "row",
+          }}
+        >
+          <SectionCard
+            sectionTitle="Go Shopping"
+            icon={images.bookLover}
+            containerStyle={{
+              margin: SIZES.padding,
+            }}
+          />
+
+          <SectionCard
+            sectionTitle="Start Learning"
+            icon={images.bookLover}
+            containerStyle={{
+              margin: SIZES.padding,
+            }}
+          />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            //height: "50%",
+          }}
+        >
+          <SectionCard
+            sectionTitle="Resources & Opportunities"
+            icon={images.bookLover}
+            containerStyle={{
+              margin: SIZES.padding,
+            }}
+          />
+
+          <SectionCard
+            sectionTitle="Book a Mentor"
+            icon={images.bookLover}
+            containerStyle={{
+              margin: SIZES.padding,
+            }}
+          />
+        </View>
+      </View>
     );
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: "column",
+        backgroundColor: COLORS.lightGray,
+      }}
+    >
       {/* Header Section */}
-      <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
-
+      <View
+        style={{
+          height: "20%",
+        }}
+      >
+        {renderHeader(profile)}
+      </View>
       {/* Body Section */}
-      <View style={{ marginTop: SIZES.padding }}>
+      <View style={{ flexDirection: "column", marginTop: SIZES.padding }}>
         {/* Top Slider */}
-        <View>{renderSlider()}</View>
-
-        {/* Trending Books Slider */}
-        {/* <View style={{ marginTop: SIZES.padding2 }}>
-          {renderMyTrendsSection(myTrends)}
-        </View> */}
-
-        {/* Courses Slider */}
-        {/* <View style={{ marginTop: SIZES.padding2 }}>
-          <View>{renderCoursesHeader()}</View>
-          <View
-            style={{
-              marginTop: SIZES.base,
-              marginBottom: SIZES.radius,
-            }}
-          >
-            {renderCoursesData()}
-          </View>
-        </View> */}
-        {/* <View
-          style={{
-            marginBottom: SIZES.font * 2,
-          }}
-        ></View> */}
+        <View>
+          {renderSlider()}
+        </View>
+        
       </View>
       <View
         style={{
-          flex: 2,
-          backgroundColor: COLORS.secondary,
+          marginTop: SIZES.padding,
+          //backgroundColor: COLORS.secondary,
         }}
       >
         <View>{renderOptions()}</View>
