@@ -17,6 +17,11 @@ const ShopScreen = ({ navigation }) => {
       style={{
         marginTop: SIZES.padding * 2,
         marginBottom: SIZES.padding,
+        backgroundColor: COLORS.white,
+        borderRadius: SIZES.padding,
+        height: 300,
+        width: "100%",
+        elevation: 5,
       }}
       onPress={() =>
         navigation.navigate("BookDescriptionScreen", {
@@ -36,11 +41,18 @@ const ShopScreen = ({ navigation }) => {
           style={{
             width: "100%",
             height: 200,
-            borderRadius: SIZES.radius,
+            borderTopLeftRadius: SIZES.padding,
+            borderTopRightRadius: SIZES.padding,
           }}
         />
       </View>
-      <Text style={{ ...FONTS.body3, color: COLORS.textGray }}>
+      <Text
+        style={{
+          ...FONTS.body3,
+          color: COLORS.secondary,
+          paddingHorizontal: SIZES.base,
+        }}
+      >
         {item.title}
       </Text>
 
@@ -54,13 +66,14 @@ const ShopScreen = ({ navigation }) => {
         <Text
           style={{
             ...FONTS.h3,
-            color: COLORS.black,
+            color: COLORS.textGray,
+            paddingHorizontal: SIZES.base,
           }}
         >
           UGX {item.price}
         </Text>
       </View>
-      <LineDivider />
+      {/* <LineDivider /> */}
     </TouchableOpacity>
   );
 
@@ -82,7 +95,7 @@ const ShopScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.lightGray5,
+        backgroundColor: COLORS.white,
         marginTop: 10,
       }}
     >

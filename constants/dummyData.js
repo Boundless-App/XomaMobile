@@ -462,11 +462,117 @@ const resources = [
   },
 ];
 
-const opportunities = [
+const scholarships = [
   {
     id: 1,
-    title: "",
-    link: "",
+    title:
+      "• Maastricht University Holland High Potential Scholarship 2022/2023 for International Students",
+    link: "https://www.maastrichtuniversity.nl/support/your-studies-begin/coming-maastricht-university-abroad/scholarships/maastricht-university",
+  },
+  {
+    id: 2,
+    title:
+      "• Columbia Law School Human Rights LL.M. Fellowship 2022/2023 for International Students",
+    link: "https://www.law.columbia.edu/admissions/graduate-admissions/llm/financial-aid-fellowships-and-scholarships/human-rights-fellowship",
+  },
+  {
+    id: 3,
+    title:
+      "• Gates Cambridge Scholarships (Fully-funded Masters & PhD) in UK 2022/2023 for International Students",
+    link: "https://www.gatescambridge.org/apply/eligibility/",
+  },
+  {
+    id: 4,
+    title:
+      "• WAAW Foundation Undergraduate STEM Scholarships 2022 for Young African Women",
+    link: "https://waawfoundation.org/scholarships./",
+  },
+  {
+    id: 5,
+    title:
+      "• Cambridge Trust Undergraduate and Graduate Scholarships 2020/2021 for International Students",
+    link: "https://www.cambridgetrust.org/scholarships/",
+  },
+  {
+    id: 6,
+    title:
+      "• University of Michigan African Presidential Scholars Programme (UMAPS) 2022/2023",
+    link: "https://ii.umich.edu/asc/umaps.html",
+  },
+  {
+    id: 7,
+    title:
+      "• Equity and Merit Scholarships for international master’s students",
+    link: "https://www.manchester.ac.uk/study/masters/funding/international/equity-merit-scholarships/",
+  },
+];
+
+const internships = [
+  {
+    id: 1,
+    title:
+      "• ABSA Global Markets Graduate Programme 2021 for Graduate Africans",
+    link: "https://absa.wd3.myworkdayjobs.com/en-US/ABSAcareersite/job/Sandton/Global-Markets-Graduate_R-15923138",
+  },
+  {
+    id: 2,
+    title:
+      "• Opening Soon: United Nations University Office of the Rector Junior Fellows Internship Programme 2022 – Japan",
+    link: "https://unu.edu/about/internship/junior-fellows-internship-programme.html#overview",
+  },
+];
+
+const fellowships = [
+  {
+    id: 1,
+    title:
+      "• Harvard I Tatti/DHI Rom Joint Fellowship for African Studies 2022/2023",
+    link: "http://itatti.harvard.edu/i-tatti-dhi-rom-joint-fellowship-african-studies",
+  },
+  {
+    id: 2,
+    title:
+      "• European Union Global Cultural Relations Programme 2021 for Young Leaders",
+    link: "https://www.cultureinexternalrelations.eu/2021/09/01/apply-for-the-global-cultural-relations-programme-2021/",
+  },
+  {
+    id: 3,
+    title:
+      "• Mo Ibrahim Foundation Leadership Fellowship Programme (Fully-funded to work at AfDB or ITC) 2022/2023",
+    link: "https://mo.ibrahim.foundation/fellowships",
+  },
+];
+const contests = [
+  {
+    id: 1,
+    title:
+      "• Bournemouth Uni New Media Writing Prize 2021 for Students and Professionals",
+    link: "https://newmediawritingprize.co.uk/",
+  },
+  {
+    id: 2,
+    title: "• Commonwealth Short Story Prize 2022 for Commonwealth Countries",
+    link: "https://www.commonwealthwriters.org/shortstoryprize/info/",
+  },
+  {
+    id: 3,
+    title: "• WFP Innovation Accelerator 2021 for Solutions to Hunger",
+    link: "https://innovation.wfp.org/apply",
+  },
+  {
+    id: 4,
+    title:
+      "• USAID Youth Excel: Our Knowledge, Leading Change Program 2021 for Young Africans",
+    link: "http://afterschoolafrica.com/58181/usaid-youth-excel-our-knowledge-leading-change-program-2021-for-young-africans/",
+  },
+];
+
+const entrepreneurship = [
+  {
+    id: 1,
+    title:
+      "• Ultimate List: 40+ Business Funding Opportunities & Awards for African Entrepreneurs",
+    link: "https://www.afterschoolafrica.com/9200/business-plan-competitions-and-awards-for-african-entrepreneurs/",
   },
 ];
 
@@ -661,6 +767,16 @@ const courses_details = {
     },
   ],
 };
+
+const Heading1 = {
+  heading:
+    "Take advantage of free resoorces to guide you on your learning or teaching journey",
+};
+
+const Heading2 = {
+  heading:
+    "Explore entry-level jobs, funding and training opportunities, fellowships, scholarships and volunteer opportunities",
+};
 export default {
   // categories,
   // courses_list_1,
@@ -671,12 +787,11 @@ export default {
   resources,
   myCart,
   courses_details,
+  Heading1,
+  Heading2,
+  scholarships,
+  internships,
+  fellowships,
+  contests,
+  entrepreneurship,
 };
-
-// {
-//   heading: "Take advantage of free resoorces to guide you on your learning or teaching journey"
-// },
-
-// {
-//   Explore entry-level jobs, funding and training opportunities, fellowships, scholarships and volunteer opportunities
-// }

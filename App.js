@@ -10,6 +10,7 @@ import {
   BookDescriptionScreen,
   CartScreen,
   CourseDescriptionScreen,
+  LessonScreen,
   OnBoarding,
   SignUp,
 } from "./screens/";
@@ -60,6 +61,7 @@ const App = () => {
             name="CourseDescriptionScreen"
             component={CourseDescriptionScreen}
           />
+          <Stack.Screen name="LessonScreen" component={LessonScreen} />
           <Stack.Screen
             name="BookDescriptionScreen"
             component={BookDescriptionScreen}

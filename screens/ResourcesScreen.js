@@ -13,7 +13,14 @@ import {
 } from "react-native";
 
 import { HorizontalCourseCard, IconButton, LineDivider } from "../components";
-import { COLORS, FONTS, SIZES, icons, resources } from "../constants";
+import {
+  COLORS,
+  FONTS,
+  SIZES,
+  icons,
+  resources,
+  dummyData,
+} from "../constants";
 
 const ResourcesScreen = ({ navigation }) => {
   function renderHeader() {
@@ -170,8 +177,9 @@ const ResourcesScreen = ({ navigation }) => {
             color: COLORS.textGray,
           }}
         >
-          Take advantage of free resources to guide you on your learning or
-          teaching journey
+          {/* Take advantage of free resources to guide you on your learning or
+          teaching journey */}
+          {dummyData.Heading1.heading}
         </Text>
         <LineDivider
           lineStyle={{

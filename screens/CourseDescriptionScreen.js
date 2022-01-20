@@ -271,6 +271,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           labelStyle={{
             color: COLORS.white,
           }}
+          onPress={() => navigation.navigate("LessonScreen")}
         />
       </View>
     );

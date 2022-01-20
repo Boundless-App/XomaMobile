@@ -223,129 +223,136 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
-  // Shop books
-  function renderMyTrendsSection(myTrends) {
-    const renderItem = ({ item, index }) => {
-      return (
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            marginLeft: index == 0 ? SIZES.padding2 : 0,
-            marginRight: SIZES.padding,
-          }}
-          onPress={() =>
-            navigation.navigate("BookDescriptionScreen", {
-              books: item,
-            })
-          }
-        >
-          {/* Book Cover */}
-          <Image
-            source={item.bookCover}
-            resizeMode="cover"
-            style={{ width: 180, height: 250, borderRadius: 20 }}
-          />
-          <Text
-            style={{
-              ...FONTS.body4,
-            }}
-          >
-            {item.bookName}
-          </Text>
-        </TouchableOpacity>
-      );
-    };
+  // // Shop books
+  // function renderMyTrendsSection(myTrends) {
+  //   const renderItem = ({ item, index }) => {
+  //     return (
+  //       <TouchableOpacity
+  //         style={{
+  //           flex: 1,
+  //           marginLeft: index == 0 ? SIZES.padding2 : 0,
+  //           marginRight: SIZES.padding,
+  //         }}
+  //         onPress={() =>
+  //           navigation.navigate("BookDescriptionScreen", {
+  //             books: item,
+  //           })
+  //         }
+  //       >
+  //         {/* Book Cover */}
+  //         <Image
+  //           source={item.bookCover}
+  //           resizeMode="cover"
+  //           style={{ width: 180, height: 250, borderRadius: 20 }}
+  //         />
+  //         <Text
+  //           style={{
+  //             ...FONTS.body4,
+  //           }}
+  //         >
+  //           {item.bookName}
+  //         </Text>
+  //       </TouchableOpacity>
+  //     );
+  //   };
 
+  //   return (
+  //     <View style={{ flex: 1 }}>
+  //       {/* Header */}
+
+  //       <Section
+  //         title="Trending Books"
+  //         onPress={() => navigation.navigate("ShopScreen")}
+  //       />
+  //       {/* Books */}
+  //       <View style={{ flex: 1, marginTop: SIZES.padding }}>
+  //         <FlatList
+  //           data={myTrends}
+  //           renderItem={renderItem}
+  //           keyExtractor={(item) => `${item.id}`}
+  //           horizontal
+  //           showsHorizontalScrollIndicator={false}
+  //         />
+  //       </View>
+  //     </View>
+  //   );
+  // }
+
+  // // Course list
+  // function renderCoursesHeader() {
+  //   return (
+  //     <Section
+  //       title="Popular Courses"
+  //       onPress={() => navigation.navigate("CoursesScreen")}
+  //     />
+  //   );
+  // }
+
+  // function renderCoursesData() {
+  //   return (
+  //     <FlatList
+  //       data={coursesData.coursesData}
+  //       listKey="Courses"
+  //       showsVerticalScrollIndicator={false}
+  //       keyExtractor={(item) => `Courses-${item.id}`}
+  //       contentContainerStyle={{
+  //         marginTop: SIZES.padding,
+  //         paddingHorizontal: SIZES.padding,
+  //       }}
+  //       renderItem={({ item, index }) => (
+  //         <HorizontalCourseCard
+  //           course={item}
+  //           containerStyle={{
+  //             paddingTop: SIZES.padding2,
+  //             paddingBottom: SIZES.padding2,
+  //             marginTop: index == 0 ? SIZES.base : SIZES.padding,
+  //           }}
+  //           onPress={() =>
+  //             navigation.navigate("CourseDescriptionScreen", {
+  //               courses: item,
+  //             })
+  //           }
+  //         />
+  //       )}
+  //       // ItemSeparatorComponent={() => (
+  //       //   <LineDivider
+  //       //     lineStyle={{
+  //       //       backgroundColor: COLORS.lightTextGray,
+  //       //       marginTop: SIZES.base,
+  //       //     }}
+  //       //   />
+  //       // )}
+  //     />
+  //   );
+  // }
+
+  function renderOptions() {
     return (
-      <View style={{ flex: 1 }}>
-        {/* Header */}
-
-        <Section
-          title="Trending Books"
-          onPress={() => navigation.navigate("ShopScreen")}
-        />
-        {/* Books */}
-        <View style={{ flex: 1, marginTop: SIZES.padding }}>
-          <FlatList
-            data={myTrends}
-            renderItem={renderItem}
-            keyExtractor={(item) => `${item.id}`}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
-      </View>
-    );
-  }
-
-  // Course list
-  function renderCoursesHeader() {
-    return (
-      <Section
-        title="Popular Courses"
-        onPress={() => navigation.navigate("CoursesScreen")}
-      />
-    );
-  }
-
-  function renderCoursesData() {
-    return (
-      <FlatList
-        data={coursesData.coursesData}
-        listKey="Courses"
-        showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => `Courses-${item.id}`}
-        contentContainerStyle={{
-          marginTop: SIZES.padding,
-          paddingHorizontal: SIZES.padding,
+      <View
+        style={{
+          backgroundColor: COLORS.lightBlue,
         }}
-        renderItem={({ item, index }) => (
-          <HorizontalCourseCard
-            course={item}
-            containerStyle={{
-              paddingTop: SIZES.padding2,
-              paddingBottom: SIZES.padding2,
-              marginTop: index == 0 ? SIZES.base : SIZES.padding,
-            }}
-            onPress={() =>
-              navigation.navigate("CourseDescriptionScreen", {
-                courses: item,
-              })
-            }
-          />
-        )}
-        // ItemSeparatorComponent={() => (
-        //   <LineDivider
-        //     lineStyle={{
-        //       backgroundColor: COLORS.lightTextGray,
-        //       marginTop: SIZES.base,
-        //     }}
-        //   />
-        // )}
-      />
+      ></View>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
       {/* Header Section */}
       <View style={{ height: "17%" }}>{renderHeader(profile)}</View>
 
       {/* Body Section */}
-      <ScrollView
-        style={{ marginTop: SIZES.padding }}
-        showsVerticalScrollIndicator={false}
-      >
+      <View style={{ marginTop: SIZES.padding }}>
         {/* Top Slider */}
         <View>{renderSlider()}</View>
 
         {/* Trending Books Slider */}
-        <View style={{ marginTop: SIZES.padding2 }}>
+        {/* <View style={{ marginTop: SIZES.padding2 }}>
           {renderMyTrendsSection(myTrends)}
-        </View>
+        </View> */}
 
         {/* Courses Slider */}
-        <View style={{ marginTop: SIZES.padding2 }}>
+        {/* <View style={{ marginTop: SIZES.padding2 }}>
           <View>{renderCoursesHeader()}</View>
           <View
             style={{
@@ -355,14 +362,22 @@ const HomeScreen = ({ navigation }) => {
           >
             {renderCoursesData()}
           </View>
-        </View>
-        <View
+        </View> */}
+        {/* <View
           style={{
             marginBottom: SIZES.font * 2,
           }}
-        ></View>
-      </ScrollView>
-    </SafeAreaView>
+        ></View> */}
+      </View>
+      <View
+        style={{
+          flex: 2,
+          backgroundColor: COLORS.secondary,
+        }}
+      >
+        <View>{renderOptions()}</View>
+      </View>
+    </View>
   );
 };
 
