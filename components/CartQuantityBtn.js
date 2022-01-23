@@ -25,7 +25,7 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
         style={{
           width: 30,
           height: 30,
-          tintColor: COLORS.primary,
+          tintColor: COLORS.lightGray,
           ...iconStyle,
         }}
       />
@@ -40,13 +40,13 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
           alignItems: "center",
           justifyContent: "center",
           borderRadius: SIZES.radius,
-          backgroundColor: COLORS.secondary,
+          backgroundColor: COLORS.lightGray,
         }}
       >
         <Text
           style={{
-            color: COLORS.white,
-            ...FONTS.body5,
+            color: COLORS.primary,
+            ...FONTS.h4,
             fontSize: 10,
             top: -2,
           }}

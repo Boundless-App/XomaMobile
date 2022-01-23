@@ -100,19 +100,19 @@ const HomeScreen = ({ navigation }) => {
     {
       id: 1,
       item: "course",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
     {
       id: 2,
       item: "workshop",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
     {
       id: 3,
       item: "opportunity",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
   ];
@@ -131,6 +131,8 @@ const HomeScreen = ({ navigation }) => {
           paddingHorizontal: SIZES.padding2 * 1.5,
           alignItems: "center",
           justifyContent: "center",
+          backgroundColor: COLORS.secondary,
+          borderBottomLeftRadius: 60,
         }}
       >
         <StatusBar backgroundColor={COLORS.status} />
@@ -138,8 +140,8 @@ const HomeScreen = ({ navigation }) => {
         {/* Greetings */}
         <View style={{ flex: 6, paddingRight: "20%" }}>
           <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
-            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>Hello </Text>
-            <Text style={{ ...FONTS.h1, color: COLORS.primary }}>
+            <Text style={{ ...FONTS.h1, color: COLORS.lightGray }}>Hello </Text>
+            <Text style={{ ...FONTS.h1, color: COLORS.lightGray }}>
               {profile.name}
             </Text>
           </View>
@@ -151,7 +153,7 @@ const HomeScreen = ({ navigation }) => {
         <IconButton
           icon={icons.notification_icon}
           iconStyle={{
-            tintColor: COLORS.primary,
+            tintColor: COLORS.lightGray,
           }}
           onPress={() => console.log("Notifications")}
           containerStyle={{
@@ -165,7 +167,7 @@ const HomeScreen = ({ navigation }) => {
           // quantity={0}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
-            backgroundColor: COLORS.lightGray5,
+            backgroundColor: COLORS.secondary,
           }}
         />
       </View>
@@ -189,7 +191,7 @@ const HomeScreen = ({ navigation }) => {
             <Image
               source={item.poster}
               resizeMode="cover"
-              style={{ width: 350, height: 150, borderRadius: 20 }}
+              style={{ width: 350, height: 100, borderRadius: 20 }}
             />
             <View
               style={{
@@ -228,52 +230,81 @@ const HomeScreen = ({ navigation }) => {
     return (
       <View
         style={{
-          flexDirection: "column",
+          flexDirection: "row",
           height: "75%",
           width: "100%",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: SIZES.padding * 2,
+          alignItems: "flex-start",
+          justifyContent: "center",
+          marginTop: SIZES.padding,
         }}
       >
         <View
           style={{
-            flexDirection: "row",
+            flexDirection: "column",
           }}
         >
           <SectionCard
             sectionTitle="Go Shopping"
-            icon={images.bookLover}
+            icon={icons.trolley}
+            iconStyle={{
+              tintColor: COLORS.secondary
+            }}
+            iconContainer={{
+              backgroundColor: COLORS.lightGray
+            }}
             containerStyle={{
               margin: SIZES.padding,
             }}
+
           />
 
           <SectionCard
-            sectionTitle="Start Learning"
-            icon={images.bookLover}
+            sectionTitle="Resources & Opportunities"
+            icon={icons.human_resource}
+            iconStyle={{
+              tintColor: COLORS.secondary
+            }}
+            iconContainer={{
+              backgroundColor: COLORS.lightGray
+            }}
             containerStyle={{
               margin: SIZES.padding,
+              height: 230,
             }}
           />
         </View>
+
         <View
           style={{
-            flexDirection: "row",
+            flexDirection: "column",
             //height: "50%",
           }}
         >
-          <SectionCard
-            sectionTitle="Resources & Opportunities"
-            icon={images.bookLover}
+        <SectionCard
+            sectionTitle="Start Learning"
+            icon={icons.reading}
+            iconStyle={{
+              tintColor: COLORS.secondary
+            }}
+            iconContainer={{
+              backgroundColor: COLORS.lightGray
+            }}
             containerStyle={{
               margin: SIZES.padding,
+              height: 230,
             }}
           />
+          
 
           <SectionCard
             sectionTitle="Book a Mentor"
-            icon={images.bookLover}
+            icon={icons.mentor}
+            iconStyle={{
+              tintColor: COLORS.secondary
+            }}
+            iconContainer={{
+              backgroundColor: COLORS.lightGray
+            }}
             containerStyle={{
               margin: SIZES.padding,
             }}
@@ -295,26 +326,29 @@ const HomeScreen = ({ navigation }) => {
       <View
         style={{
           height: "20%",
+          //backgroundColor: COLORS.secondary,
         }}
       >
         {renderHeader(profile)}
       </View>
+      
       {/* Body Section */}
-      <View style={{ flexDirection: "column", marginTop: SIZES.padding }}>
+      <View style={{ flexDirection: "column", marginTop: SIZES.padding, }}>
         {/* Top Slider */}
         <View>
           {renderSlider()}
-        </View>
-        
+        </View>        
       </View>
+
       <View
         style={{
-          marginTop: SIZES.padding,
+          //marginTop: SIZES.padding,
           //backgroundColor: COLORS.secondary,
         }}
       >
         <View>{renderOptions()}</View>
       </View>
+
     </View>
   );
 };

@@ -3,6 +3,17 @@ export const onBoardingScreenOne = require("../assets/images/burgundy-117.png");
 export const onBoardingScreenTwo = require("../assets/images/burgundy-remote-education.png");
 export const onBoardingScreenThree = require("../assets/images/burgundy-library-1.png");
 
+//Tab images
+export const boundlessLogo = require("../assets/images/boundless-logo-light.png");
+export const boundlessLogoBlack = require("../assets/images/boundless-black.png");
+export const collecting = require("../assets/images/collecting.png");
+export const empty = require("../assets/images/empty.png");
+export const mentor = require("../assets/images/mentor2.png");
+export const productIterations = require("../assets/images/product_iteration.png");
+export const research = require("../assets/images/research.png");
+export const voidSpace = require("../assets/images/void_space.png");
+export const shopping = require("../assets/images/shopping.png");
+
 //book images
 export const bookPackageLevel3 = require("../assets/books/BOOK_PACKAGE_LEVEL31_HZLjJS8.max-350x225.png");
 export const bookPackageLevel2 = require("../assets/books/BOOK_PACKAGE_LEVEL23.max-350x225.png");
@@ -53,7 +64,17 @@ export const xomaLogo = require("../assets/images/xoma.png")
 export default {
   onBoardingScreenOne,
   onBoardingScreenTwo,
-  onBoardingScreenThree,  
+  onBoardingScreenThree, 
+  
+  boundlessLogo,
+  boundlessLogoBlack,
+  collecting,
+  empty,
+  mentor,
+  productIterations,
+  research,
+  shopping,
+  voidSpace,
 
   bookPackageLevel3,
   bookPackageLevel2,

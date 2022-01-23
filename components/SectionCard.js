@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, TouchableWithoutFeedback } from "react-native";
 
 import { COLORS, FONTS, SIZES } from "../constants";
 
@@ -9,18 +9,19 @@ const SectionCard = ({
   onPress,
   icon,
   iconStyle,
+  iconContainer,
 }) => {
   return (
     <TouchableOpacity
       style={{
         flexDirection: "row",
         borderRadius: SIZES.base,
-        backgroundColor: COLORS.white,
-        elevation: 2,
+        backgroundColor: COLORS.lightGray,
+        elevation: 5,
         justifyContent: "center",
         alignItems: "center",
         width: 180,
-        height: 180,
+        height: 190,
 
         ...containerStyle,
       }}
@@ -29,7 +30,7 @@ const SectionCard = ({
       {/* Details */}
       <View
         style={{
-          alignItems: "center",
+          //alignItems: "center",
           justifyContent: "space-evenly",
           height: "80%",
           width: "80%",
@@ -37,16 +38,31 @@ const SectionCard = ({
         }}
       >
         {/* Section Image */}
+        <View
+      style={{
+        width: 75,
+        height: 75,
+        borderRadius: 80,
+        backgroundColor: COLORS.secondary,
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: SIZES.radius,
+
+        ...iconContainer
+      }}
+        >
         <Image
           source={icon}
           resizeMode="cover"
           style={{
-            width: "100%",
-            height: "100%",
+            width: 50,
+            height: 50,
 
             ...iconStyle,
           }}
         />
+        </View>
+
         {/* Title */}
         <View
           style={{
@@ -54,9 +70,9 @@ const SectionCard = ({
             bottom: 0,
             height: "30%",
             width: "100%",
-            backgroundColor: COLORS.white,
+            backgroundColor: COLORS.lightGray,
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-end",
             flexDirection: "row-reverse",
             alignSelf: "flex-start",
           }}
@@ -64,7 +80,7 @@ const SectionCard = ({
           <Text
             style={{
               ...FONTS.h4,
-              textAlign: "center",
+              //textAlign: "center",
               justifyContent: "center",
             }}
           >

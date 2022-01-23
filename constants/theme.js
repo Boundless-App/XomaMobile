@@ -5,6 +5,7 @@ export const COLORS = {
   // base colors
   primary: "#4D4D4D",
   secondary: "#800020",
+  secondary2: "#95181C",
   transparentSecondary: 'rgba(128, 0, 32, 0.5)',
   // status: "#5A0619", //Rosewood
   status: "#600218",

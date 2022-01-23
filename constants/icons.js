@@ -60,7 +60,16 @@ export const user_outline = require("../assets/icons/user_outline.png");
 export const user = require("../assets/icons/user.png");
 export const wallet = require("../assets/icons/wallet.png");
 export const xoma_logo = require("../assets/icons/xoma-logo.png");
-
+export const book_pencil_filled = require("../assets/icons/book-and-pencil-filled.png");
+export const book_pencil_outline = require("../assets/icons/book-and-pencil-outline.png");
+export const eLearning = require("../assets/icons/e-learning.png");
+export const human_resource = require("../assets/icons/human-resources.png");
+export const mentor = require("../assets/icons/mentor.png");
+export const mentorship = require("../assets/icons/mentorship.png");
+export const opportunities = require("../assets/icons/opportunities.png");
+export const reading = require("../assets/icons/reading.png");
+export const resources = require("../assets/icons/resources.png");
+export const trolley = require("../assets/icons/trolley.png");
 
 export default {
   card_icon,
@@ -125,4 +134,14 @@ export default {
   user,
   wallet,
   xoma_logo,
+  book_pencil_filled,
+  book_pencil_outline,
+  eLearning,
+  human_resource,
+  mentor,
+  mentorship,
+  opportunities,
+  reading,
+  resources,
+  trolley
 };
