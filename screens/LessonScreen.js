@@ -10,23 +10,9 @@ import {
   StatusBar,
 } from "react-native";
 
-import {
-  COLORS,
-  FONTS,
-  SIZES,
-  icons,
-  images,
-  coursesData,
-  books,
-} from "../constants";
+import { COLORS, FONTS, SIZES, images, coursesData } from "../constants";
 
-import {
-  CartQuantityBtn,
-  HorizontalCourseCard,
-  IconButton,
-  LineDivider,
-  Section,
-} from "../components";
+import { HorizontalCourseCard, LineDivider, Section } from "../components";
 
 import AutoScroll from "@homielab/react-native-auto-scroll";
 
@@ -99,33 +85,56 @@ const LessonScreen = ({ navigation }) => {
     {
       id: 1,
       item: "course",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
     {
       id: 2,
       item: "workshop",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
     {
       id: 3,
       item: "opportunity",
-      poster: images.kidWantsBook,
+      poster: images.collecting,
       details: "Ads details",
     },
   ];
 
-  const [profile, setProfile] = React.useState(profileData);
   const [content, setContent] = React.useState(contentData);
   const [myTrends, setMyTrends] = React.useState(trends);
 
   function renderHeader() {
     return (
-      <Section
-        title="Workshops"
-        onPress={() => navigation.navigate("CoursesScreen")}
-      />
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          paddingTop: SIZES.padding,
+          paddingHorizontal: SIZES.padding2 * 1.5,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: COLORS.secondary,
+          borderBottomRightRadius: 60,
+        }}
+      >
+        <StatusBar backgroundColor={COLORS.status} />
+
+        {/* Greetings */}
+        <View style={{ flex: 6, paddingRight: "20%" }}>
+          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
+            <Text
+              style={{
+                ...FONTS.h2,
+                color: COLORS.lightGray,
+              }}
+            >
+              Workshops
+            </Text>
+          </View>
+        </View>
+      </View>
     );
   }
 
@@ -146,7 +155,7 @@ const LessonScreen = ({ navigation }) => {
             <Image
               source={item.poster}
               resizeMode="cover"
-              style={{ width: 300, height: 110, borderRadius: 20 }}
+              style={{ width: 350, height: 160, borderRadius: 20 }}
             />
             <View
               style={{
@@ -287,7 +296,7 @@ const LessonScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.lightGray }}>
       {/* Header Section */}
-      <View style={{ marginTop: SIZES.padding2 }}>{renderHeader()}</View>
+      <View style={{ height: "7%" }}>{renderHeader()}</View>
 
       {/* Body Section */}
       <View style={{ marginTop: SIZES.padding }}>
@@ -311,9 +320,7 @@ const LessonScreen = ({ navigation }) => {
             {renderCoursesData()}
           </View>
         </View>
-        
       </View>
-
     </View>
   );
 };

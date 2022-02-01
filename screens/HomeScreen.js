@@ -132,7 +132,7 @@ const HomeScreen = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: COLORS.secondary,
-          borderBottomLeftRadius: 60,
+          borderBottomRightRadius: 60,
         }}
       >
         <StatusBar backgroundColor={COLORS.status} />
@@ -140,8 +140,8 @@ const HomeScreen = ({ navigation }) => {
         {/* Greetings */}
         <View style={{ flex: 6, paddingRight: "20%" }}>
           <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
-            <Text style={{ ...FONTS.h1, color: COLORS.lightGray }}>
-              Hello{" "}{profile.name},
+            <Text style={{ ...FONTS.h2, color: COLORS.lightGray }}>
+              Hello {profile.name},
             </Text>
           </View>
         </View>
@@ -153,6 +153,8 @@ const HomeScreen = ({ navigation }) => {
           icon={icons.notification_icon}
           iconStyle={{
             tintColor: COLORS.lightGray,
+            width: 25,
+            height: 25,
           }}
           onPress={() => console.log("Notifications")}
           containerStyle={{
@@ -167,6 +169,11 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
             backgroundColor: COLORS.secondary,
+          }}
+          iconStyle={{
+            tintColor: COLORS.lightGray,
+            width: 25,
+            height: 25,
           }}
         />
       </View>
@@ -349,13 +356,11 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <View
-        style={
-          {
-            //marginTop: SIZES.padding,
-            //backgroundColor: COLORS.secondary,
-            height: "80%"
-          }
-        }
+        style={{
+          //marginTop: SIZES.padding,
+          //backgroundColor: COLORS.secondary,
+          height: "80%",
+        }}
       >
         <View>{renderOptions()}</View>
       </View>

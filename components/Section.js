@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 
-const Section = ({ containerStyle, title, onPress, children }) => {
+const Section = ({ containerStyle, title, onPress, children, textStyle }) => {
   return (
     <View
       style={{
@@ -21,6 +21,8 @@ const Section = ({ containerStyle, title, onPress, children }) => {
             flex: 1,
             ...FONTS.h2,
             color: COLORS.primary,
+
+            ...textStyle
           }}
         >
           {title}
@@ -32,6 +34,7 @@ const Section = ({ containerStyle, title, onPress, children }) => {
               alignSelf: "flex-start",
               textDecorationLine: "underline",
               color: COLORS.primary,
+              ...textStyle
             }}
           >
             See All
