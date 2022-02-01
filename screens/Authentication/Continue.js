@@ -5,7 +5,7 @@ import { FormInput, TextIconButton, TextButton } from "../../components";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
 import { utils } from "../../utils";
 
-const SignUp = ({ navigation }) => {
+const ContinueScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -164,7 +164,7 @@ const SignUp = ({ navigation }) => {
               ? COLORS.secondary
               : COLORS.transparentSecondary,
           }}
-          onPress={() => navigation.navigate("Continue")}
+          onPress={() => navigation.navigate("Home")}
         />
 
         {/* Sign In Button*/}
@@ -223,4 +223,4 @@ const SignUp = ({ navigation }) => {
   );
 };
 
-export default SignUp;
+export default ContinueScreen;

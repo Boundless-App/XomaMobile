@@ -140,9 +140,8 @@ const HomeScreen = ({ navigation }) => {
         {/* Greetings */}
         <View style={{ flex: 6, paddingRight: "20%" }}>
           <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
-            <Text style={{ ...FONTS.h1, color: COLORS.lightGray }}>Hello </Text>
             <Text style={{ ...FONTS.h1, color: COLORS.lightGray }}>
-              {profile.name}
+              Hello{" "}{profile.name},
             </Text>
           </View>
         </View>
@@ -191,7 +190,7 @@ const HomeScreen = ({ navigation }) => {
             <Image
               source={item.poster}
               resizeMode="cover"
-              style={{ width: 350, height: 100, borderRadius: 20 }}
+              style={{ width: 350, height: 160, borderRadius: 20 }}
             />
             <View
               style={{
@@ -226,16 +225,17 @@ const HomeScreen = ({ navigation }) => {
     );
   }
 
+  //Cards
   function renderOptions() {
     return (
       <View
         style={{
           flexDirection: "row",
-          height: "75%",
+          height: "85%",
           width: "100%",
-          alignItems: "flex-start",
+          alignItems: "center",
           justifyContent: "center",
-          marginTop: SIZES.padding,
+          //marginTop: SIZES.padding,
         }}
       >
         <View
@@ -247,66 +247,71 @@ const HomeScreen = ({ navigation }) => {
             sectionTitle="Go Shopping"
             icon={icons.trolley}
             iconStyle={{
-              tintColor: COLORS.secondary
+              tintColor: COLORS.secondary,
             }}
-            iconContainer={{
-              backgroundColor: COLORS.lightGray
-            }}
+            // iconContainer={{
+            //   backgroundColor: COLORS.white,
+            // }}
             containerStyle={{
-              margin: SIZES.padding,
+              marginLeft: SIZES.padding,
+              marginBottom: SIZES.base,
             }}
-
+            onPress={() => navigation.navigate("Shop")}
           />
 
           <SectionCard
             sectionTitle="Resources & Opportunities"
             icon={icons.human_resource}
             iconStyle={{
-              tintColor: COLORS.secondary
+              tintColor: COLORS.secondary,
             }}
-            iconContainer={{
-              backgroundColor: COLORS.lightGray
-            }}
+            // iconContainer={{
+            //   backgroundColor: COLORS.white,
+            // }}
             containerStyle={{
-              margin: SIZES.padding,
-              height: 230,
+              marginLeft: SIZES.padding,
+              height: 200,
             }}
+            onPress={() => navigation.navigate("Lessons")}
+            //Lessons
           />
         </View>
 
         <View
           style={{
             flexDirection: "column",
+            marginLeft: SIZES.base,
             //height: "50%",
           }}
         >
-        <SectionCard
+          <SectionCard
             sectionTitle="Start Learning"
             icon={icons.reading}
             iconStyle={{
-              tintColor: COLORS.secondary
+              tintColor: COLORS.secondary,
             }}
-            iconContainer={{
-              backgroundColor: COLORS.lightGray
-            }}
+            // iconContainer={{
+            //   backgroundColor: COLORS.white,
+            // }}
             containerStyle={{
-              margin: SIZES.padding,
-              height: 230,
+              marginRight: SIZES.padding,
+              marginBottom: SIZES.base,
+              height: 200,
             }}
+            onPress={() => navigation.navigate("Courses")}
           />
-          
 
           <SectionCard
             sectionTitle="Book a Mentor"
             icon={icons.mentor}
             iconStyle={{
-              tintColor: COLORS.secondary
+              tintColor: COLORS.secondary,
             }}
-            iconContainer={{
-              backgroundColor: COLORS.lightGray
-            }}
+            // iconContainer={{
+            //   backgroundColor: COLORS.white,
+            // }}
             containerStyle={{
-              margin: SIZES.padding,
+              marginRight: SIZES.padding,
             }}
           />
         </View>
@@ -325,30 +330,35 @@ const HomeScreen = ({ navigation }) => {
       {/* Header Section */}
       <View
         style={{
-          height: "20%",
+          height: "13%",
           //backgroundColor: COLORS.secondary,
         }}
       >
         {renderHeader(profile)}
       </View>
-      
+
       {/* Body Section */}
-      <View style={{ flexDirection: "column", marginTop: SIZES.padding, }}>
+      <View
+        style={{
+          flexDirection: "column",
+          marginTop: SIZES.padding * 2,
+        }}
+      >
         {/* Top Slider */}
-        <View>
-          {renderSlider()}
-        </View>        
+        <View>{renderSlider()}</View>
       </View>
 
       <View
-        style={{
-          //marginTop: SIZES.padding,
-          //backgroundColor: COLORS.secondary,
-        }}
+        style={
+          {
+            //marginTop: SIZES.padding,
+            //backgroundColor: COLORS.secondary,
+            height: "80%"
+          }
+        }
       >
         <View>{renderOptions()}</View>
       </View>
-
     </View>
   );
 };

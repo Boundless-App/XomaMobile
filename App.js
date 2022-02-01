@@ -13,6 +13,7 @@ import {
   LessonScreen,
   OnBoarding,
   SignUp,
+  Continue
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
@@ -44,13 +45,14 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
-          initialRouteName={"Home"}
+          initialRouteName={"OnBoarding"}
         >
+          {/* Authentication */}
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
-
           <Stack.Screen name="SignIn" component={SignIn} />
-
           <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="Continue" component={Continue} />
+
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen name="Shop" component={ShopNav} />
           <Stack.Screen name="Courses" component={CourseNav} />
@@ -61,7 +63,7 @@ const App = () => {
             name="CourseDescriptionScreen"
             component={CourseDescriptionScreen}
           />
-          <Stack.Screen name="LessonScreen" component={LessonScreen} />
+          <Stack.Screen name="Lessons" component={LessonScreen} />
           <Stack.Screen
             name="BookDescriptionScreen"
             component={BookDescriptionScreen}

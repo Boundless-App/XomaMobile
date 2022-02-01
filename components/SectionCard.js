@@ -16,12 +16,12 @@ const SectionCard = ({
       style={{
         flexDirection: "row",
         borderRadius: SIZES.base,
-        backgroundColor: COLORS.lightGray,
-        elevation: 5,
+        backgroundColor: COLORS.white,
+        elevation: 2,
         justifyContent: "center",
         alignItems: "center",
         width: 180,
-        height: 190,
+        height: 170,
 
         ...containerStyle,
       }}
@@ -30,7 +30,7 @@ const SectionCard = ({
       {/* Details */}
       <View
         style={{
-          //alignItems: "center",
+          alignItems: "center",
           justifyContent: "space-evenly",
           height: "80%",
           width: "80%",
@@ -40,10 +40,10 @@ const SectionCard = ({
         {/* Section Image */}
         <View
       style={{
-        width: 75,
-        height: 75,
+        width: 100,
+        height: 100,
         borderRadius: 80,
-        backgroundColor: COLORS.secondary,
+        backgroundColor: COLORS.transparent,
         alignItems: "center",
         justifyContent: "center",
         marginBottom: SIZES.radius,
@@ -55,8 +55,8 @@ const SectionCard = ({
           source={icon}
           resizeMode="cover"
           style={{
-            width: 50,
-            height: 50,
+            width: "70%",
+            height: "70%",
 
             ...iconStyle,
           }}
@@ -70,7 +70,7 @@ const SectionCard = ({
             bottom: 0,
             height: "30%",
             width: "100%",
-            backgroundColor: COLORS.lightGray,
+            backgroundColor: COLORS.transparent,
             alignItems: "center",
             justifyContent: "flex-end",
             flexDirection: "row-reverse",
