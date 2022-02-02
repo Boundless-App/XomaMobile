@@ -13,7 +13,9 @@ import {
   LessonScreen,
   OnBoarding,
   SignUp,
-  Continue
+  Continue,
+  ResOps,
+  Notifications,
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
@@ -59,11 +61,12 @@ const App = () => {
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Resources" component={ResourcesScreen} />
           <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
+          <Stack.Screen name="ResOps" component={ResOps} />
           <Stack.Screen
             name="CourseDescriptionScreen"
             component={CourseDescriptionScreen}
           />
-          <Stack.Screen name="Lessons" component={LessonScreen} />
+          <Stack.Screen name="Notifications" component={Notifications} />
           <Stack.Screen
             name="BookDescriptionScreen"
             component={BookDescriptionScreen}

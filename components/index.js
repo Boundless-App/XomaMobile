@@ -1,4 +1,6 @@
 import BookCard from "./BookCard";
+import Header from "./Header";
+import HeaderTwo from "./HeaderTwo";
 import IconButton from "./IconButton";
 import TextButton from "./TextButton";
 import TextIconButton from "./TextIconButton";
@@ -29,6 +31,8 @@ export {
   LineDivider,
   VerticalLineDivider,
   HorizontalCourseCard,
+  Header,
+  HeaderTwo,
   IconButton,
   TextButton,
   VerticalShopCard,

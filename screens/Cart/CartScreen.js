@@ -7,6 +7,8 @@ import {
   CartQuantityBtn,
   IconButton,
   FooterTotal,
+  HeaderTwo,
+  Header,
 } from "../../components";
 
 import { COLORS, FONTS, SIZES, icons, dummyData, books } from "../../constants";
@@ -36,54 +38,63 @@ const CartScreen = ({ navigation }) => {
 
   function renderHeader() {
     return (
-      <View
-        style={{
-          height: 50,
-          // backgroundColor: COLORS.lightRed,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
+      //     <View
+      //       style={{
+      //         height: 50,
+      //         // backgroundColor: COLORS.lightRed,
+      //         flexDirection: "row",
+      //         alignItems: "center",
+      //         justifyContent: "space-between",
+      //       }}
+      //     >
+      //       <IconButton
+      //         icon={icons.back_icon}
+      //         onPress={() => navigation.goBack()}
+      //         iconStyle={{
+      //           tintColor: COLORS.white,
+      //         }}
+      //         containerStyle={{
+      //           // marginVertical: "8%",
+      //           // marginHorizontal: "8%",
+      //           // position: "absolute",
+      //           top: 10,
+      //           left: 20,
+      //           width: 40,
+      //           height: 40,
+      //           alignItems: "center",
+      //           justifyContent: "center",
+      //           borderRadius: 10,
+      //           backgroundColor: COLORS.transparentBlack,
+      //           borderRadius: SIZES.padding,
+      //         }}
+      //       />
+      //       <Text
+      //         style={{
+      //           ...FONTS.h4,
+      //           paddingTop: SIZES.font,
+      //           marginLeft: SIZES.padding,
+      //           alignItems: "center",
+      //         }}
+      //       >
+      //         MY CART
+      //       </Text>
+      //       <CartQuantityBtn
+      //         // quantity={0}
+      //         containerStyle={{
+      //           marginRight: 10,
+      //           marginTop: 10,
+      //         }}
+      //       />
+      //     </View>
+      <Header
+        icon={icons.back_icon}
+        onPress1={() => navigation.goBack()}
+        iconStyle={{
+          tintColor: COLORS.white,
+          marginLeft: SIZES.radius,
         }}
-      >
-        <IconButton
-          icon={icons.back_icon}
-          onPress={() => navigation.goBack()}
-          iconStyle={{
-            tintColor: COLORS.white,
-          }}
-          containerStyle={{
-            // marginVertical: "8%",
-            // marginHorizontal: "8%",
-            // position: "absolute",
-            top: 10,
-            left: 20,
-            width: 40,
-            height: 40,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-            backgroundColor: COLORS.transparentBlack,
-            borderRadius: SIZES.padding,
-          }}
-        />
-        <Text
-          style={{
-            ...FONTS.h4,
-            paddingTop: SIZES.font,
-            marginLeft: SIZES.padding,
-            alignItems: "center",
-          }}
-        >
-          MY CART
-        </Text>
-        <CartQuantityBtn
-          // quantity={0}
-          containerStyle={{
-            marginRight: 10,
-            marginTop: 10,
-          }}
-        />
-      </View>
+        heading={"My Cart"}
+      />
     );
   }
 

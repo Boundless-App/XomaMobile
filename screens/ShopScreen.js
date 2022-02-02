@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { LineDivider } from "../components";
+import { Header, LineDivider } from "../components";
 
 import { COLORS, books, SIZES, FONTS } from "../constants";
 
@@ -80,6 +80,7 @@ const ShopScreen = ({ navigation }) => {
   function renderBooksList() {
     return (
       <FlatList
+        showsVerticalScrollIndicator={false}
         style={{
           paddingHorizontal: SIZES.padding * 2,
           paddingBottom: 30,
@@ -96,18 +97,16 @@ const ShopScreen = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: COLORS.white,
-        marginTop: 10,
+        marginTop: 0,
       }}
     >
-      <Text
-        style={{
-          ...FONTS.h4,
-          alignSelf: "center",
-          marginBottom: SIZES.base,
+      <Header
+        heading={"Shop"}
+        onPress={() => navigation.navigate("Cart")}
+        containerStyle={{
+          paddingLeft: SIZES.padding2 * 4,
         }}
-      >
-        SHOP
-      </Text>
+      />
       {renderBooksList()}
       <View style={{ marginBottom: SIZES.radius * 2 }}></View>
     </View>

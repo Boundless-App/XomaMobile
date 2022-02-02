@@ -156,7 +156,7 @@ const HomeScreen = ({ navigation }) => {
             width: 25,
             height: 25,
           }}
-          onPress={() => console.log("Notifications")}
+          onPress={() => navigation.navigate("Notifications")}
           containerStyle={{
             paddingRight: "4%",
           }}
@@ -263,7 +263,7 @@ const HomeScreen = ({ navigation }) => {
               marginLeft: SIZES.padding,
               marginBottom: SIZES.base,
             }}
-            onPress={() => navigation.navigate("Shop")}
+            onPress={() => navigation.navigate("ShopScreen")}
           />
 
           <SectionCard
@@ -279,7 +279,7 @@ const HomeScreen = ({ navigation }) => {
               marginLeft: SIZES.padding,
               height: 200,
             }}
-            onPress={() => navigation.navigate("Lessons")}
+            onPress={() => navigation.navigate("ResOps")}
             //Lessons
           />
         </View>
@@ -305,7 +305,7 @@ const HomeScreen = ({ navigation }) => {
               marginBottom: SIZES.base,
               height: 200,
             }}
-            onPress={() => navigation.navigate("Courses")}
+            onPress={() => navigation.navigate("CoursesScreen")}
           />
 
           <SectionCard
@@ -320,6 +320,7 @@ const HomeScreen = ({ navigation }) => {
             containerStyle={{
               marginRight: SIZES.padding,
             }}
+            onPress={() => console.log("Coming Soon")}
           />
         </View>
       </View>

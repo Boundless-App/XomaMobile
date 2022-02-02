@@ -12,83 +12,89 @@ import {
 } from "react-native";
 
 import { COLORS, FONTS, SIZES, icons, courses } from "../constants";
-import { LineDivider, TextButton, VerticalLineDivider } from "../components";
+import {
+  HeaderTwo,
+  LineDivider,
+  TextButton,
+  VerticalLineDivider,
+} from "../components";
 import { HorizontalCourseCard } from "../components";
 
 const CoursesScreen = ({ navigation }) => {
-  function renderButtonSection() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          padding: SIZES.padding,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            height: 70,
-            borderRadius: SIZES.radius,
-          }}
-        >
-          {/* Resources */}
-          <TouchableOpacity
-            style={{ flex: 1 }}
-            onPress={() => navigation.navigate("Resources")}
-          >
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Text
-                style={{
-                  marginLeft: SIZES.base,
-                  ...FONTS.h3,
-                  color: COLORS.lightGray,
-                }}
-              >
-                Resources
-              </Text>
-            </View>
-          </TouchableOpacity>
+  // function renderButtonSection() {
+  //   return (
+  //   <View
+  //     style={{
+  //       flex: 1,
+  //       justifyContent: "center",
+  //       padding: SIZES.padding,
+  //     }}
+  //   >
+  //     <View
+  //       style={{
+  //         flexDirection: "row",
+  //         width: "100%",
+  //         height: 70,
+  //         borderRadius: SIZES.radius,
+  //       }}
+  //     >
+  //       {/* Resources */}
+  //       <TouchableOpacity
+  //         style={{ flex: 1 }}
+  //         onPress={() => navigation.navigate("Resources")}
+  //       >
+  //         <View
+  //           style={{
+  //             flex: 1,
+  //             flexDirection: "row",
+  //             alignItems: "center",
+  //             justifyContent: "center",
+  //           }}
+  //         >
+  //           <Text
+  //             style={{
+  //               marginLeft: SIZES.base,
+  //               ...FONTS.h3,
+  //               color: COLORS.lightGray,
+  //             }}
+  //           >
+  //             Resources
+  //           </Text>
+  //         </View>
+  //       </TouchableOpacity>
 
-          {/* Divider */}
-          <VerticalLineDivider />
+  //       {/* Divider */}
+  //       <VerticalLineDivider />
 
-          {/* Opportunities */}
-          <TouchableOpacity
-            style={{ flex: 1 }}
-            onPress={() => navigation.navigate("Opportunities")}
-          >
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Text
-                style={{
-                  marginLeft: SIZES.base,
-                  ...FONTS.h3,
-                  color: COLORS.lightGray,
-                }}
-              >
-                Opportunities
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
+  //       {/* Opportunities */}
+  //       <TouchableOpacity
+  //         style={{ flex: 1 }}
+  //         onPress={() => navigation.navigate("Opportunities")}
+  //       >
+  //         <View
+  //           style={{
+  //             flex: 1,
+  //             flexDirection: "row",
+  //             alignItems: "center",
+  //             justifyContent: "center",
+  //           }}
+  //         >
+  //           <Text
+  //             style={{
+  //               marginLeft: SIZES.base,
+  //               ...FONTS.h3,
+  //               color: COLORS.lightGray,
+  //             }}
+  //           >
+  //             Opportunities
+  //           </Text>
+  //         </View>
+  //       </TouchableOpacity>
+  //     </View>
+  //   </View>
+  // <HeaderTwo heading={"Courses"} />
+  //   );
+  // }
 
   function renderCoursesList() {
     return (
@@ -136,15 +142,15 @@ const CoursesScreen = ({ navigation }) => {
         backgroundColor: COLORS.secondary,
       }}
     >
-      <View
+      {/* <View
         style={{
           flex: 1,
           alignItems: "center",
         }}
       >
         {renderButtonSection()}
-      </View>
-
+      </View> */}
+      <HeaderTwo heading={"Courses"} />
       <View
         style={{
           flex: 9,

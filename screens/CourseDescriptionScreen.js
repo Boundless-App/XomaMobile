@@ -8,7 +8,13 @@ import {
 } from "react-native";
 
 import { COLORS, FONTS, SIZES, icons, constants } from "../constants";
-import { IconButton, LineDivider, TextButton } from "../components";
+import {
+  Header,
+  HeaderTwo,
+  IconButton,
+  LineDivider,
+  TextButton,
+} from "../components";
 
 import CourseDesption from "./CoursesTabs/CourseDesption";
 import CourseContent from "./CoursesTabs/CourseContent";
@@ -153,7 +159,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           // alignItems: "center",
         }}
       >
-        <IconButton
+        {/* <IconButton
           icon={icons.back_icon}
           onPress={() => navigation.goBack()}
           iconStyle={{
@@ -173,7 +179,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
             backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.padding,
           }}
-        />
+        /> */}
         <Text
           style={{
             // position: "absolute",
@@ -284,6 +290,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           backgroundColor: COLORS.lightGray3,
         }}
       >
+        <HeaderTwo onPress={() => navigation.goBack()} icon={icons.back_icon} />
         <View
           style={{
             flex: 2,
