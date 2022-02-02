@@ -13,7 +13,8 @@ import {
   LessonScreen,
   OnBoarding,
   SignUp,
-  Continue
+  Continue,
+  BookAMentor
 } from "./screens/";
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
@@ -69,6 +70,7 @@ const App = () => {
             component={BookDescriptionScreen}
           />
           <Stack.Screen name="Cart" component={CartScreen} />
+          <Stack.Screen name="BookAMentor" component={BookAMentor} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

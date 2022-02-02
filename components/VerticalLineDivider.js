@@ -7,7 +7,7 @@ const VerticalLineDivider = () => {
     <View
       style={{
         width: 1,
-        paddingVertical: 15,
+        paddingVertical: 4,
       }}
     >
       <View

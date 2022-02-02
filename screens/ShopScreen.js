@@ -95,25 +95,17 @@ const ShopScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.white,
+        backgroundColor: COLORS.lightGray,
         marginTop: 10,
       }}
-    >
-      <Text
-        style={{
-          ...FONTS.h4,
-          alignSelf: "center",
-          marginBottom: SIZES.base,
-        }}
-      >
-        SHOP
-      </Text>
+    > 
       {renderBooksList()}
       <View style={{ marginBottom: SIZES.radius * 2 }}></View>
     </View>
   );
 };
 export default ShopScreen;
+
 // const renderItem = ({ item }) => (
 //   <View
 //     style={{

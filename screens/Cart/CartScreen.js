@@ -46,10 +46,10 @@ const CartScreen = ({ navigation }) => {
         }}
       >
         <IconButton
-          icon={icons.back_icon}
+          icon={icons.back_arrow_icon}
           onPress={() => navigation.goBack()}
           iconStyle={{
-            tintColor: COLORS.white,
+            tintColor: COLORS.primary,
           }}
           containerStyle={{
             // marginVertical: "8%",
@@ -61,9 +61,6 @@ const CartScreen = ({ navigation }) => {
             height: 40,
             alignItems: "center",
             justifyContent: "center",
-            borderRadius: 10,
-            backgroundColor: COLORS.transparentBlack,
-            borderRadius: SIZES.padding,
           }}
         />
         <Text
@@ -81,6 +78,9 @@ const CartScreen = ({ navigation }) => {
           containerStyle={{
             marginRight: 10,
             marginTop: 10,
+          }}
+          iconStyle={{
+            tintColor: COLORS.primary
           }}
         />
       </View>

@@ -10,9 +10,14 @@ import {
   StatusBar,
 } from "react-native";
 
-import { COLORS, FONTS, SIZES, images, coursesData } from "../constants";
+import { COLORS, FONTS, SIZES, images, coursesData, icons } from "../constants";
 
-import { HorizontalCourseCard, LineDivider, Section } from "../components";
+import {
+  HorizontalCourseCard,
+  LineDivider,
+  Section,
+  IconButton,
+} from "../components";
 
 import AutoScroll from "@homielab/react-native-auto-scroll";
 
@@ -110,7 +115,7 @@ const LessonScreen = ({ navigation }) => {
       <View
         style={{
           flex: 1,
-          flexDirection: "row",
+          flexDirection: "column",
           paddingTop: SIZES.padding,
           paddingHorizontal: SIZES.padding2 * 1.5,
           alignItems: "center",
@@ -121,18 +126,37 @@ const LessonScreen = ({ navigation }) => {
       >
         <StatusBar backgroundColor={COLORS.status} />
 
+        <IconButton
+          icon={icons.back_arrow_icon}
+          onPress={() => navigation.goBack()}
+          iconStyle={{
+            tintColor: COLORS.white,
+          }}
+          containerStyle={{
+            position: "absolute",
+            top: 10,
+            left: 20,
+            width: 40,
+            height: 40,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        />
         {/* Greetings */}
-        <View style={{ flex: 6, paddingRight: "20%" }}>
-          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.base }}>
-            <Text
-              style={{
-                ...FONTS.h2,
-                color: COLORS.lightGray,
-              }}
-            >
-              Workshops
-            </Text>
-          </View>
+        <View
+          style={{
+            flex: 6,
+          }}
+        >
+          <Text
+            style={{
+              ...FONTS.h2,
+              color: COLORS.lightGray,
+              textAlign: "center",
+            }}
+          >
+            Workshops
+          </Text>
         </View>
       </View>
     );

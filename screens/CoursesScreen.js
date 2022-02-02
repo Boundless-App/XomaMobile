@@ -23,6 +23,7 @@ const CoursesScreen = ({ navigation }) => {
           flex: 1,
           justifyContent: "center",
           padding: SIZES.padding,
+          backgroundColor: COLORS.secondary,
         }}
       >
         <View

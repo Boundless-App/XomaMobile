@@ -320,6 +320,8 @@ const HomeScreen = ({ navigation }) => {
             containerStyle={{
               marginRight: SIZES.padding,
             }}
+            //BookAMentor
+            onPress={() => navigation.navigate("BookAMentor")}
           />
         </View>
       </View>

@@ -61,11 +61,11 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           style={{
             height: "100%",
             width: "100%",
-            borderBottomLeftRadius: SIZES.radius * 2,
-            borderBottomRightRadius: SIZES.radius * 2,
+            borderBottomLeftRadius: SIZES.radius,
+            borderBottomRightRadius: SIZES.radius,
           }}
         />
-        <IconButton
+        {/* <IconButton
           icon={icons.back_icon}
           onPress={() => navigation.goBack()}
           iconStyle={{
@@ -83,7 +83,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.padding,
           }}
-        />
+        /> */}
       </View>
     );
   }
@@ -105,6 +105,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           style={{
             flexDirection: "row",
             paddingVertical: 8,
+            marginHorizontal: 10,
             backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.radius,
           }}
@@ -256,6 +257,9 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             alignSelf: "center",
             backgroundColor: COLORS.lightTextGray,
             marginHorizontal: "5%",
+          }}
+          iconStyle={{
+            tintColor: COLORS.primary
           }}
         />
         <TouchableOpacity

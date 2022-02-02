@@ -8,6 +8,7 @@ import BookDescriptionScreen from "./BookDescriptionScreen";
 import CourseDescriptionScreen from "./CourseDescriptionScreen";
 import LessonScreen from "./LessonScreen";
 import CartScreen from "./Cart/CartScreen";
+import BookAMentor from "./BookAMentor";
 
 // OnBoarding
 import OnBoarding from "./OnBoarding/OnBoarding";
@@ -33,5 +34,6 @@ export {
   AuthLayout,
   SignIn,
   SignUp,
-  Continue
+  Continue,
+  BookAMentor
 };
