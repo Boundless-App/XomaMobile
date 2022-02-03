@@ -9,6 +9,8 @@ import CourseDescriptionScreen from "./CourseDescriptionScreen";
 import LessonScreen from "./LessonScreen";
 import CartScreen from "./Cart/CartScreen";
 import BookAMentor from "./BookAMentor";
+import ResOps from "./ResOps";
+import Notifications from "./Notifications";
 
 // OnBoarding
 import OnBoarding from "./OnBoarding/OnBoarding";
@@ -17,7 +19,7 @@ import OnBoarding from "./OnBoarding/OnBoarding";
 import AuthLayout from "./Authentication/AuthLayout";
 import SignIn from "./Authentication/SignIn";
 import SignUp from "./Authentication/SignUp";
-import Continue from "./Authentication/Continue"
+import Continue from "./Authentication/Continue";
 
 export {
   HomeScreen,
@@ -35,5 +37,7 @@ export {
   SignIn,
   SignUp,
   Continue,
-  BookAMentor
+  BookAMentor,
+  ResOps,
+  Notifications,
 };

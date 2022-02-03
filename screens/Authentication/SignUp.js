@@ -195,7 +195,7 @@ const SignUp = ({ navigation }) => {
       </View>
 
       {/* Footer */}
-      <View
+      {/* <View
           style={{
             flexDirection: "row",
             marginTop: SIZES.radius,
@@ -218,7 +218,7 @@ const SignUp = ({ navigation }) => {
             //onPress={() => navigation.goBack()}
             onPress={() => navigation.navigate("SignIn")}
           />
-        </View>
+        </View> */}
     </AuthLayout>
   );
 };

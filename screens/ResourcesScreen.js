@@ -12,7 +12,12 @@ import {
   Linking,
 } from "react-native";
 
-import { HorizontalCourseCard, IconButton, LineDivider } from "../components";
+import {
+  HeaderTwo,
+  HorizontalCourseCard,
+  IconButton,
+  LineDivider,
+} from "../components";
 import {
   COLORS,
   FONTS,
@@ -25,52 +30,57 @@ import {
 const ResourcesScreen = ({ navigation }) => {
   function renderHeader() {
     return (
-      <View
-        style={{
-          height: 50,
-          // backgroundColor: COLORS.lightRed,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <IconButton
-          icon={icons.back_icon}
-          onPress={() => navigation.goBack()}
-          iconStyle={{
-            tintColor: COLORS.white,
-          }}
-          containerStyle={{
-            // marginVertical: "8%",
-            // marginHorizontal: "8%",
-            // position: "absolute",
-            top: 10,
-            left: 20,
-            width: 40,
-            height: 40,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-            backgroundColor: COLORS.transparentBlack,
-            borderRadius: SIZES.padding,
-          }}
-        />
-        <Text
-          style={{
-            ...FONTS.h4,
-            paddingTop: SIZES.font,
-            marginLeft: SIZES.padding,
-            alignItems: "center",
-          }}
-        >
-          RESOURCES
-        </Text>
-        <View
-          style={{
-            marginLeft: "10%",
-          }}
-        ></View>
-      </View>
+      // <View
+      //   style={{
+      //     height: 50,
+      //     // backgroundColor: COLORS.lightRed,
+      //     flexDirection: "row",
+      //     alignItems: "center",
+      //     justifyContent: "space-between",
+      //   }}
+      // >
+      //   <IconButton
+      //     icon={icons.back_icon}
+      //     onPress={() => navigation.goBack()}
+      //     iconStyle={{
+      //       tintColor: COLORS.white,
+      //     }}
+      //     containerStyle={{
+      //       // marginVertical: "8%",
+      //       // marginHorizontal: "8%",
+      //       // position: "absolute",
+      //       top: 10,
+      //       left: 20,
+      //       width: 40,
+      //       height: 40,
+      //       alignItems: "center",
+      //       justifyContent: "center",
+      //       borderRadius: 10,
+      //       backgroundColor: COLORS.transparentBlack,
+      //       borderRadius: SIZES.padding,
+      //     }}
+      //   />
+      //   <Text
+      //     style={{
+      //       ...FONTS.h4,
+      //       paddingTop: SIZES.font,
+      //       marginLeft: SIZES.padding,
+      //       alignItems: "center",
+      //     }}
+      //   >
+      //     RESOURCES
+      //   </Text>
+      //   <View
+      //     style={{
+      //       marginLeft: "10%",
+      //     }}
+      //   ></View>
+      // </View>
+      <HeaderTwo
+        icon={icons.back_icon}
+        onPress={() => navigation.goBack()}
+        heading={"Resources"}
+      />
     );
   }
 
