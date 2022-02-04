@@ -1,26 +1,28 @@
 const onboarding_screens = [
   {
-      id: 1,
-      backgroundImage: require("../assets/images/burgundy-117.png"),
-      bannerImage: require("../assets/images/burgundy-117.png"),
-      title: "Explore Online Courses",
-      description: "All types of educational & professional courses available online."
+    id: 1,
+    backgroundImage: require("../assets/images/burgundy-117.png"),
+    bannerImage: require("../assets/images/burgundy-117.png"),
+    title: "Explore Online Courses",
+    description:
+      "All types of educational & professional courses available online.",
   },
   {
-      id: 2,
-      backgroundImage: require("../assets/images/burgundy-remote-education.png"),
-      bannerImage: require("../assets/images/burgundy-remote-education.png"),
-      title: "An Online Library At Your Disposal",
-      description: "Have unlimited access to mind strengthening content"
+    id: 2,
+    backgroundImage: require("../assets/images/burgundy-remote-education.png"),
+    bannerImage: require("../assets/images/burgundy-remote-education.png"),
+    title: "An Online Library At Your Disposal",
+    description: "Have unlimited access to mind strengthening content",
   },
   {
-      id: 3,
-      backgroundImage: require("../assets/images/burgundy-library-1.png"),
-      bannerImage: require("../assets/images/burgundy-library-1.png"),
-      title: "An Online Store ",
-      description: "You’ll receive the great food within an hour. And get free delivery credits for every order."
-  }
-]
+    id: 3,
+    backgroundImage: require("../assets/images/burgundy-library-1.png"),
+    bannerImage: require("../assets/images/burgundy-library-1.png"),
+    title: "An Online Store ",
+    description:
+      "You’ll receive the great books delivered propmtly. And get free delivery credits for every order.",
+  },
+];
 
 const course_details_tabs = [
   {
@@ -158,5 +160,3 @@ export default {
 //         icon: require("../assets/icons/profile.png")
 //     }
 // ]
-
-

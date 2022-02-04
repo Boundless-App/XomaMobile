@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import {
+  HeaderTwo,
   LineDivider,
   ProfileValue,
   ProgressBar,
@@ -17,32 +18,37 @@ import {
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
-const ProfileScreen = ({navigation}) => {
+const ProfileScreen = ({ navigation }) => {
   function renderHeader() {
     return (
-      <View
-        style={{
-          flexDirection: "row",
-          marginTop: 70,
-          paddingHorizontal: SIZES.padding,
-          justifyContent: "space-between",
-        }}
-      >
-        <Text
-          style={{
-            ...FONTS.h1,
-            color: COLORS.primary,
-          }}
-        >
-          My Profile
-        </Text>
+      // <View
+      //   style={{
+      //     flexDirection: "row",
+      //     marginTop: 70,
+      //     paddingHorizontal: SIZES.padding,
+      //     justifyContent: "space-between",
+      //   }}
+      // >
+      //   <Text
+      //     style={{
+      //       ...FONTS.h1,
+      //       color: COLORS.primary,
+      //     }}
+      //   >
+      //     My Profile
+      //   </Text>
 
-        <Image
-          source={icons.profile_icon}
-          resizeMode="contain"
-          style={{ width: 40, height: 40, tintColor: COLORS.primary }}
-        />
-      </View>
+      //   <Image
+      //     source={icons.profile_icon}
+      //     resizeMode="contain"
+      //     style={{ width: 40, height: 40, tintColor: COLORS.primary }}
+      //   />
+      // </View>
+      <HeaderTwo
+        onPress={() => navigation.goBack()}
+        heading={"My Profile"}
+        textStyle={{ marginRight: "30%" }}
+      />
     );
   }
 
@@ -166,7 +172,7 @@ const ProfileScreen = ({navigation}) => {
         />
         <LineDivider />
         <ProfileValue icon={icons.read_icon} label="Password" value="******" />
-        <LineDivider lineStyle={{backgroundColor: COLORS.secondary}}/>
+        <LineDivider lineStyle={{ backgroundColor: COLORS.secondary }} />
         <TextButton
           label="Log out"
           labelStyle={{

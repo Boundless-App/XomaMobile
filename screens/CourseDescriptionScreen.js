@@ -290,7 +290,11 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           backgroundColor: COLORS.lightGray3,
         }}
       >
-        <HeaderTwo onPress={() => navigation.goBack()} icon={icons.back_icon} />
+        <HeaderTwo
+          onPress={() => navigation.goBack()}
+          icon={icons.back_icon}
+          iconStyle={{ marginRight: "60%" }}
+        />
         <View
           style={{
             flex: 2,

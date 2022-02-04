@@ -23,6 +23,8 @@ import Incrementer from "./Incrementer";
 import FooterTotal from "./FooterTotal";
 import TabIndicator from "./TabIndicator";
 import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
+import Carousel from "./Carousel";
+import CarouselItem from "./CarouselItem";
 
 export {
   BookCard,
@@ -50,4 +52,6 @@ export {
   CustomSwitch,
   TextIconButton,
   KeyboardAvoidingWrapper,
+  Carousel,
+  CarouselItem,
 };

@@ -65,7 +65,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             borderBottomRightRadius: SIZES.radius,
           }}
         />
-        {/* <IconButton
+        <IconButton
           icon={icons.back_icon}
           onPress={() => navigation.goBack()}
           iconStyle={{
@@ -83,7 +83,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.padding,
           }}
-        /> */}
+        />
       </View>
     );
   }
@@ -259,7 +259,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             marginHorizontal: "5%",
           }}
           iconStyle={{
-            tintColor: COLORS.primary
+            tintColor: COLORS.primary,
           }}
         />
         <TouchableOpacity

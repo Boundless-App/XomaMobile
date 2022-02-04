@@ -78,8 +78,10 @@ const ResourcesScreen = ({ navigation }) => {
       // </View>
       <HeaderTwo
         icon={icons.back_icon}
+        iconStyle={{ marginRight: "55%" }}
         onPress={() => navigation.goBack()}
         heading={"Resources"}
+        textStyle={{ marginRight: 50 }}
       />
     );
   }

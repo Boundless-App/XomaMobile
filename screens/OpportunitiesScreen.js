@@ -78,6 +78,7 @@ const OpportunitiesScreen = ({ navigation }) => {
       // </View>
       <HeaderTwo
         icon={icons.back_icon}
+        iconStyle={{ marginRight: "55%" }}
         onPress={() => navigation.goBack()}
         heading={"Opportunities"}
         textStyle={{ marginRight: 50 }}

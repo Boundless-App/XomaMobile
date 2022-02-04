@@ -12,9 +12,11 @@ const ResOps = ({ navigation }) => {
       }}
     >
       <HeaderTwo
-        icon={icons.back_arrow_icon}
+        icon={icons.back_icon}
+        iconStyle={{ marginRight: "35%" }}
         onPress={() => navigation.goBack()}
         heading={"Resources & opportunities"}
+        textStyle={{ marginRight: 45 }}
       />
       <View
         style={{

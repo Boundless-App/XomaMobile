@@ -1,54 +1,67 @@
 import React from "react";
 import { View, Text, ImageBackground } from "react-native";
-import { IconButton } from "../components";
+import { HeaderTwo, IconButton } from "../components";
 import { COLORS, constants, FONTS, SIZES, images, icons } from "../constants";
 
-const BookAMentor = ({navigation}) => {
+const BookAMentor = ({ navigation }) => {
   return (
     <View
       style={{
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: COLORS.white,
       }}
     >
-      <IconButton
-        icon={icons.back_arrow_icon}
+      <HeaderTwo
+        icon={icons.back_icon}
+        iconStyle={{ marginRight: "60%" }}
         onPress={() => navigation.goBack()}
-        iconStyle={{
-          tintColor: COLORS.primary,
-        }}
-        containerStyle={{
-          position: "absolute",
-          top: 10,
-          left: 20,
-          width: 40,
-          height: 40,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        heading={"Mentor"}
+        textStyle={{ marginRight: 50 }}
       />
-      <ImageBackground
-        source={images.coming_soon}
+      <View
         style={{
-          //flex: 1,
+          flex: 2,
           alignItems: "center",
           justifyContent: "center",
-          height: "50%",
-          width: "100%",
+          backgroundColor: COLORS.white,
         }}
       >
-        <Text
+        {/* <IconButton
+          icon={icons.back_arrow_icon}
+          onPress={() => navigation.goBack()}
+          iconStyle={{
+            tintColor: COLORS.primary,
+          }}
+          containerStyle={{
+            position: "absolute",
+            top: 10,
+            left: 20,
+            width: 40,
+            height: 40,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        /> */}
+        <ImageBackground
+          source={images.coming_soon}
           style={{
-            textAlign: "center",
-            ...FONTS.h1,
-            color: COLORS.secondary,
+            //flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            height: "50%",
+            width: "100%",
           }}
         >
-          Comming Soon!
-        </Text>
-      </ImageBackground>
+          <Text
+            style={{
+              textAlign: "center",
+              ...FONTS.h1,
+              color: COLORS.secondary,
+            }}
+          >
+            Coming Soon!
+          </Text>
+        </ImageBackground>
+      </View>
     </View>
   );
 };

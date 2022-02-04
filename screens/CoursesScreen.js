@@ -139,7 +139,7 @@ const CoursesScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.secondary,
+        // backgroundColor: COLORS.secondary,
       }}
     >
       {/* <View
@@ -150,13 +150,13 @@ const CoursesScreen = ({ navigation }) => {
       >
         {renderButtonSection()}
       </View> */}
-      <HeaderTwo heading={"Courses"} />
+      <HeaderTwo heading={"Courses"} textStyle={{ marginRight: "35%" }} />
       <View
         style={{
           flex: 9,
           backgroundColor: COLORS.lightGray,
-          borderTopRightRadius: SIZES.radius * 2,
-          borderTopLeftRadius: SIZES.radius * 2,
+          // borderTopRightRadius: SIZES.radius * 2,
+          // borderTopLeftRadius: SIZES.radius * 2,
           overflow: "hidden",
           marginBottom: SIZES.radius * 2,
         }}

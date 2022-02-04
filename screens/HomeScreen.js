@@ -21,14 +21,16 @@ import {
 } from "../constants";
 
 import {
+  Carousel,
   CartQuantityBtn,
   HorizontalCourseCard,
   IconButton,
   LineDivider,
   Section,
 } from "../components";
+import { dummy, dummyData } from "../data/Data";
 
-import AutoScroll from "@homielab/react-native-auto-scroll";
+// import AutoScroll from "@homielab/react-native-auto-scroll";
 import SectionCard from "../components/SectionCard";
 
 const HomeScreen = ({ navigation }) => {
@@ -182,55 +184,59 @@ const HomeScreen = ({ navigation }) => {
 
   // Advertisements
   function renderSlider() {
-    const renderItem = ({ item, index }) => {
-      return (
-        <AutoScroll endPadding={1}>
-          <TouchableOpacity
-            style={{
-              borderRadius: SIZES.radius,
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: SIZES.base,
-              marginLeft: index == 0 ? SIZES.padding2 : 0,
-            }}
-          >
-            <Image
-              source={item.poster}
-              resizeMode="cover"
-              style={{ width: 350, height: 160, borderRadius: 20 }}
-            />
-            <View
-              style={{
-                position: "absolute",
-                bottom: 0,
-                height: 50,
-                width: SIZES.width * 0.3,
-                backgroundColor: COLORS.white,
-                borderTopRightRadius: SIZES.radius,
-                borderBottomLeftRadius: SIZES.radius,
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row-reverse",
-                alignSelf: "flex-start",
-              }}
-            >
-              <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
-            </View>
-          </TouchableOpacity>
-        </AutoScroll>
-      );
-    };
-
+    // const renderItem = ({ item, index }) => {
     return (
-      <FlatList
-        data={content}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => `${item.id}`}
-        renderItem={renderItem}
-      />
+      // <AutoScroll endPadding={1}>
+      //   <TouchableOpacity
+      //     style={{
+      //       borderRadius: SIZES.radius,
+      //       alignItems: "center",
+      //       justifyContent: "center",
+      //       marginRight: SIZES.base,
+      //       marginLeft: index == 0 ? SIZES.padding2 : 0,
+      //     }}
+      //   >
+      //     <Image
+      //       source={item.poster}
+      //       resizeMode="cover"
+      //       style={{ width: 350, height: 160, borderRadius: 20 }}
+      //     />
+      //     <View
+      //       style={{
+      //         position: "absolute",
+      //         bottom: 0,
+      //         height: 50,
+      //         width: SIZES.width * 0.3,
+      //         backgroundColor: COLORS.white,
+      //         borderTopRightRadius: SIZES.radius,
+      //         borderBottomLeftRadius: SIZES.radius,
+      //         alignItems: "center",
+      //         justifyContent: "center",
+      //         flexDirection: "row-reverse",
+      //         alignSelf: "flex-start",
+      //       }}
+      //     >
+      //       <Text style={{ ...FONTS.h4 }}>{item.details}</Text>
+      //     </View>
+      //   </TouchableOpacity>
+      // </AutoScroll>
+      <View>
+        <Carousel data={dummy} />
+        {/* <StatusBar style="auto" /> */}
+      </View>
     );
   }
+
+  //   return (
+  //     <FlatList
+  //       data={content}
+  //       horizontal
+  //       showsHorizontalScrollIndicator={false}
+  //       keyExtractor={(item) => `${item.id}`}
+  //       renderItem={renderItem}
+  //     />
+  //   );
+  // }
 
   //Cards
   function renderOptions() {
@@ -320,7 +326,7 @@ const HomeScreen = ({ navigation }) => {
             containerStyle={{
               marginRight: SIZES.padding,
             }}
-            onPress={() => console.log("Coming Soon")}
+            onPress={() => navigation.navigate("BookAMentor")}
           />
         </View>
       </View>
@@ -349,7 +355,8 @@ const HomeScreen = ({ navigation }) => {
       <View
         style={{
           flexDirection: "column",
-          marginTop: SIZES.padding * 2,
+          // marginTop: SIZES.padding * 2,
+          marginTop: SIZES.padding,
         }}
       >
         {/* Top Slider */}
@@ -360,7 +367,8 @@ const HomeScreen = ({ navigation }) => {
         style={{
           //marginTop: SIZES.padding,
           //backgroundColor: COLORS.secondary,
-          height: "80%",
+          height: "45%",
+          // height: "80%",
         }}
       >
         <View>{renderOptions()}</View>
