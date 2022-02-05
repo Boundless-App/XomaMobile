@@ -38,12 +38,12 @@ const SignIn = ({ navigation }) => {
           marginTop: SIZES.padding * 2,
         }}
       >
-        {/* Form Input */}
+        {/* Form Input - email */}
         <FormInput
-        containerStyle={{
-          marginTop: SIZES.base,
-        }}
-        icons={icons.email}
+          containerStyle={{
+            marginTop: SIZES.base,
+          }}
+          icons={icons.email}
           placeholder="Email"
           keyboardType="email-address"
           autoCompleteType="email"
@@ -54,7 +54,6 @@ const SignIn = ({ navigation }) => {
             setEmail(value);
           }}
           errorMsg={emailError}
-          
           appendComponent={
             <View
               style={{
@@ -82,15 +81,17 @@ const SignIn = ({ navigation }) => {
           }
         />
 
+        {/* Password */}
         <FormInput
           placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          containerStyle={{
-            //marginTop: SIZES.padding,
-          }}
+          containerStyle={
+            {
+              //marginTop: SIZES.padding,
+            }
+          }
           onChange={(value) => setPassword(value)}
-          
           appendComponent={
             <TouchableOpacity
               style={{
@@ -140,11 +141,10 @@ const SignIn = ({ navigation }) => {
         {/* Sign In */}
         <TextButton
           label="Sign In"
+          disabled={isEnableSignIn() ? false : true}
           labelStyle={{
-            color: COLORS.white
-        }}
-        onPress={() => navigation.navigate("Home")}
-          diabled={isEnableSignIn() ? false : true}
+            color: COLORS.white,
+          }}
           contentContainerStyle={{
             height: 55,
             alignItems: "center",
@@ -154,6 +154,7 @@ const SignIn = ({ navigation }) => {
               ? COLORS.secondary
               : COLORS.transparentSecondary,
           }}
+          onPress={() => navigation.navigate("SignUp")}
         />
         {/* Sign Up */}
         <View
@@ -185,8 +186,56 @@ const SignIn = ({ navigation }) => {
             onPress={() => navigation.navigate("SignUp")}
           />
         </View>
-      </View>
 
+        {/* Footer */}
+        <View
+          style={{
+            flexDirection: "column",
+            marginTop: SIZES.radius,
+            //justifyContent: "center",
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>
+              @2022{" "}
+            </Text>
+            <TextButton
+              label="Boundless Minds Limited."
+              contentContainerStyle={{
+                marginLeft: 3,
+                backgroundColor: null,
+              }}
+              labelStyle={{
+                color: COLORS.secondary,
+                ...FONTS.h3,
+              }}
+              //onPress={() => navigation.goBack()}
+              //onPress={() => navigation.navigate("SignIn")}
+            />
+          </View>
+          <View
+            style={{
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: COLORS.primary,
+                ...FONTS.body3,
+                textAlign: "center",
+              }}
+            >
+              {" "}
+              All Rights Reserved.
+            </Text>
+          </View>
+        </View>
+      </View>
     </AuthLayout>
   );
 };

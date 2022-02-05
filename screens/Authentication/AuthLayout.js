@@ -1,10 +1,24 @@
 import React from "react";
-import { View, Text, Image, KeyboardAvoidingView, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { constants, images, FONTS, COLORS, SIZES } from "../../constants";
 
-const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
+const AuthLayout = ({
+  authContainer,
+  title,
+  subtitle,
+  titleContainerStyle,
+  children,
+  iconContainer,
+  keyboardContainer,
+}) => {
   return (
     <View
       style={{
@@ -12,7 +26,9 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
         paddingVertical: SIZES.padding,
         backgroundColor: COLORS.lightGray,
         paddingHorizontal: SIZES.radius,
-        paddingTop: SIZES.radius * 3
+        paddingTop: SIZES.radius * 3,
+
+        ...authContainer,
       }}
     >
       <KeyboardAvoidingView
@@ -20,7 +36,8 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
         contentContainerStyle={{
           flex: 1,
           paddingVertical: SIZES.padding,
-          
+
+          ...keyboardContainer,
         }}
       >
         {/* App Icon */}
@@ -37,43 +54,42 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, children }) => {
               width: 200,
               tintColor: COLORS.secondary,
               margin: SIZES.radius,
+
+              ...iconContainer,
             }}
           />
         </View>
-        
-        <ScrollView
-        showsVerticalScrollIndicator={false}
-        >
 
-        {/* Title & Subtitle */}
-        <View
-          style={{
-            marginTop: SIZES.padding,
-            ...titleContainerStyle,
-          }}
-        >
-          <Text
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* Title & Subtitle */}
+          <View
             style={{
-              textAlign: "center",
-              ...FONTS.h2,
+              marginTop: SIZES.padding,
+              ...titleContainerStyle,
             }}
           >
-            {title}
-          </Text>
+            <Text
+              style={{
+                textAlign: "center",
+                ...FONTS.h2,
+              }}
+            >
+              {title}
+            </Text>
 
-          <Text
-            style={{
-              textAlign: "center",
-              color: COLORS.primary,
-              marginTop: SIZES.base,
-              ...FONTS.body3,
-            }}
-          >
-            {subtitle}
-          </Text>
-        </View>
-        {/* Content & Children */}
-        {children}
+            <Text
+              style={{
+                textAlign: "center",
+                color: COLORS.primary,
+                marginTop: SIZES.base,
+                ...FONTS.body3,
+              }}
+            >
+              {subtitle}
+            </Text>
+          </View>
+          {/* Content & Children */}
+          {children}
         </ScrollView>
       </KeyboardAvoidingView>
     </View>

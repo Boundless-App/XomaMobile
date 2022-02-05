@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Modal,
+  FlatList,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { AuthLayout } from "..";
 import { FormInput, TextIconButton, TextButton } from "../../components";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
@@ -8,18 +16,18 @@ import { utils } from "../../utils";
 const ContinueScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [showPass, setShowPass] = React.useState(false);
+  //const [password, setPassword] = React.useState("");
+  const [dropDown, setDropDown] = React.useState(false);
 
   const [emailError, setEmailError] = React.useState("");
   const [usernameError, setUsernameError] = React.useState("");
-  const [passwordError, setPasswordError] = React.useState("");
+  //const [passwordError, setPasswordError] = React.useState("");
 
   function isEnableSignUp() {
     return (
-      email != "" &&
       username != "" &&
       password != "" &&
+      email != "" &&
       emailError == "" &&
       passwordError == "" &&
       usernameError == ""
@@ -28,10 +36,14 @@ const ContinueScreen = ({ navigation }) => {
 
   return (
     <AuthLayout
-      title="Getting started"
-      subtitle="Create an account to continue!"
+      title="Welcome:"
+      subtitle="Let's get to know you alittle more"
+      authContainer={{
+        paddingTop: SIZES.radius * 2,
+        paddingBottom: SIZES.base
+      }}
       titleContainerStyle={{
-        marginTop: SIZES.radius,
+        marginTop: SIZES.base,
       }}
     >
       {/* Form input and Sign up*/}
@@ -41,18 +53,18 @@ const ContinueScreen = ({ navigation }) => {
           marginTop: SIZES.padding,
         }}
       >
-        {/* Email */}
+        {/* Username */}
         <FormInput
-          placeholder="Email"
-          keyboardType="email-address"
-          autoCompleteType="email"
+          placeholder="Your full name"
+          //keyboardType="email-address"
+          //autoCompleteType="email"
           onChange={(value) => {
             //validate email
-            utils.validateEmail(value, setEmailError);
+            // utils.validateEmail(value, setEmailError);
 
-            setEmail(value);
+            setUsername(value);
           }}
-          errorMsg={emailError}
+          //errorMsg={emailError}
           appendComponent={
             <View
               style={{
@@ -80,77 +92,210 @@ const ContinueScreen = ({ navigation }) => {
           }
         />
 
-        {/* Password */}
-        <FormInput
-          placeholder="Password"
-          secureTextEntry={!showPass}
-          autoCompleteType="password"
-          containerStyle={{
-            marginTop: SIZES.padding,
+{/* Gender & Age */}
+        <View
+          style={{
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "space-around"
           }}
-          onChange={(value) => {
-            utils.validatePassword(value, setPasswordError);
-            setPassword(value);
+        >
+          <View
+          style={{
+            width: "50%",
+            paddingRight: SIZES.base
           }}
-          errorMsg={passwordError}
-          appendComponent={
-            <TouchableOpacity
-              style={{
-                width: 40,
-                alignItems: "flex-end",
-                justifyContent: "center",
-              }}
-              onPress={() => setShowPass(!showPass)}
-            >
-              <Image
-                source={showPass ? icons.eye_close : icons.eye}
+          >
+            {/* Gender */}
+          <FormInput
+            placeholder="Gender"
+            // secureTextEntry={!showPass}
+            autoCompleteType="password"
+            // containerStyle={{
+            //   marginTop: SIZES.base,
+            // }}
+            // onChange={(value) => {
+            //   // utils.validatePassword(value, setPasswordError);
+            //   setPassword(value);
+            // }}
+            // errorMsg={passwordError}
+            appendComponent={
+              <TouchableOpacity
                 style={{
-                  height: 20,
-                  width: 20,
-                  tintColor: COLORS.primary,
+                  width: 40,
+                  alignItems: "flex-end",
+                  justifyContent: "center",
                 }}
-              />
-            </TouchableOpacity>
-          }
-        />
+                onPress={() => setDropDown(!dropDown)}
+              >
+                <Image
+                  source={icons.down_arrow}
+                  style={{
+                    height: 20,
+                    width: 20,
+                    tintColor: COLORS.primary,
+                  }}
+                />
+              </TouchableOpacity>
+            }
+          />
+          </View>
 
-        <FormInput
-          placeholder="Confirm Password"
-          secureTextEntry={!showPass}
-          autoCompleteType="password"
-          containerStyle={{
-            marginTop: SIZES.padding,
+          <View
+          style={{
+            width: "50%",
+            paddingLeft: SIZES.base
           }}
+          >
+          <FormInput
+            placeholder="How old are you?"
+            // secureTextEntry={!showPass}
+            // autoCompleteType="password"
+            // containerStyle={{
+            //   marginTop: SIZES.padding,
+            // }}
+            // onChange={(value) => {
+            //   utils.validatePassword(value, setPasswordError);
+            //   setPassword(value);
+            // }}
+            //errorMsg={passwordError}
+            appendComponent={
+              <TouchableOpacity
+                style={{
+                  width: 40,
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                }}
+                onPress={() => setDropDown(!dropDown)}
+              >
+                <Image
+                  source={icons.down_arrow}
+                  style={{
+                    height: 20,
+                    width: 20,
+                    tintColor: COLORS.primary,
+                  }}
+                />
+              </TouchableOpacity>
+            }
+          />
+          </View>
+        </View>
+
+{/* Country & Location */}
+        <View
+          style={{
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "space-around"
+          }}
+        >
+          <View
+          style={{
+            width: "50%",
+            paddingRight: SIZES.base
+          }}
+          >
+            {/* Gender */}
+          <FormInput
+            placeholder="Country"
+            // secureTextEntry={!showPass}
+            autoCompleteType="password"
+            // containerStyle={{
+            //   marginTop: SIZES.base,
+            // }}
+            // onChange={(value) => {
+            //   // utils.validatePassword(value, setPasswordError);
+            //   setPassword(value);
+            // }}
+            // errorMsg={passwordError}
+            appendComponent={
+              <TouchableOpacity
+                style={{
+                  width: 40,
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                }}
+                onPress={() => setDropDown(!dropDown)}
+              >
+                <Image
+                  source={icons.down_arrow}
+                  style={{
+                    height: 20,
+                    width: 20,
+                    tintColor: COLORS.primary,
+                  }}
+                />
+              </TouchableOpacity>
+            }
+          />
+          </View>
+
+          <View
+          style={{
+            width: "50%",
+            paddingLeft: SIZES.base
+          }}
+          >
+          <FormInput
+            placeholder="Location"
+            // secureTextEntry={!showPass}
+            // autoCompleteType="password"
+            // containerStyle={{
+            //   marginTop: SIZES.padding,
+            // }}
+            // onChange={(value) => {
+            //   utils.validatePassword(value, setPasswordError);
+            //   setPassword(value);
+            // }}
+            //errorMsg={passwordError}
+          />
+          </View>
+        </View>
+
+{/* Level of Education */}
+<FormInput
+          placeholder="Maximum Level of Education"
+          //keyboardType="email-address"
+          //autoCompleteType="email"
           onChange={(value) => {
-            utils.validatePassword(value, setPasswordError);
-            setPassword(value);
+            //validate email
+            // utils.validateEmail(value, setEmailError);
+
+            setUsername(value);
           }}
-          errorMsg={passwordError}
+          //errorMsg={emailError}
           appendComponent={
-            <TouchableOpacity
+            <View
               style={{
-                width: 40,
-                alignItems: "flex-end",
                 justifyContent: "center",
               }}
-              onPress={() => setShowPass(!showPass)}
             >
               <Image
-                source={showPass ? icons.eye_close : icons.eye}
+                source={
+                  email == "" || (email != "" && emailError == "")
+                    ? icons.correct
+                    : icons.cancel
+                }
                 style={{
                   height: 20,
                   width: 20,
-                  tintColor: COLORS.primary,
+                  tintColor:
+                    email == ""
+                      ? COLORS.primary
+                      : email != "" && emailError == ""
+                      ? COLORS.green
+                      : COLORS.red,
                 }}
               />
-            </TouchableOpacity>
+            </View>
           }
         />
 
         {/* Sign Up and Sign In */}
         {/* Sign Up Button */}
         <TextButton
-          label="Continue"
+          label="Update Profile"
           disabled={isEnableSignUp() ? false : true}
           labelStyle={{
             color: COLORS.white,
@@ -185,7 +330,7 @@ const ContinueScreen = ({ navigation }) => {
               backgroundColor: null,
             }}
             labelStyle={{
-              color: COLORS.primary,
+              color: COLORS.secondary,
               ...FONTS.h3,
             }}
             //onPress={() => navigation.goBack()}
@@ -196,29 +341,50 @@ const ContinueScreen = ({ navigation }) => {
 
       {/* Footer */}
       <View
+        style={{
+          flexDirection: "column",
+          marginTop: SIZES.radius,
+          //justifyContent: "center",
+        }}
+      >
+        <View
           style={{
             flexDirection: "row",
-            marginTop: SIZES.radius,
             justifyContent: "center",
           }}
         >
-          <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>
-            Already have an account?{" "}
-          </Text>
+          <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>@2022 </Text>
           <TextButton
-            label="Sign In"
+            label="Boundless Minds Limited."
             contentContainerStyle={{
               marginLeft: 3,
               backgroundColor: null,
             }}
             labelStyle={{
-              color: COLORS.primary,
+              color: COLORS.secondary,
               ...FONTS.h3,
             }}
             //onPress={() => navigation.goBack()}
-            onPress={() => navigation.navigate("SignIn")}
+            //onPress={() => navigation.navigate("SignIn")}
           />
         </View>
+        <View
+          style={{
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.primary,
+              ...FONTS.body3,
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            All Rights Reserved.
+          </Text>
+        </View>
+      </View>
     </AuthLayout>
   );
 };

@@ -18,11 +18,9 @@ const SignUp = ({ navigation }) => {
   function isEnableSignUp() {
     return (
       email != "" &&
-      username != "" &&
       password != "" &&
       emailError == "" &&
-      passwordError == "" &&
-      usernameError == ""
+      passwordError == ""
     );
   }
 
@@ -85,9 +83,9 @@ const SignUp = ({ navigation }) => {
           placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          containerStyle={{
-            marginTop: SIZES.padding,
-          }}
+          // containerStyle={{
+          //   marginTop: SIZES.base,
+          // }}
           onChange={(value) => {
             utils.validatePassword(value, setPasswordError);
             setPassword(value);
@@ -118,9 +116,9 @@ const SignUp = ({ navigation }) => {
           placeholder="Confirm Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          containerStyle={{
-            marginTop: SIZES.padding,
-          }}
+          // containerStyle={{
+          //   marginTop: SIZES.padding,
+          // }}
           onChange={(value) => {
             utils.validatePassword(value, setPasswordError);
             setPassword(value);
@@ -150,7 +148,7 @@ const SignUp = ({ navigation }) => {
         {/* Sign Up and Sign In */}
         {/* Sign Up Button */}
         <TextButton
-          label="Continue"
+          label="Create Account"
           disabled={isEnableSignUp() ? false : true}
           labelStyle={{
             color: COLORS.white,
@@ -185,7 +183,7 @@ const SignUp = ({ navigation }) => {
               backgroundColor: null,
             }}
             labelStyle={{
-              color: COLORS.primary,
+              color: COLORS.secondary,
               ...FONTS.h3,
             }}
             //onPress={() => navigation.goBack()}
@@ -195,30 +193,51 @@ const SignUp = ({ navigation }) => {
       </View>
 
       {/* Footer */}
-      {/* <View
+      <View
+        style={{
+          flexDirection: "column",
+          marginTop: SIZES.radius,
+          //justifyContent: "center",
+        }}
+      >
+        <View
           style={{
             flexDirection: "row",
-            marginTop: SIZES.radius,
             justifyContent: "center",
           }}
         >
-          <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>
-            Already have an account?{" "}
-          </Text>
+          <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>@2022 </Text>
           <TextButton
-            label="Sign In"
+            label="Boundless Minds Limited."
             contentContainerStyle={{
               marginLeft: 3,
               backgroundColor: null,
             }}
             labelStyle={{
-              color: COLORS.primary,
+              color: COLORS.secondary,
               ...FONTS.h3,
             }}
             //onPress={() => navigation.goBack()}
-            onPress={() => navigation.navigate("SignIn")}
+            //onPress={() => navigation.navigate("SignIn")}
           />
-        </View> */}
+        </View>
+        <View
+          style={{
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.primary,
+              ...FONTS.body3,
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            All Rights Reserved.
+          </Text>
+        </View>
+      </View>
     </AuthLayout>
   );
 };
