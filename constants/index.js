@@ -8,6 +8,7 @@ import dummyData from "./dummyData";
 import dummyData2 from "./dummyData2";
 import constants from "./constants";
 import theme, { COLORS, SIZES, FONTS } from "./theme";
+import * as jsonData from "./data.json"
 
 export {
   icons,
@@ -23,4 +24,5 @@ export {
   dummyData,
   constants,
   dummyData2,
+  jsonData
 };

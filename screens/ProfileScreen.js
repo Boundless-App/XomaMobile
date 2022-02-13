@@ -57,7 +57,7 @@ const ProfileScreen = ({ navigation }) => {
       <View
         style={{
           flexDirection: "row",
-          marginTop: SIZES.padding,
+          marginTop: SIZES.padding * 3,
           paddingHorizontal: SIZES.radius,
           paddingVertical: 20,
           borderRadius: SIZES.radius,
@@ -131,7 +131,7 @@ const ProfileScreen = ({ navigation }) => {
               ...FONTS.h2,
             }}
           >
-            Davi
+            Eugena
           </Text>
 
           <Text
@@ -140,7 +140,7 @@ const ProfileScreen = ({ navigation }) => {
               ...FONTS.h4,
             }}
           >
-            Dev
+            eugena@hello.com
           </Text>
 
           {/* Progress */}

@@ -130,7 +130,7 @@ const CartScreen = ({ navigation }) => {
             marginTop: 10,
           }}
           iconStyle={{
-            tintColor: COLORS.primary,
+            tintColor: COLORS.white,
           }}
         />
       </Header>
@@ -166,9 +166,10 @@ const CartScreen = ({ navigation }) => {
               flexDirection: "row",
               alignItems: "center",
               marginTop: SIZES.padding,
+              //marginHorizontal: SIZES.base,
               paddingHorizontal: SIZES.radius,
-              borderRadius: SIZES.radius,
-              elevation: 10,
+              borderRadius: SIZES.radius / 2,
+              elevation: 5,
             }}
           >
             {/* Book Image */}
@@ -225,12 +226,13 @@ const CartScreen = ({ navigation }) => {
             containerStyle={{
               flex: 1,
               justifyContent: "flex-end",
-              backgroundColor: COLORS.primary,
+              backgroundColor: COLORS.secondary,
               flexDirection: "row",
               alignItems: "center",
               marginTop: SIZES.padding,
+              //marginHorizontal: SIZES.base,
               paddingHorizontal: SIZES.radius,
-              borderRadius: SIZES.radius,
+              borderRadius: SIZES.radius / 2,
             }}
             icon={icons.delete_icon}
             iconStyle={

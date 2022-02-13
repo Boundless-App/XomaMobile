@@ -9,7 +9,7 @@ import {
   TextIconButton,
 } from "../../components";
 
-import { COLORS, FONTS, icons, images, SIZES } from "../../constants";
+import { COLORS, FONTS, icons, images, SIZES, jsonData } from "../../constants";
 
 import { utils } from "../../utils";
 
@@ -154,7 +154,7 @@ const SignIn = ({ navigation }) => {
               ? COLORS.secondary
               : COLORS.transparentSecondary,
           }}
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => navigation.navigate("Home")}
         />
         {/* Sign Up */}
         <View

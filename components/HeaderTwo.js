@@ -17,7 +17,7 @@ const HeaderTwo = ({
         flexDirection: "row",
         justifyContent: "space-around",
 
-        height: "10%",
+        height: "7%",
         backgroundColor: COLORS.secondary,
         alignItems: "center",
         //justifyContent: "center",

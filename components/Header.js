@@ -16,7 +16,7 @@ const Header = ({
       style={{
         flexDirection: "row",
         justifyContent: "space-around",
-        height: "10%",
+        height: "7%",
         backgroundColor: COLORS.secondary,
         alignItems: "center",
         borderBottomRightRadius: 60,
@@ -54,7 +54,7 @@ const Header = ({
           onPress={onPress}
           containerStyle={{
             alignSelf: "center",
-            backgroundColor: COLORS.secondary,
+            backgroundColor: COLORS.transparent,
             marginHorizontal: "5%",
           }}
         />
