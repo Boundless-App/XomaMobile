@@ -35,7 +35,7 @@
 </code></pre>
 
 <p>Once all this is done, run this command to run the mobile app</p>
-<pre><code class="lang-bash">npm <span class="hljs-keyword">install</span>
+<pre><code class="lang-bash">expo <span class="hljs-keyword">start</span>
 </code></pre>
 
 <p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
