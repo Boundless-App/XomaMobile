@@ -19,6 +19,8 @@ import {
   VerticalLineDivider,
 } from "../components";
 import { HorizontalCourseCard } from "../components";
+// import { getCourses } from "../Redux/actions";
+// import { useDispatch, useSelector } from "react-redux";
 
 const CoursesScreen = ({ navigation }) => {
   // function renderButtonSection() {
@@ -95,6 +97,16 @@ const CoursesScreen = ({ navigation }) => {
   // <HeaderTwo heading={"Courses"} />
   //   );
   // }
+
+  // const { courses } = useSelector((state) => state.userReducer);
+  // const dispatch = useDispatch;
+
+  // useEffect(() => {
+
+  //   return () => {
+  //     second
+  //   }
+  // }, [])
 
   function renderCoursesList() {
     return (

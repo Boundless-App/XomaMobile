@@ -85,105 +85,99 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           }}
         />
 
-        < CartQuantityBtn
-        // quantity={0}
-        onPress = {
-          () => navigation.navigate("Cart")
-        }
-        containerStyle = {
-          {
+        <CartQuantityBtn
+          // quantity={0}
+          onPress={() => navigation.navigate("Cart")}
+          containerStyle={{
             position: "absolute",
-              top: 10,
-              right: 20,
-              width: 50,
-              height: 50,
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 10,
-              backgroundColor: COLORS.transparentBlack,
-              borderRadius: SIZES.padding,
-          }
-        }
-        iconStyle = {
-          {
+            top: 10,
+            right: 20,
+            width: 50,
+            height: 50,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 10,
+            backgroundColor: COLORS.transparentBlack,
+            borderRadius: SIZES.padding,
+          }}
+          iconStyle={{
             tintColor: COLORS.white,
-          }
-        }
+          }}
         />
       </View>
     );
   }
 
-  function renderBookTitlePrice() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          position: "absolute",
-          top: "30%",
-          left: "0%",
-          width: "100%",
-          height: "100%",
-          alignItems: "center",
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            paddingVertical: 8,
-            marginHorizontal: 10,
-            backgroundColor: COLORS.transparentBlack,
-            borderRadius: SIZES.radius,
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                marginTop: 8,
-              }}
-            ></View>
-            <Text
-              style={{
-                ...FONTS.body3,
-                color: COLORS.white,
-              }}
-            >
-              {books.title}
-            </Text>
-          </View>
-          <VerticalLineDivider />
-          <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-            }}
-          >
-            <Text
-              style={{
-                ...FONTS.body4,
-                color: COLORS.white,
-              }}
-            >
-              UGX
-            </Text>
-            <Text
-              style={{
-                ...FONTS.body4,
-                color: COLORS.white,
-              }}
-            >
-              {books.price}
-            </Text>
-          </View>
-        </View>
-      </View>
-    );
-  }
+  // function renderBookTitlePrice() {
+  //   return (
+  //     <View
+  //       style={{
+  //         flex: 1,
+  //         position: "absolute",
+  //         top: "30%",
+  //         left: "0%",
+  //         width: "100%",
+  //         height: "100%",
+  //         alignItems: "center",
+  //       }}
+  //     >
+  //       <View
+  //         style={{
+  //           flexDirection: "row",
+  //           paddingVertical: 8,
+  //           marginHorizontal: 10,
+  //           backgroundColor: COLORS.transparentBlack,
+  //           borderRadius: SIZES.radius,
+  //         }}
+  //       >
+  //         <View
+  //           style={{
+  //             flex: 1,
+  //             alignItems: "center",
+  //           }}
+  //         >
+  //           <View
+  //             style={{
+  //               marginTop: 8,
+  //             }}
+  //           ></View>
+  //           <Text
+  //             style={{
+  //               ...FONTS.body3,
+  //               color: COLORS.white,
+  //             }}
+  //           >
+  //             {books.title}
+  //           </Text>
+  //         </View>
+  //         <VerticalLineDivider />
+  //         <View
+  //           style={{
+  //             flex: 1,
+  //             alignItems: "center",
+  //           }}
+  //         >
+  //           <Text
+  //             style={{
+  //               ...FONTS.body4,
+  //               color: COLORS.white,
+  //             }}
+  //           >
+  //             UGX
+  //           </Text>
+  //           <Text
+  //             style={{
+  //               ...FONTS.body4,
+  //               color: COLORS.white,
+  //             }}
+  //           >
+  //             {books.price}
+  //           </Text>
+  //         </View>
+  //       </View>
+  //     </View>
+  //   );
+  // }
 
   function renderBookDescription() {
     const indicatorSize =
@@ -263,7 +257,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
               marginBottom: SIZES.padding,
             }}
           >
-            Description
+            {books.title}
           </Text>
           <Text style={{ ...FONTS.body3, color: COLORS.primary }}>
             {books.description}
@@ -309,7 +303,9 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             }
           }}
         >
-          <Text style={{ ...FONTS.h3, color: COLORS.white }}>Add To Cart</Text>
+          <Text style={{ ...FONTS.h3, color: COLORS.white }}>
+            Add For UGX {books.price}
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -326,7 +322,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
         {/* Header section, with image and price */}
         {renderHeaderSection()}
         {/* Book Title and Price */}
-        {renderBookTitlePrice()}
+        {/* {renderBookTitlePrice()} */}
         {/* Book Desctiption */}
 
         {renderBookDescription()}
@@ -343,19 +339,21 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cartItems: state,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     cartItems: state,
+//   };
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItemToCart: (id) => dispatch({ type: "ADD_TO_CART", payload: id }),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addItemToCart: (id) => dispatch({ type: "ADD_TO_CART", payload: id }),
+//   };
+// };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BookDescriptionScreen);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(BookDescriptionScreen);
+
+export default BookDescriptionScreen;

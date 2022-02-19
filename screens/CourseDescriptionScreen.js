@@ -271,13 +271,13 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           contentContainerStyle={{
             height: "100%",
             paddingHorizontal: SIZES.padding,
-            borderRadius: 30,
+            borderRadius: 12,
             backgroundColor: COLORS.caribbeanGreen,
           }}
           labelStyle={{
             color: COLORS.white,
           }}
-          onPress={() => navigation.navigate("LessonScreen")}
+          onPress={() => navigation.navigate("CourseAttempt")}
         />
       </View>
     );
@@ -290,10 +290,29 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           backgroundColor: COLORS.lightGray3,
         }}
       >
-        <HeaderTwo
+        {/* <HeaderTwo
           onPress={() => navigation.goBack()}
           icon={icons.back_icon}
           iconStyle={{ marginRight: "60%" }}
+        /> */}
+        <IconButton
+          icon={icons.back_icon}
+          onPress={() => navigation.goBack()}
+          iconStyle={{
+            tintColor: COLORS.white,
+          }}
+          containerStyle={{
+            position: "absolute",
+            top: 10,
+            left: 20,
+            width: 50,
+            height: 50,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 10,
+            backgroundColor: COLORS.transparentBlack,
+            borderRadius: SIZES.padding,
+          }}
         />
         <View
           style={{

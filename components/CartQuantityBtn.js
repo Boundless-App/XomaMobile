@@ -58,10 +58,12 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cartItems: state,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     cartItems: state,
+//   };
+// };
 
-export default connect()(CartQuantityBtn);
+// export default connect()(CartQuantityBtn);
+
+export default CartQuantityBtn;

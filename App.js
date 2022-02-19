@@ -10,7 +10,7 @@ import {
   BookDescriptionScreen,
   CartScreen,
   CourseDescriptionScreen,
-  LessonScreen,
+  CourseAttempt,
   OnBoarding,
   SignUp,
   Continue,
@@ -21,7 +21,7 @@ import {
 import { Tabs, CourseNav, ShopNav } from "./components";
 import { useFonts } from "expo-font";
 import SignIn from "./screens/Authentication/SignIn";
-import store from "./screens/Cart/store";
+// import store from "/screens/Cart";
 
 const theme = {
   ...DefaultTheme,
@@ -44,39 +44,40 @@ const App = () => {
   }
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{ headerShown: false }}
-          initialRouteName={"OnBoarding"}
-        >
-          {/* Authentication */}
-          <Stack.Screen name="OnBoarding" component={OnBoarding} />
-          <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="Continue" component={Continue} />
+    // <Provider store={store}>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={"OnBoarding"}
+      >
+        {/* Authentication */}
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Continue" component={Continue} />
 
-          <Stack.Screen name="Home" component={Tabs} />
-          <Stack.Screen name="Shop" component={ShopNav} />
-          <Stack.Screen name="Courses" component={CourseNav} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Resources" component={ResourcesScreen} />
-          <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
-          <Stack.Screen name="ResOps" component={ResOps} />
-          <Stack.Screen
-            name="CourseDescriptionScreen"
-            component={CourseDescriptionScreen}
-          />
-          <Stack.Screen name="Notifications" component={Notifications} />
-          <Stack.Screen
-            name="BookDescriptionScreen"
-            component={BookDescriptionScreen}
-          />
-          <Stack.Screen name="Cart" component={CartScreen} />
-          <Stack.Screen name="BookAMentor" component={BookAMentor} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Provider>
+        <Stack.Screen name="Home" component={Tabs} />
+        <Stack.Screen name="Shop" component={ShopNav} />
+        <Stack.Screen name="Courses" component={CourseNav} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Resources" component={ResourcesScreen} />
+        <Stack.Screen name="Opportunities" component={OpportunitiesScreen} />
+        <Stack.Screen name="ResOps" component={ResOps} />
+        <Stack.Screen
+          name="CourseDescriptionScreen"
+          component={CourseDescriptionScreen}
+        />
+        <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen
+          name="BookDescriptionScreen"
+          component={BookDescriptionScreen}
+        />
+        <Stack.Screen name="Cart" component={CartScreen} />
+        <Stack.Screen name="BookAMentor" component={BookAMentor} />
+        <Stack.Screen name="CourseAttempt" component={CourseAttempt} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    // </Provider>
   );
 };
 

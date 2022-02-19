@@ -264,9 +264,10 @@ const CartScreen = ({ navigation }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cartItems: state,
-  };
-};
-export default connect(mapStateToProps)(CartScreen);
+// const mapStateToProps = (state) => {
+//   return {
+//     cartItems: state,
+//   };
+// };
+// export default connect(mapStateToProps)(CartScreen);
+export default CartScreen;

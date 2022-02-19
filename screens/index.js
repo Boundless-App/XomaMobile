@@ -11,6 +11,7 @@ import CartScreen from "./Cart/CartScreen";
 import BookAMentor from "./BookAMentor";
 import ResOps from "./ResOps";
 import Notifications from "./Notifications";
+import CourseAttempt from "./CourseAttempt";
 
 // OnBoarding
 import OnBoarding from "./OnBoarding/OnBoarding";
@@ -40,4 +41,5 @@ export {
   BookAMentor,
   ResOps,
   Notifications,
+  CourseAttempt,
 };
