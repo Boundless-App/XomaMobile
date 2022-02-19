@@ -1,5 +1,5 @@
 <h1 align="center">📚 The Xoma App 📚</h1>
-<p align="center">This is a mobile version of the Mentor for Boundless Minds. Built with React Native, Tailwind CSS.
+<p align="center">This is a mobile version of the <a href="https://thementoronline.org/">Mentor</a> under <a href="https://boundless-minds.org/">Boundless Minds</a>. Built with <a href="https://docs.expo.dev/"><code>Expo</code></a>.
 </p>
 
 <p align="center"> 
@@ -24,4 +24,18 @@
 <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
 </a>
 
-Made with [contributors-img](https://contrib.rocks).
+<h2 id="getting-started">Getting Started</h2>
+
+<p>First, to install the expo command line tool run this:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">npm</span> install --<span class="hljs-built_in">global</span> expo-cli
+</code></pre>
+
+<p>then install the node modules to help install the dependencies needed by the app to run successfully:</p>
+<pre><code class="lang-bash">npm <span class="hljs-keyword">install</span>
+</code></pre>
+
+<p>Once all this is done, run this command to run the mobile app</p>
+<pre><code class="lang-bash">expo <span class="hljs-keyword">start</span>
+</code></pre>
+
+<p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
