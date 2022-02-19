@@ -96,8 +96,8 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
               source={icons.list_icon}
               resizeMode="contain"
               style={{
-                width: 30,
-                height: 20,
+                width: SIZES.iconSize + 10,
+                height: SIZES.iconSize,
                 tintColor: COLORS.textGray,
               }}
             />

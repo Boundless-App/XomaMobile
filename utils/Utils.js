@@ -27,10 +27,19 @@ function validatePassword(value, setPasswordError) {
     }
 }
 
+function validateUsername(value, setUsernameError) {
+    if (value.length < 9) {
+        setUsernameError("Username must be 9 characters")
+    } else {
+        setUsernameError("")
+    }
+}
+
 const utils = {
     isValidEmail,
     validateEmail,
-    validatePassword
+    validatePassword,
+    validateUsername
 };
 
 export default utils;

@@ -4,6 +4,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  Linking,
   Modal,
   FlatList,
   TouchableWithoutFeedback,
@@ -39,7 +40,7 @@ const ContinueScreen = ({ navigation }) => {
       title="Welcome:"
       subtitle="Let's get to know you alittle more"
       authContainer={{
-        paddingTop: SIZES.radius * 2,
+        paddingTop: SIZES.padding3 * 2,
         paddingBottom: SIZES.base
       }}
       titleContainerStyle={{
@@ -73,7 +74,7 @@ const ContinueScreen = ({ navigation }) => {
             >
               <Image
                 source={
-                  email == "" || (email != "" && emailError == "")
+                  username == "" || (username != "" && usernameError == "")
                     ? icons.correct
                     : icons.cancel
                 }
@@ -81,9 +82,9 @@ const ContinueScreen = ({ navigation }) => {
                   height: 20,
                   width: 20,
                   tintColor:
-                    email == ""
+                    username == ""
                       ? COLORS.primary
-                      : email != "" && emailError == ""
+                      : username != "" && usernameError == ""
                       ? COLORS.green
                       : COLORS.red,
                 }}
@@ -303,7 +304,7 @@ const ContinueScreen = ({ navigation }) => {
           contentContainerStyle={{
             height: 55,
             alignItems: "center",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding3,
             borderRadius: SIZES.radius,
             backgroundColor: isEnableSignUp()
               ? COLORS.secondary
@@ -311,40 +312,13 @@ const ContinueScreen = ({ navigation }) => {
           }}
           onPress={() => navigation.navigate("Home")}
         />
-
-        {/* Sign In Button*/}
-        <View
-          style={{
-            flexDirection: "row",
-            marginTop: SIZES.radius,
-            justifyContent: "center",
-          }}
-        >
-          <Text style={{ color: COLORS.primary, ...FONTS.body3 }}>
-            Already have an account?{" "}
-          </Text>
-          <TextButton
-            label="Sign In"
-            contentContainerStyle={{
-              marginLeft: 3,
-              backgroundColor: null,
-            }}
-            labelStyle={{
-              color: COLORS.secondary,
-              ...FONTS.h3,
-            }}
-            //onPress={() => navigation.goBack()}
-            onPress={() => navigation.navigate("SignIn")}
-          />
-        </View>
       </View>
 
       {/* Footer */}
       <View
         style={{
           flexDirection: "column",
-          marginTop: SIZES.radius,
-          //justifyContent: "center",
+          marginTop: SIZES.padding3 * 2,
         }}
       >
         <View
@@ -364,8 +338,11 @@ const ContinueScreen = ({ navigation }) => {
               color: COLORS.secondary,
               ...FONTS.h3,
             }}
-            //onPress={() => navigation.goBack()}
-            //onPress={() => navigation.navigate("SignIn")}
+            onPress = {
+              () => {
+                Linking.openURL("https://boundless-minds.org/");
+              }
+            }
           />
         </View>
         <View

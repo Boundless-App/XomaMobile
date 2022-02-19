@@ -28,8 +28,8 @@ const ProfileValue = ({ icons, label, value, onPress }) => {
           source={icons}
           resizeMode="contain"
           style={{
-            width: 25,
-            height: 25,
+            width: SIZES.iconSize + 5,
+            height: SIZES.iconSize + 5,
             tintColor: COLORS.white,
           }}
         />

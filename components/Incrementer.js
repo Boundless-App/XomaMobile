@@ -25,8 +25,8 @@ const Incrementer = ({ containerStyle, value = 1, onAdd, onMinus }) => {
         }}
         icon={icons.minus_icon}
         iconStyle={{
-          height: 25,
-          width: 25,
+          height: SIZES.iconSize + 5,
+          width: SIZES.iconSize + 5,
           tintColor: value > 1 ? COLORS.primary : COLORS.gray,
         }}
         onPress={onMinus}

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
 import { AuthLayout } from "..";
 import { FormInput, TextIconButton, TextButton } from "../../components";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
@@ -32,13 +32,14 @@ const SignUp = ({ navigation }) => {
         marginTop: SIZES.radius,
       }}
     >
-      {/* Form input and Sign up*/}
+      {/* Form input*/}
       <View
         style={{
           flex: 1,
           marginTop: SIZES.padding,
         }}
       >
+
         {/* Email */}
         <FormInput
           placeholder="Email"
@@ -83,9 +84,6 @@ const SignUp = ({ navigation }) => {
           placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          // containerStyle={{
-          //   marginTop: SIZES.base,
-          // }}
           onChange={(value) => {
             //utils.validatePassword(value, setPasswordError);
             setPassword(value);
@@ -116,14 +114,11 @@ const SignUp = ({ navigation }) => {
           placeholder="Confirm Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          // containerStyle={{
-          //   marginTop: SIZES.padding,
-          // }}
           onChange={(value) => {
             //utils.validatePassword(value, setPasswordError);
             setPassword(value);
           }}
-          errorMsg={passwordError}
+          //errorMsg={passwordError}
           appendComponent={
             <TouchableOpacity
               style={{
@@ -157,7 +152,7 @@ const SignUp = ({ navigation }) => {
           contentContainerStyle={{
             height: 55,
             alignItems: "center",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding3,
             borderRadius: SIZES.radius,
             backgroundColor: isEnableSignUp()
               ? COLORS.secondary
@@ -170,7 +165,7 @@ const SignUp = ({ navigation }) => {
         <View
           style={{
             flexDirection: "row",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding3,
             justifyContent: "center",
           }}
         >
@@ -187,7 +182,6 @@ const SignUp = ({ navigation }) => {
               color: COLORS.secondary,
               ...FONTS.h3,
             }}
-            //onPress={() => navigation.goBack()}
             onPress={() => navigation.navigate("SignIn")}
           />
         </View>
@@ -197,8 +191,7 @@ const SignUp = ({ navigation }) => {
       <View
         style={{
           flexDirection: "column",
-          marginTop: SIZES.radius,
-          //justifyContent: "center",
+          marginTop: SIZES.padding3,
         }}
       >
         <View
@@ -218,8 +211,11 @@ const SignUp = ({ navigation }) => {
               color: COLORS.secondary,
               ...FONTS.h3,
             }}
-            //onPress={() => navigation.goBack()}
-            //onPress={() => navigation.navigate("SignIn")}
+            onPress = {
+              () => {
+                Linking.openURL("https://boundless-minds.org/");
+              }
+            }
           />
         </View>
         <View

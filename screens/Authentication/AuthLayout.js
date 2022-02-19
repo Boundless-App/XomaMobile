@@ -26,7 +26,7 @@ const AuthLayout = ({
         paddingVertical: SIZES.padding,
         backgroundColor: COLORS.lightGray,
         paddingHorizontal: SIZES.radius,
-        paddingTop: SIZES.radius * 3,
+        paddingTop: SIZES.padding3 * 3,
 
         ...authContainer,
       }}

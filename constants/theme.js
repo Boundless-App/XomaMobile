@@ -48,6 +48,8 @@ export const SIZES = {
   radius: 12,
   padding: 10,
   padding2: 12,
+  padding3: 30,
+  iconSize: 20,
 
   // font sizes
   largeTitle: 50,

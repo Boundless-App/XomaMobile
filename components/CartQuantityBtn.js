@@ -23,8 +23,8 @@ const CartQuantityBtn = ({ containerStyle, iconStyle, quantity, onPress }) => {
       <Image
         source={icons.cart_icon}
         style={{
-          width: 30,
-          height: 30,
+          width: SIZES.iconSize + 10,
+          height: SIZES.iconSize + 10,
           tintColor: COLORS.lightGray,
           ...iconStyle,
         }}

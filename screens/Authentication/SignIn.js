@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Linking
+} from "react-native";
 
 import { AuthLayout } from "../";
 import {
@@ -38,6 +44,7 @@ const SignIn = ({ navigation }) => {
           marginTop: SIZES.padding * 2,
         }}
       >
+
         {/* Form Input - email */}
         <FormInput
           containerStyle={{
@@ -81,16 +88,12 @@ const SignIn = ({ navigation }) => {
           }
         />
 
-        {/* Password */}
+        {/* Form Input - Password */}
+
         <FormInput
           placeholder="Password"
           secureTextEntry={!showPass}
           autoCompleteType="password"
-          containerStyle={
-            {
-              //marginTop: SIZES.padding,
-            }
-          }
           onChange={(value) => setPassword(value)}
           appendComponent={
             <TouchableOpacity
@@ -138,7 +141,7 @@ const SignIn = ({ navigation }) => {
           />
         </View>
 
-        {/* Sign In */}
+        {/* Sign In Button */}
         <TextButton
           label="Sign In"
           disabled={isEnableSignIn() ? false : true}
@@ -148,7 +151,7 @@ const SignIn = ({ navigation }) => {
           contentContainerStyle={{
             height: 55,
             alignItems: "center",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding3,
             borderRadius: SIZES.radius,
             backgroundColor: isEnableSignIn()
               ? COLORS.secondary
@@ -156,11 +159,11 @@ const SignIn = ({ navigation }) => {
           }}
           onPress={() => navigation.navigate("Home")}
         />
-        {/* Sign Up */}
+        {/* Sign Up Text Button*/}
         <View
           style={{
             flexDirection: "row",
-            marginTop: SIZES.radius,
+            marginTop: SIZES.padding3,
             justifyContent: "center",
           }}
         >
@@ -191,8 +194,7 @@ const SignIn = ({ navigation }) => {
         <View
           style={{
             flexDirection: "column",
-            marginTop: SIZES.radius,
-            //justifyContent: "center",
+            marginTop: SIZES.padding3,
           }}
         >
           <View
@@ -214,8 +216,11 @@ const SignIn = ({ navigation }) => {
                 color: COLORS.secondary,
                 ...FONTS.h3,
               }}
-              //onPress={() => navigation.goBack()}
-              //onPress={() => navigation.navigate("SignIn")}
+              onPress = {
+                () => {
+                  Linking.openURL("https://boundless-minds.org/");
+                }
+              }
             />
           </View>
           <View

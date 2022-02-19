@@ -20,7 +20,6 @@ const HeaderTwo = ({
         height: "7%",
         backgroundColor: COLORS.secondary,
         alignItems: "center",
-        //justifyContent: "center",
         borderBottomRightRadius: 60,
         ...containerStyle,
       }}
@@ -53,8 +52,6 @@ const HeaderTwo = ({
           style={{
             ...FONTS.h2,
             color: COLORS.white,
-            marginRight: "28%",
-            marginHorizontal: SIZES.padding,
             textAlign: "center",
             ...textStyle,
           }}
@@ -67,8 +64,8 @@ const HeaderTwo = ({
           source={icon1}
           resizeMode="contain"
           style={{
-            width: 30,
-            height: 30,
+            width: SIZES.iconSize + 10,
+            height: SIZES.iconSize + 10,
             tintColor: COLORS.white,
             ...iconStyle,
           }}

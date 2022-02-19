@@ -18,8 +18,8 @@ const VerticalShopCard = ({ containerStyle }) => {
         style={{
           width: "100%",
           height: 150,
-          marginBottom: SIZES.radius,
-          borderRadius: SIZES.radius,
+          marginBottom: SIZES.padding3,
+          borderRadius: SIZES.padding3,
         }}
       />
 
@@ -27,7 +27,7 @@ const VerticalShopCard = ({ containerStyle }) => {
       <View
         style={{
           flexShrink: 1,
-          paddingHorizontal: SIZES.radius,
+          paddingHorizontal: SIZES.padding3,
         }}
       >
         <Text

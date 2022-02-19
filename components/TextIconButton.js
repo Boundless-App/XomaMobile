@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Text, Image, StyleSheet } from "react-native";
 
-import { COLORS, FONTS } from "../constants";
+import { COLORS, FONTS, SIZES } from "../constants";
 
 const TextIconButton = ({
   containerStyle,
@@ -57,8 +57,8 @@ const TextIconButton = ({
 const styles = StyleSheet.create({
   image: {
     marginTop: 5,
-    width: 20,
-    height: 20,
+    width: SIZES.iconSize,
+    height: SIZES.iconSize,
     tintColor: COLORS.black,
   },
 });
