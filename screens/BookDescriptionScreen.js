@@ -75,14 +75,40 @@ const BookDescriptionScreen = ({ route, navigation }) => {
             position: "absolute",
             top: 10,
             left: 20,
-            width: 40,
-            height: 40,
+            width: 50,
+            height: 50,
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 10,
             backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.padding,
           }}
+        />
+
+        < CartQuantityBtn
+        // quantity={0}
+        onPress = {
+          () => navigation.navigate("Cart")
+        }
+        containerStyle = {
+          {
+            position: "absolute",
+              top: 10,
+              right: 20,
+              width: 50,
+              height: 50,
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 10,
+              backgroundColor: COLORS.transparentBlack,
+              borderRadius: SIZES.padding,
+          }
+        }
+        iconStyle = {
+          {
+            tintColor: COLORS.white,
+          }
+        }
         />
       </View>
     );
@@ -250,7 +276,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
   function renderBottomButton() {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <CartQuantityBtn
+        {/* <CartQuantityBtn
           // quantity={0}
           onPress={() => navigation.navigate("Cart")}
           containerStyle={{
@@ -261,7 +287,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           iconStyle={{
             tintColor: COLORS.primary,
           }}
-        />
+        /> */}
         <TouchableOpacity
           style={{
             flex: 1,

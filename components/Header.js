@@ -42,6 +42,7 @@ const Header = ({
             color: COLORS.white,
             marginLeft: "40%",
             marginHorizontal: SIZES.radius * 4,
+            alignItems: "center"
           }}
         >
           {heading}

@@ -46,7 +46,7 @@ const ContinueScreen = ({ navigation }) => {
         marginTop: SIZES.base,
       }}
     >
-      {/* Form input and Sign up*/}
+      {/* Form input under continue*/}
       <View
         style={{
           flex: 1,

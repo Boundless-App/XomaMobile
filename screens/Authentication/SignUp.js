@@ -87,10 +87,10 @@ const SignUp = ({ navigation }) => {
           //   marginTop: SIZES.base,
           // }}
           onChange={(value) => {
-            utils.validatePassword(value, setPasswordError);
+            //utils.validatePassword(value, setPasswordError);
             setPassword(value);
           }}
-          errorMsg={passwordError}
+          //errorMsg={passwordError}
           appendComponent={
             <TouchableOpacity
               style={{
@@ -120,7 +120,7 @@ const SignUp = ({ navigation }) => {
           //   marginTop: SIZES.padding,
           // }}
           onChange={(value) => {
-            utils.validatePassword(value, setPasswordError);
+            //utils.validatePassword(value, setPasswordError);
             setPassword(value);
           }}
           errorMsg={passwordError}
@@ -146,6 +146,7 @@ const SignUp = ({ navigation }) => {
         />
 
         {/* Sign Up and Sign In */}
+
         {/* Sign Up Button */}
         <TextButton
           label="Create Account"

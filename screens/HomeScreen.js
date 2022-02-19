@@ -151,7 +151,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Icons */}
 
         {/* Notifications */}
-        <IconButton
+        {/* <IconButton
           icon={icons.notification_icon}
           iconStyle={{
             tintColor: COLORS.lightGray,
@@ -162,7 +162,7 @@ const HomeScreen = ({ navigation }) => {
           containerStyle={{
             paddingRight: "4%",
           }}
-        />
+        /> */}
 
         {/* Cart */}
 
@@ -344,7 +344,7 @@ const HomeScreen = ({ navigation }) => {
       {/* Header Section */}
       <View
         style={{
-          height: "13%",
+          height: "10%",
           //backgroundColor: COLORS.secondary,
         }}
       >

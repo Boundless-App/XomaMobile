@@ -104,7 +104,7 @@ const ShopScreen = ({ navigation }) => {
         heading={"Shop"}
         onPress={() => navigation.navigate("Cart")}
         containerStyle={{
-          paddingLeft: SIZES.padding2 * 4,
+          paddingLeft: SIZES.padding2 * 2,
         }}
       />
       {renderBooksList()}
