@@ -35,11 +35,20 @@ function validateUsername(value, setUsernameError) {
     }
 }
 
+function validatePhone(value, setPhoneError) {
+    if (value.length < 12) {
+        setPhoneError("Phone number must be 12 characters")
+    } else {
+        setPhoneError("")
+    }
+}
+
 const utils = {
     isValidEmail,
     validateEmail,
     validatePassword,
-    validateUsername
+    validateUsername,
+    validatePhone
 };
 
 export default utils;

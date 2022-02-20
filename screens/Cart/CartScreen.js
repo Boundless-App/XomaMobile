@@ -259,7 +259,19 @@ const CartScreen = ({ navigation }) => {
       {renderCartList()}
 
       {/* Footer */}
-      <FooterTotal subTotal={50000} shippingFee={8000} total={58000} />
+      < FooterTotal subTotal = {
+        50000
+      }
+      shippingFee = {
+        8000
+      }
+      total = {
+        58000
+      }
+      onPress = {
+        () => navigation.navigate("DeliveryInfo")
+      }
+      />
     </View>
   );
 };

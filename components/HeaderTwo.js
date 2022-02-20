@@ -16,7 +16,6 @@ const HeaderTwo = ({
       style={{
         flexDirection: "row",
         justifyContent: "space-around",
-
         height: "7%",
         backgroundColor: COLORS.secondary,
         alignItems: "center",
@@ -24,41 +23,35 @@ const HeaderTwo = ({
         ...containerStyle,
       }}
     >
-      <View
-        style={{
-          alignItems: "center",
-          paddingHorizontal: SIZES.radius,
-        }}
-      >
-        <TouchableOpacity onPress={onPress}>
-          <Image
-            source={icon}
-            resizeMode="contain"
-            style={{
-              width: 30,
-              height: 30,
-              tintColor: COLORS.white,
-              ...iconStyle,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          alignItems: "center",
-        }}
-      >
+      <TouchableOpacity onPress={onPress}>
+        <Image
+          source={icon}
+          resizeMode="contain"
+          style={{
+            width: SIZES.iconSize + 10,
+            height: SIZES.iconSize + 10,
+            tintColor: COLORS.white,
+            ...iconStyle,
+          }}
+        />
+      </TouchableOpacity>
+
+      <View>
         <Text
           style={{
             ...FONTS.h2,
             color: COLORS.white,
-            textAlign: "center",
+            marginLeft: "40%",
+            marginHorizontal: SIZES.radius * 4,
+            alignItems: "center",
+            justifyContent: "center",
             ...textStyle,
           }}
         >
           {heading}
         </Text>
       </View>
+
       <View>
         <Image
           source={icon1}
@@ -71,6 +64,7 @@ const HeaderTwo = ({
           }}
         />
       </View>
+
     </View>
   );
 };

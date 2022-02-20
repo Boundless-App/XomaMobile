@@ -60,12 +60,12 @@ const ContinueScreen = ({ navigation }) => {
           //keyboardType="email-address"
           //autoCompleteType="email"
           onChange={(value) => {
-            //validate email
-            // utils.validateEmail(value, setEmailError);
+            //validate Username
+            utils.validateUsername(value, setUsernameError);
 
             setUsername(value);
           }}
-          //errorMsg={emailError}
+          errorMsg={usernameError}
           appendComponent={
             <View
               style={{

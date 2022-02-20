@@ -8,6 +8,7 @@ import BookDescriptionScreen from "./BookDescriptionScreen";
 import CourseDescriptionScreen from "./CourseDescriptionScreen";
 import LessonScreen from "./LessonScreen";
 import CartScreen from "./Cart/CartScreen";
+import DeliveryInfo from "./Cart/DeliveryInfo"
 import BookAMentor from "./BookAMentor";
 import ResOps from "./ResOps";
 import Notifications from "./Notifications";
@@ -33,6 +34,7 @@ export {
   CourseDescriptionScreen,
   LessonScreen,
   CartScreen,
+  DeliveryInfo,
   OnBoarding,
   AuthLayout,
   SignIn,
