@@ -9,7 +9,8 @@ import {
   ResourcesScreen,
   BookDescriptionScreen,
   CartScreen,
-  DeliveryInfo,
+  Checkout,
+  Success,
   CourseDescriptionScreen,
   CourseAttempt,
   OnBoarding,
@@ -74,7 +75,8 @@ const App = () => {
           component={BookDescriptionScreen}
         />
         <Stack.Screen name="Cart" component={CartScreen} />
-        <Stack.Screen name="DeliveryInfo" component={DeliveryInfo} />
+        <Stack.Screen name="Checkout" component={Checkout} />
+        <Stack.Screen name="Success" component={Success} />
         <Stack.Screen name="BookAMentor" component={BookAMentor} />
         <Stack.Screen name="CourseAttempt" component={CourseAttempt} />
       </Stack.Navigator>

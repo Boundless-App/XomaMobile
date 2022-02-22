@@ -15,6 +15,7 @@ export const voidSpace = require("../assets/images/void_space.png");
 export const shopping = require("../assets/images/shopping.png");
 export const coming_soon = require("../assets/images/coming_soon.png");
 export const exploring_nature = require("../assets/images/exploring-nature.png");
+export const success = require("../assets/images/success.png");
 
 //book images
 export const bookPackageLevel3 = require("../assets/books/BOOK_PACKAGE_LEVEL31_HZLjJS8.max-350x225.png");
@@ -79,6 +80,7 @@ export default {
   voidSpace,
   coming_soon,
   exploring_nature,
+  success,
 
   bookPackageLevel3,
   bookPackageLevel2,

@@ -6,7 +6,13 @@ import LinearGradient from "react-native-linear-gradient";
 import { TextButton, LineDivider } from "../components";
 import { FONTS, SIZES, COLORS } from "../constants";
 
-const FooterTotal = ({ subTotal, shippingFee, total, onPress }) => {
+const FooterTotal = ({
+  subTotal,
+  shippingFee,
+  total,
+  onPress,
+  buttonStyle,
+}) => {
   return (
     <View>
       {/* Shadow */}
@@ -38,7 +44,7 @@ const FooterTotal = ({ subTotal, shippingFee, total, onPress }) => {
         <View
           style={{
             flexDirection: "row",
-            marginHorizontal: SIZES.base
+            marginHorizontal: SIZES.base,
           }}
         >
           <Text style={{ flex: 1, ...FONTS.body3 }}>Subtotal</Text>
@@ -53,7 +59,7 @@ const FooterTotal = ({ subTotal, shippingFee, total, onPress }) => {
             flexDirection: "row",
             marginTop: SIZES.padding,
             marginBottom: SIZES.padding * 2,
-            marginHorizontal: SIZES.base
+            marginHorizontal: SIZES.base,
           }}
         >
           <Text style={{ flex: 1, ...FONTS.body3 }}>Shipping Fee</Text>
@@ -62,14 +68,14 @@ const FooterTotal = ({ subTotal, shippingFee, total, onPress }) => {
 
         {/* Line */}
         <LineDivider />
-        
+
         {/* Total */}
         <View
           style={{
             flexDirection: "row",
             marginTop: SIZES.padding * 2,
             marginBottom: SIZES.padding * 3,
-            marginHorizontal: SIZES.base
+            marginHorizontal: SIZES.base,
           }}
         >
           <Text style={{ flex: 1, ...FONTS.h3 }}>Total</Text>
@@ -83,6 +89,8 @@ const FooterTotal = ({ subTotal, shippingFee, total, onPress }) => {
             //marginTop: SIZES.padding,
             borderRadius: SIZES.radius,
             backgroundColor: COLORS.secondary,
+
+            ...buttonStyle,
           }}
           label={"Place Your Order"}
           labelStyle={{

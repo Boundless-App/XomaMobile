@@ -43,12 +43,21 @@ function validatePhone(value, setPhoneError) {
     }
 }
 
+function validateAddress(value, setUsernameError) {
+    if (value.length < 9) {
+        setUsernameError("Username must be 9 characters")
+    } else {
+        setUsernameError("")
+    }
+}
+
 const utils = {
     isValidEmail,
     validateEmail,
     validatePassword,
     validateUsername,
-    validatePhone
+    validatePhone,
+    validateAddress
 };
 
 export default utils;

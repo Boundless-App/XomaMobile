@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity, Text } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { FooterTotal, HeaderTwo, FormInput } from "../../components";
 
 import { COLORS, FONTS, SIZES, icons, dummyData, books } from "../../constants";
@@ -16,7 +17,7 @@ const DeliveryInfo = ({ navigation }) => {
           //marginLeft: SIZES.padding3,
           //marginLeft: "40%",
         }}
-        heading={"Step Two"}
+        heading={"Checkout"}
         textStyle={{
           marginLeft: "35%",
           //marginHorizontal: SIZES.radius * 4,
@@ -26,19 +27,25 @@ const DeliveryInfo = ({ navigation }) => {
   }
 
   const [phoneNumber, setPhoneNumber] = React.useState("");
-  const [address, setAddress] = React.useState("");
-  const [dropDown, setDropDown] = React.useState(false);
+  const [streetAddress, setStreetAddress] = React.useState("");
+  const [poBoxAddress, setPoBoxAddress] = React.useState("");
+  const [cityAddress, setCityAddress] = React.useState("");
 
-  const [addressError, setAddressError] = React.useState("");
   const [phoneNumberError, setPhoneNumberError] = React.useState("");
-  //const [showPass, setShowPass] = React.useState(false);
+  const [streetAddressError, setStreetAddressError] = React.useState("");
+  const [poBoxAddressError, setPoBoxAddressError] = React.useState("");
+  const [cityAddressError, setCityAddressError] = React.useState("");
 
-  function isEnableSignUp() {
+  function isEnableCheckout() {
     return (
       phoneNumber == "" &&
       phoneNumberError == "" &&
-      address == "" &&
-      addressError == ""
+      streetAddress == "" &&
+      streetAddressError == "" &&
+      poBoxAddress == "" &&
+      poBoxAddressError == "" &&
+      cityAddress == "" &&
+      cityAddressError == ""
     );
   }
 
@@ -72,13 +79,14 @@ const DeliveryInfo = ({ navigation }) => {
             justifyContent: "space-evenly",
           }}
         >
+          {/* Phone Number */}
           <FormInput
             containerStyle={{
               marginHorizontal: SIZES.radius,
             }}
             placeholder="Phone Number"
             onChange={(value) => {
-              //validate Username
+              //validate Phone
               utils.validatePhone(value, setPhoneNumberError);
 
               setPhoneNumber(value);
@@ -111,42 +119,100 @@ const DeliveryInfo = ({ navigation }) => {
               </View>
             }
           />
+
+          {/* Street Address */}
           <FormInput
             containerStyle={{
               marginHorizontal: SIZES.radius,
             }}
-            placeholder="Delivery Address"
+            placeholder="Street Address"
             onChange={(value) => {
-              //validate Username
-              //utils.validatePhone(value, setPhoneNumberError);
+              //validate Street Address
+              utils.validateAddress(value, setStreetAddressError);
 
-              setAddress(value);
+              setStreetAddress(value);
             }}
-            errorMsg={addressError}
+            errorMsg={streetAddressError}
             appendComponent={
-              <TouchableOpacity
+              <View
                 style={{
-                  width: 40,
-                  alignItems: "flex-end",
                   justifyContent: "center",
                 }}
-                onPress={() => setDropDown(!dropDown)}
               >
                 <Image
-                  source={icons.down_arrow}
+                  source={icons.location}
                   style={{
                     height: 20,
                     width: 20,
                     tintColor: COLORS.primary,
                   }}
                 />
-              </TouchableOpacity>
+              </View>
+            }
+          />
+
+          {/* P.O Box Number */}
+          <FormInput
+            containerStyle={{
+              marginHorizontal: SIZES.radius,
+            }}
+            placeholder="P.O Box Number"
+            onChange={(value) => {
+              setPoBoxAddress(value);
+            }}
+            appendComponent={
+              <View
+                style={{
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  source={icons.location}
+                  style={{
+                    height: 20,
+                    width: 20,
+                    tintColor: COLORS.primary,
+                  }}
+                />
+              </View>
+            }
+          />
+
+          {/* City / Town */}
+          <FormInput
+            containerStyle={{
+              marginHorizontal: SIZES.radius,
+            }}
+            placeholder="City/Town"
+            onChange={(value) => {
+              //validate Username
+              utils.validateAddress(value, setCityAddressError);
+
+              setCityAddress(value);
+            }}
+            errorMsg={cityAddressError}
+            appendComponent={
+              <View
+                style={{
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  source={icons.location}
+                  style={{
+                    height: 20,
+                    width: 20,
+                    tintColor: COLORS.primary,
+                  }}
+                />
+              </View>
             }
           />
         </View>
       </View>
     );
   }
+
   return (
     <View
       style={{
@@ -158,8 +224,18 @@ const DeliveryInfo = ({ navigation }) => {
       {/* Header */}
       {renderHeader()}
 
-      {/* CartList */}
-      {renderDeliveryForm()}
+      <KeyboardAwareScrollView
+        keyboardDismissMode="on-drag"
+        extraScrollHeight={-200}
+        contentContainerStyle={{
+          flexGrow: 1,
+          paddingHorizontal: SIZES.padding,
+          paddingBottom: 20,
+        }}
+      >
+        {/* Delivery Form */}
+        {renderDeliveryForm()}
+      </KeyboardAwareScrollView>
 
       {/* Footer */}
       <View
@@ -171,9 +247,10 @@ const DeliveryInfo = ({ navigation }) => {
           subTotal={50000}
           shippingFee={8000}
           total={58000}
-          // onPress = {
-          //     () => navigation.navigate("DeliveryInfo")
-          // }
+          buttonStyle={{
+            backgroundColor: COLORS.secondary
+          }}
+          onPress={() => navigation.replace("Success")}
         />
       </View>
     </View>

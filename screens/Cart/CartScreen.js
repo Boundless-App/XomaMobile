@@ -269,7 +269,7 @@ const CartScreen = ({ navigation }) => {
         58000
       }
       onPress = {
-        () => navigation.navigate("DeliveryInfo")
+        () => navigation.navigate("Checkout",{total:58000})
       }
       />
     </View>
