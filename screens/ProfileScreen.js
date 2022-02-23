@@ -171,7 +171,10 @@ const ProfileScreen = ({ navigation }) => {
           value="eugena@hello.com"
         />
         <LineDivider />
-        <ProfileValue icon={icons.read_icon} label="Password" value="******" />
+        <ProfileValue icon={icons.read_icon} label="Password" value="******"
+        onPress={() => navigation.navigate("ChangePassword")} 
+          
+        />
         <LineDivider lineStyle={{ backgroundColor: COLORS.secondary }} />
         <TextButton
           label="Log out"

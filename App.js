@@ -11,6 +11,7 @@ import {
   CartScreen,
   Checkout,
   Success,
+  ChangePassword,
   CourseDescriptionScreen,
   CourseAttempt,
   OnBoarding,
@@ -77,6 +78,7 @@ const App = () => {
         <Stack.Screen name="Cart" component={CartScreen} />
         <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Success" component={Success} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="BookAMentor" component={BookAMentor} />
         <Stack.Screen name="CourseAttempt" component={CourseAttempt} />
       </Stack.Navigator>

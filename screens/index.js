@@ -10,6 +10,7 @@ import LessonScreen from "./LessonScreen";
 import CartScreen from "./Cart/CartScreen";
 import Checkout from "./Cart/Checkout";
 import Success from "./Cart/Success";
+import ChangePassword from "./ChangePassword"
 import BookAMentor from "./BookAMentor";
 import ResOps from "./ResOps";
 import Notifications from "./Notifications";
@@ -37,6 +38,7 @@ export {
   CartScreen,
   Checkout,
   Success,
+  ChangePassword,
   OnBoarding,
   AuthLayout,
   SignIn,
