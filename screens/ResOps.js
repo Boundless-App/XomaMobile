@@ -20,206 +20,96 @@ const ResOps = ({ navigation }) => {
       />
       <View
         style={{
-          flex: 2,
+          flex: 1,
           alignItems: "center",
           justifyContent: "center",
+          marginVertical: "10%",
         }}
       >
         <TouchableOpacity
           onPress={() => navigation.navigate("Resources")}
           style={{
-            flexDirection: "row",
-            borderRadius: SIZES.base,
-            backgroundColor: COLORS.white,
-            //elevation: 2,
+            height: "30%",
+            width: "90%",
+            elevation: 1,
           }}
         >
-          {/* Thumbnail */}
-          <View
-            style={
-              {
-                //backgroundColor: COLORS.black
-              }
-            }
-          >
+          <View style={{}}>
             <Image
               source={images.bookLover}
               resizeMode="cover"
               style={{
-                width: 110,
-                height: 130,
-                borderRadius: 20,
+                height: "85%",
+                width: "100%",
               }}
             />
           </View>
-          {/* Details */}
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "column",
-              marginLeft: SIZES.base,
-              //backgroundColor: COLORS.black,
-            }}
-          >
-            <View
+          <View>
+            <Text
               style={{
-                flexDirection: "column",
-                height: 52,
-                //backgroundColor: COLORS.white
+                ...FONTS.h3,
               }}
             >
-              {/* Title */}
-              <Text
-                style={{
-                  ...FONTS.h4,
-                  fontSize: 17,
-                  marginTop: SIZES.base,
-                  color: COLORS.primary,
-                }}
-              >
-                Resources
-              </Text>
-            </View>
+              Resources
+            </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Opportunities")}
-          style={{
-            flexDirection: "row",
-            borderRadius: SIZES.base,
-            backgroundColor: COLORS.white,
-            //elevation: 2,
-          }}
-        >
-          {/* Thumbnail */}
-          <View
-            style={
-              {
-                //backgroundColor: COLORS.black
-              }
-            }
-          >
-            <Image
-              source={images.bookLover}
-              resizeMode="cover"
-              style={{
-                width: 110,
-                height: 130,
-                borderRadius: 20,
-              }}
-            />
-          </View>
-          {/* Details */}
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "column",
-              marginLeft: SIZES.base,
-              //backgroundColor: COLORS.black,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "column",
-                height: 52,
-                //backgroundColor: COLORS.white
-              }}
-            >
-              {/* Title */}
-              <Text
-                style={{
-                  ...FONTS.h4,
-                  fontSize: 17,
-                  marginTop: SIZES.base,
-                  color: COLORS.primary,
-                }}
-              >
-                Opportunities
-              </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => console.log("Coming Soon")}
-          style={{
-            flexDirection: "row",
-            borderRadius: SIZES.base,
-            backgroundColor: COLORS.white,
-            //elevation: 2,
-          }}
-        >
-          {/* Thumbnail */}
-          <View
-            style={
-              {
-                //backgroundColor: COLORS.black
-              }
-            }
-          >
-            <Image
-              source={images.bookLover}
-              resizeMode="cover"
-              style={{
-                width: 110,
-                height: 130,
-                borderRadius: 20,
-              }}
-            />
-          </View>
-          {/* Details */}
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "column",
-              marginLeft: SIZES.base,
-              //backgroundColor: COLORS.black,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "column",
-                height: 52,
-                //backgroundColor: COLORS.white
-              }}
-            >
-              {/* Title */}
-              <Text
-                style={{
-                  ...FONTS.h4,
-                  fontSize: 17,
-                  marginTop: SIZES.base,
-                  color: COLORS.primary,
-                }}
-              >
-                Workshops
-              </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-        {/* <TouchableOpacity
-          style={{
-            marginVertical: 50,
-          }}
           onPress={() => navigation.navigate("Resources")}
+          style={{
+            height: "30%",
+            width: "90%",
+            elevation: 1,
+          }}
         >
-          <Text>Resources</Text>
+          <View style={{}}>
+            <Image
+              source={images.knowledge}
+              resizeMode="cover"
+              style={{
+                height: "85%",
+                width: "100%",
+              }}
+            />
+          </View>
+          <View>
+            <Text
+              style={{
+                ...FONTS.h3,
+              }}
+            >
+              Opportunities
+            </Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
+          // onPress={() => navigation.navigate("Opportunities")}
           style={{
-            marginVertical: 50,
+            height: "30%",
+            width: "90%",
+            elevation: 1,
           }}
-          onPress={() => navigation.navigate("Opportunities")}
         >
-          <Text>Opportunities</Text>
+          <View style={{}}>
+            <Image
+              source={images.exploring_nature}
+              resizeMode="cover"
+              style={{
+                height: "85%",
+                width: "100%",
+              }}
+            />
+          </View>
+          <View>
+            <Text
+              style={{
+                ...FONTS.h3,
+              }}
+            >
+              Workshops
+            </Text>
+          </View>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            marginVertical: 50,
-          }}
-          onPress={() => console.log("Coming Soon")}
-        >
-          <Text>Workshops</Text>
-        </TouchableOpacity> */}
       </View>
     </View>
   );
