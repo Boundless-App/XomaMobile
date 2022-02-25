@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, FlatList } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
-import { connect } from "react-redux";
+
 import {
   Incrementer,
   CartQuantityBtn,
@@ -38,54 +38,6 @@ const CartScreen = ({ navigation }) => {
 
   function renderHeader() {
     return (
-      //     <View
-      //       style={{
-      //         height: 50,
-      //         // backgroundColor: COLORS.lightRed,
-      //         flexDirection: "row",
-      //         alignItems: "center",
-      //         justifyContent: "space-between",
-      //       }}
-      //     >
-      //       <IconButton
-      //         icon={icons.back_icon}
-      //         onPress={() => navigation.goBack()}
-      //         iconStyle={{
-      //           tintColor: COLORS.white,
-      //         }}
-      //         containerStyle={{
-      //           // marginVertical: "8%",
-      //           // marginHorizontal: "8%",
-      //           // position: "absolute",
-      //           top: 10,
-      //           left: 20,
-      //           width: 40,
-      //           height: 40,
-      //           alignItems: "center",
-      //           justifyContent: "center",
-      //           borderRadius: 10,
-      //           backgroundColor: COLORS.transparentBlack,
-      //           borderRadius: SIZES.padding,
-      //         }}
-      //       />
-      //       <Text
-      //         style={{
-      //           ...FONTS.h4,
-      //           paddingTop: SIZES.font,
-      //           marginLeft: SIZES.padding,
-      //           alignItems: "center",
-      //         }}
-      //       >
-      //         MY CART
-      //       </Text>
-      //       <CartQuantityBtn
-      //         // quantity={0}
-      //         containerStyle={{
-      //           marginRight: 10,
-      //           marginTop: 10,
-      //         }}
-      //       />
-      //     </View>
       <Header
         icon={icons.back_icon}
         onPress1={() => navigation.goBack()}
@@ -124,7 +76,6 @@ const CartScreen = ({ navigation }) => {
           MY CART
         </Text>
         <CartQuantityBtn
-          // quantity={0}
           containerStyle={{
             marginRight: 10,
             marginTop: 10,
@@ -139,15 +90,6 @@ const CartScreen = ({ navigation }) => {
 
   function renderCartList() {
     return (
-      // <View
-      //   style={{
-      //     marginTop: SIZES.radius,
-      //     height: 100,
-      //     backgroundColor: COLORS.lightGray2,
-      //   }}
-      // >
-      //   <Text>{dummyData.myCart.title}</Text>
-      // </View>
       <SwipeListView
         data={myCartList}
         keyExtractor={(item) => `${item.id}`}
@@ -166,7 +108,7 @@ const CartScreen = ({ navigation }) => {
               flexDirection: "row",
               alignItems: "center",
               marginTop: SIZES.padding,
-              //marginHorizontal: SIZES.base,
+
               paddingHorizontal: SIZES.radius,
               borderRadius: SIZES.radius / 2,
               elevation: 5,
@@ -230,7 +172,6 @@ const CartScreen = ({ navigation }) => {
               flexDirection: "row",
               alignItems: "center",
               marginTop: SIZES.padding,
-              //marginHorizontal: SIZES.base,
               paddingHorizontal: SIZES.radius,
               borderRadius: SIZES.radius / 2,
             }}
@@ -259,27 +200,14 @@ const CartScreen = ({ navigation }) => {
       {renderCartList()}
 
       {/* Footer */}
-      < FooterTotal subTotal = {
-        50000
-      }
-      shippingFee = {
-        8000
-      }
-      total = {
-        58000
-      }
-      onPress = {
-        () => navigation.navigate("Checkout",{total:58000})
-      }
+      <FooterTotal
+        subTotal={50000}
+        shippingFee={8000}
+        total={58000}
+        onPress={() => navigation.navigate("Checkout", { total: 58000 })}
       />
     </View>
   );
 };
 
-// const mapStateToProps = (state) => {
-//   return {
-//     cartItems: state,
-//   };
-// };
-// export default connect(mapStateToProps)(CartScreen);
 export default CartScreen;

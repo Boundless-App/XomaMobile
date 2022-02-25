@@ -33,6 +33,7 @@ const courses_details = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ],
+  is_active: false,
 };
 export default {
   courses_details,

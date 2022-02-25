@@ -21,7 +21,7 @@ function infinateScroll(dataList) {
 
   setInterval(function () {
     scrolled++;
-    if (scrolled < numberOfData) scrollValue = scrollValue + width;
+    if (scrolled != numberOfData) scrollValue = scrollValue + width;
     else {
       scrollValue = 0;
       scrolled = 0;
@@ -60,9 +60,10 @@ const Carousel = ({ data }) => {
           renderItem={({ item }) => {
             return <CarouselItem item={item} />;
           }}
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { x: scrollX } } },
-          ])}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            { useNativeDriver: false }
+          )}
         />
         <View
           style={{

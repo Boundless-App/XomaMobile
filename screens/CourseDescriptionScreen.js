@@ -129,7 +129,7 @@ const SelectTab = ({ scrollX, onTabPress }) => {
 };
 
 const CourseDescriptionScreen = ({ route, navigation }) => {
-  // const [selectedTab, setSelectedTab] = React.useState(0);
+  const [active, setActive] = React.useState(null);
   const [courses, setCourses] = React.useState(null);
   const flatListRef = React.useRef();
   const scrollX = React.useRef(new Animated.Value(0)).current;
@@ -153,38 +153,10 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           bottom: 70,
           top: 0,
           left: 0,
-          // right: 0,
-          // height: "40%",
-          // overflow: "hidden",
-          // alignItems: "center",
         }}
       >
-        {/* <IconButton
-          icon={icons.back_icon}
-          onPress={() => navigation.goBack()}
-          iconStyle={{
-            tintColor: COLORS.white,
-          }}
-          containerStyle={{
-            // marginVertical: "8%",
-            // marginHorizontal: "8%",
-            position: "absolute",
-            top: 10,
-            left: 20,
-            width: 40,
-            height: 40,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-            backgroundColor: COLORS.transparentBlack,
-            borderRadius: SIZES.padding,
-          }}
-        /> */}
         <Text
           style={{
-            // position: "absolute",
-            // flex: 1,
-            // flexWrap: "wrap",
             top: "80%",
             alignItems: "flex-end",
             justifyContent: "flex-end",
@@ -259,28 +231,55 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
   }
 
   function renderEnrollButton() {
-    return (
-      <View
-        style={{
-          marginBottom: SIZES.padding,
-          marginHorizontal: SIZES.padding,
-        }}
-      >
-        <TextButton
-          label="Enroll"
-          contentContainerStyle={{
-            height: "100%",
-            paddingHorizontal: SIZES.padding,
-            borderRadius: 12,
-            backgroundColor: COLORS.caribbeanGreen,
+    function updateBtnHandler() {}
+
+    if (active === false) {
+      return (
+        <View
+          style={{
+            marginBottom: SIZES.padding,
+            marginHorizontal: SIZES.padding,
           }}
-          labelStyle={{
-            color: COLORS.white,
+        >
+          <TextButton
+            label="Enroll"
+            contentContainerStyle={{
+              height: "100%",
+              paddingHorizontal: SIZES.padding,
+              borderRadius: 12,
+              backgroundColor: COLORS.caribbeanGreen,
+            }}
+            labelStyle={{
+              color: COLORS.white,
+            }}
+            onPress={() => updateBtnHandler()}
+          />
+        </View>
+      );
+    } else {
+      return (
+        <View
+          style={{
+            marginBottom: SIZES.padding,
+            marginHorizontal: SIZES.padding,
           }}
-          onPress={() => navigation.navigate("CourseAttempt")}
-        />
-      </View>
-    );
+        >
+          <TextButton
+            label="Continue"
+            contentContainerStyle={{
+              height: "100%",
+              paddingHorizontal: SIZES.padding,
+              borderRadius: 12,
+              backgroundColor: COLORS.secondary,
+            }}
+            labelStyle={{
+              color: COLORS.white,
+            }}
+            onPress={() => navigation.navigate("CourseAttempt")}
+          />
+        </View>
+      );
+    }
   }
   if (courses) {
     return (
@@ -290,11 +289,6 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           backgroundColor: COLORS.lightGray3,
         }}
       >
-        {/* <HeaderTwo
-          onPress={() => navigation.goBack()}
-          icon={icons.back_icon}
-          iconStyle={{ marginRight: "60%" }}
-        /> */}
         <IconButton
           icon={icons.back_icon}
           onPress={() => navigation.goBack()}

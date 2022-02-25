@@ -15,22 +15,6 @@ const FooterTotal = ({
 }) => {
   return (
     <View>
-      {/* Shadow */}
-      {/* <LinearGradient
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
-        colors={[COLORS.transparent, COLORS.lightGray2]}
-        style={{
-          position: "absolute",
-          top: -15,
-          left: 0,
-          right: 0, 
-          height: Platform.OS === "ios" ? 200 : 50,
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
-        }} 
-      />
-      */}
       {/* Order Details */}
       <View
         style={{
@@ -92,7 +76,7 @@ const FooterTotal = ({
 
             ...buttonStyle,
           }}
-          label={"Place Your Order"}
+          label={"Go To Checkout"}
           labelStyle={{
             color: COLORS.white,
           }}

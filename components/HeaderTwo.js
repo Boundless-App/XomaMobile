@@ -64,7 +64,6 @@ const HeaderTwo = ({
           }}
         />
       </View>
-
     </View>
   );
 };
