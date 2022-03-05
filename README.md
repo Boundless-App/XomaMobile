@@ -108,7 +108,6 @@ The mentor is a digital Mobile-Web platform that prepares young people for work,
 - :iphone:&nbsp; [WhatsApp](https://www.whatsapp.com/ 'WhatsApp')
 - :telephone_receiver:&nbsp; Calls
 
-
 ## :sparkles: Main Features
 
 - Register & Login authentication through email & password.
@@ -130,5 +129,4 @@ The mentor is a digital Mobile-Web platform that prepares young people for work,
 
 ## :warning: Disclaimer
 
------------------------------------------------------------------------
 <p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
