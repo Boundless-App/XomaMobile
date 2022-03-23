@@ -18,6 +18,7 @@
 
 <p align="center">
   <a href="#books-background">Background</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#pencil-solution">Solution</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#eyes-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-tools-stack">Tools Stack</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,6 +49,8 @@
 A key aspect missing in the employment–education debate is the criticality of soft skills (21st Century Skills). Soft skills in the form of critical thinking, curiosity, problem solving, negotiation, data and digital skills, people management, collaboration and communication are important for increasing employment outcomes in many aspects. 
 
 The absence of these skills – which are crucial for the future of work – in formal school and curriculum contributes to the severe mismatch between the skills of young graduates entering the job market and the skills that employers need for today's global workforce. It explains why hundreds of thousands who complete University cannot transition from school-to-work or create opportunities for themselves and for others. i.e Mentor
+
+## :pencil: Solution
 
 The mentor is a digital Mobile-Web platform that prepares young people for work, through the following:
 1. Providing free online work-readiness soft skilling courses and school-to-work transition opportunities to University and vocational students, these include: Scholarships, Internships, contests and research grants.
@@ -105,7 +108,6 @@ The mentor is a digital Mobile-Web platform that prepares young people for work,
 - :iphone:&nbsp; [WhatsApp](https://www.whatsapp.com/ 'WhatsApp')
 - :telephone_receiver:&nbsp; Calls
 
-
 ## :sparkles: Main Features
 
 - Register & Login authentication through email & password.
@@ -127,5 +129,4 @@ The mentor is a digital Mobile-Web platform that prepares young people for work,
 
 ## :warning: Disclaimer
 
------------------------------------------------------------------------
 <p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
