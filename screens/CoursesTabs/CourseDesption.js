@@ -21,7 +21,7 @@ const courseDesption = () => {
           paddingHorizontal: SIZES.padding,
         }}
       >
-        <Text style={{ ...FONTS.h2 }}>{dummyData2.courses_details.title}</Text>
+        <Text style={{ ...FONTS.h3 }}>{dummyData2.courses_details.title}</Text>
       </View>
     );
   }

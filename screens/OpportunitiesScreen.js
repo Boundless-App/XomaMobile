@@ -30,12 +30,26 @@ import {
 const OpportunitiesScreen = ({ navigation }) => {
   function renderHeader() {
     return (
+      // <HeaderTwo
+      //   icon={icons.back_icon}
+      //   iconStyle={{ marginRight: "1%" }}
+      //   onPress={() => navigation.goBack()}
+      //   heading={"Opportunities"}
+      //   textStyle={{ marginRight: 30 }}
+      // />
       <HeaderTwo
         icon={icons.back_icon}
-        iconStyle={{ marginRight: "1%" }}
         onPress={() => navigation.goBack()}
-        heading={"Opportunities"}
-        textStyle={{ marginRight: 30 }}
+        iconStyle={{
+          tintColor: COLORS.white,
+          //marginLeft: SIZES.padding3,
+          //marginLeft: "40%",
+        }}
+        heading={"Opportunites"}
+        textStyle={{
+          marginLeft: "35%",
+          //marginHorizontal: SIZES.radius * 4,
+        }}
       />
     );
   }

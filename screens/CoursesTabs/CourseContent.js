@@ -46,7 +46,7 @@ const CourseContent = () => {
                   marginLeft: SIZES.radius,
                 }}
               >
-                <Text style={{ ...FONTS.body4 }}>{item?.topic}</Text>
+                <Text style={{ ...FONTS.body3 }}>{item?.topic}</Text>
               </View>
             </View>
           );

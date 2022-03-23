@@ -26,11 +26,7 @@ const OnBoarding = ({ navigation }) => {
           // dot color
           const dotColor = dotPosition.interpolate({
             inputRange: [index - 1, index, index + 1],
-            outputRange: [
-              COLORS.lightRed,
-              COLORS.secondary,
-              COLORS.lightRed,
-            ],
+            outputRange: [COLORS.lightRed, COLORS.secondary, COLORS.lightRed],
             extrapolate: "clamp",
           });
 
@@ -114,7 +110,7 @@ const OnBoarding = ({ navigation }) => {
               label="skip"
               contentContainerStyle={{
                 backgroundColor: null,
-                paddingHorizontal: SIZES.padding
+                paddingHorizontal: SIZES.padding,
               }}
               labelStyle={{
                 color: COLORS.secondary,
@@ -124,14 +120,13 @@ const OnBoarding = ({ navigation }) => {
             <TextButton
               label="Next"
               labelStyle={{
-                color: COLORS.white
-            }}
+                color: COLORS.white,
+              }}
               contentContainerStyle={{
                 height: 60,
                 width: 200,
                 borderRadius: SIZES.radius,
                 backgroundColor: COLORS.secondary,
-                
               }}
               onPress={() => {
                 flatListRef?.current?.scrollToIndex({
@@ -159,7 +154,7 @@ const OnBoarding = ({ navigation }) => {
               contentContainerStyle={{
                 height: 60,
                 borderRadius: SIZES.radius,
-                backgroundColor: COLORS.secondary
+                backgroundColor: COLORS.secondary,
               }}
               onPress={() => navigation.replace("SignIn")}
             />
@@ -239,7 +234,11 @@ const OnBoarding = ({ navigation }) => {
                   paddingHorizontal: SIZES.radius,
                 }}
               >
-                <Text style={{ ...FONTS.h1, fontSize: 25 }}>{item.title}</Text>
+                <Text
+                  style={{ ...FONTS.h1, fontSize: 25, textAlign: "center" }}
+                >
+                  {item.title}
+                </Text>
                 <Text
                   style={{
                     marginTop: SIZES.radius,

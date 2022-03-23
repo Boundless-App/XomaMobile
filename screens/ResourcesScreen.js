@@ -30,12 +30,26 @@ import {
 const ResourcesScreen = ({ navigation }) => {
   function renderHeader() {
     return (
+      // <HeaderTwo
+      //   icon={icons.back_icon}
+      //   iconStyle={{ marginRight: "1%" }}
+      //   onPress={() => navigation.goBack()}
+      //   heading={"Resources"}
+      //   textStyle={{ marginRight: 60 }}
+      // />
       <HeaderTwo
         icon={icons.back_icon}
-        iconStyle={{ marginRight: "1%" }}
         onPress={() => navigation.goBack()}
+        iconStyle={{
+          tintColor: COLORS.white,
+          //marginLeft: SIZES.padding3,
+          //marginLeft: "40%",
+        }}
         heading={"Resources"}
-        textStyle={{ marginRight: 60 }}
+        textStyle={{
+          marginLeft: "35%",
+          //marginHorizontal: SIZES.radius * 4,
+        }}
       />
     );
   }

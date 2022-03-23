@@ -286,7 +286,7 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
       <View
         style={{
           flex: 1,
-          backgroundColor: COLORS.lightGray3,
+          backgroundColor: COLORS.lightGray4,
         }}
       >
         <IconButton
@@ -294,17 +294,19 @@ const CourseDescriptionScreen = ({ route, navigation }) => {
           onPress={() => navigation.goBack()}
           iconStyle={{
             tintColor: COLORS.white,
+            height: 30,
+            width: 30,
           }}
           containerStyle={{
             position: "absolute",
-            top: 10,
-            left: 20,
+            top: 5,
+            left: 0,
             width: 50,
             height: 50,
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 10,
-            backgroundColor: COLORS.transparentBlack,
+            // backgroundColor: COLORS.transparentBlack,
             borderRadius: SIZES.padding,
           }}
         />

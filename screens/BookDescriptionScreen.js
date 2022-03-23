@@ -74,7 +74,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           containerStyle={{
             position: "absolute",
             top: 10,
-            left: 20,
+            left: 2,
             width: 50,
             height: 50,
             alignItems: "center",
@@ -91,7 +91,7 @@ const BookDescriptionScreen = ({ route, navigation }) => {
           containerStyle={{
             position: "absolute",
             top: 10,
-            right: 20,
+            right: 2,
             width: 50,
             height: 50,
             alignItems: "center",

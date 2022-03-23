@@ -21,7 +21,7 @@ const ProgressBar = ({ containerStyle, progress, progressStyle }) => {
           height: "100%",
           width: progress,
           borderRadius: 10,
-          backgroundColor: COLORS.primary,
+          backgroundColor: COLORS.secondary,
           ...progressStyle,
         }}
       ></View>

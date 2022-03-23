@@ -107,11 +107,10 @@ const HorizontalCourseCard = ({ containerStyle, course, onPress }) => {
         >
           <ProgressBar
             progress={course.progress}
-            containerStyle={
-              {
-                //marginTop: SIZES.base,
-              }
-            }
+            containerStyle={{
+              //marginTop: SIZES.base,
+              backgroundColor: COLORS.lightGray2,
+            }}
           />
 
           <Text

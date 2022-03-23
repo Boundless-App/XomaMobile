@@ -11,12 +11,26 @@ const ResOps = ({ navigation }) => {
         flex: 1,
       }}
     >
-      <HeaderTwo
+      {/* <HeaderTwo
         icon={icons.back_icon}
         iconStyle={{ marginRight: "5%" }}
         onPress={() => navigation.goBack()}
         heading={"Insights"}
         textStyle={{ marginRight: 30 }}
+      /> */}
+      <HeaderTwo
+        icon={icons.back_icon}
+        onPress={() => navigation.goBack()}
+        iconStyle={{
+          tintColor: COLORS.white,
+          //marginLeft: SIZES.padding3,
+          //marginLeft: "40%",
+        }}
+        heading={"Insights"}
+        textStyle={{
+          marginLeft: "35%",
+          //marginHorizontal: SIZES.radius * 4,
+        }}
       />
       <View
         style={{
@@ -55,7 +69,7 @@ const ResOps = ({ navigation }) => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Resources")}
+          onPress={() => navigation.navigate("Opportunities")}
           style={{
             height: "30%",
             width: "90%",
